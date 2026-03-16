@@ -151,14 +151,9 @@
       }
       
       .desktop-works-stage {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 1512px;
-        height: 982px;
-        /* Default transform; will be overridden by JS */
-        transform: translate(-50%, -50%) scale(1);
-        transform-origin: center center;
+        position: relative;
+        width: 100%;
+        height: 100%;
       }
 
       /* ── Work card ──────────────────────────────── */
@@ -172,6 +167,10 @@
       }
 
       /* Hover states */
+      .work-card:hover {
+        z-index: 20;
+      }
+
       .work-card:hover .work-card-number,
       .work-card:hover .work-card-year,
       .work-card:hover .work-card-title {
@@ -274,75 +273,12 @@
         height: 60px; /* fixed height for 1:1 box */
       }
 
-      /* ── Card positions (from Figma absolute coords) */
-
-      /* 1. Artworks & Posters — top center */
-      .work-card-1 {
-        top: 100px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      /* 10. Vinamilk Works — upper-left area */
-      .work-card-10 {
-        top: 152px;
-        left: 252px;
-      }
-
-      /* 2. Logos & Marks — upper-right area */
-      .work-card-2 {
-        top: 152px;
-        right: 182px;
-      }
-
-      /* 9. Ukiyo Sushi Bar — left middle-upper */
-      .work-card-9 {
-        top: 280px;
-        left: 152px;
-      }
-
-      /* 3. Len Huong Red Envelope — right middle-upper */
-      .work-card-3 {
-        top: 280px;
-        right: 73px;
-      }
-
-      /* 8. The Horse — left middle-lower */
-      .work-card-8 {
-        top: 420px;
-        left: 189px;
-      }
-
-      /* 4. What Remains — right middle-lower */
-      .work-card-4 {
-        top: 420px;
-        right: 120px;
-      }
-
-      /* 7. Micro Animation — bottom-left */
-      .work-card-7 {
-        top: 560px;
-        left: 256px;
-      }
-
-      /* 5. Today U Wear — bottom-right */
-      .work-card-5 {
-        top: 560px;
-        right: 140px;
-      }
-
-      /* 6. Di Luon Khong — bottom center */
-      .work-card-6 {
-        top: 700px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
       /* ── Central clock decoration ───────────────── */
       .clock-pivot {
         position: absolute;
-        top: 528.1px;
-        left: 748px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 10;
         pointer-events: none;
       }
@@ -351,19 +287,21 @@
         position: absolute;
         width: 147.34px;
         height: 147.34px;
-        top: -73.67px;
-        left: -73.67px;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%); /* perfect center */
       }
 
       .clock-hands {
         position: absolute;
         width: 346.685px;
         height: 303.083px;
-        top: -202.22px;
-        left: -180.49px;
+        top: 0;
+        left: 0;
+        /* Center pivot: needle origin in the SVG is exactly 180.49px, 202.22px */
         transform-origin: 180.49px 202.22px;
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: rotate(0deg);
+        transform: translate(-180.49px, -202.22px) rotate(0deg);
       }
     </style>
   </head>
@@ -711,65 +649,78 @@
       const stage = document.querySelector(".desktop-works-stage");
       
       if (clockHands && workCards.length > 0 && stage) {
-        // Initial state
-        clockHands.style.transform = `rotate(0deg)`;
+        clockHands.style.transform = `translate(-180.49px, -202.22px) rotate(0deg)`;
 
         workCards.forEach((card) => {
           card.addEventListener("mouseenter", () => {
             const stageRect = stage.getBoundingClientRect();
             
-            // The clock pivot center inside the stage is (748, 528.1)
-            // We must scale it to match the current transform scale!
-            const currentScale = stageRect.width / 1512;
-            const pivotX = stageRect.left + (748 * currentScale);
-            const pivotY = stageRect.top + (528.1 * currentScale);
+            // Pivot is exactly 50%, 50% relative to stage
+            const pivotX = stageRect.left + stageRect.width / 2;
+            const pivotY = stageRect.top + stageRect.height / 2;
 
-            // Get center of the hovered card relative to the window
             const cardRect = card.getBoundingClientRect();
             const cardCenterX = cardRect.left + cardRect.width / 2;
             const cardCenterY = cardRect.top + cardRect.height / 2;
 
-            // Calculate angle between pivot and center of card
             const deltaX = cardCenterX - pivotX;
             const deltaY = cardCenterY - pivotY;
             
             let angleDeg = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
             
-            // The yellow needle in the SVG points to exactly 150.56 degrees 
             const offset = -150.56; 
             const finalAngle = angleDeg + offset;
 
-            clockHands.style.transform = `rotate(${finalAngle}deg)`;
+            clockHands.style.transform = `translate(-180.49px, -202.22px) rotate(${finalAngle}deg)`;
           });
 
           card.addEventListener("mouseleave", () => {
-            clockHands.style.transform = `rotate(0deg)`;
+            clockHands.style.transform = `translate(-180.49px, -202.22px) rotate(0deg)`;
           });
         });
 
-        // Responsive scaling logic
-        function updateStageScale() {
+        // Fluid Elliptical Positioning Logic
+        function updateStageLayout() {
           const wrapper = document.querySelector(".works-stage-wrapper");
-          const stageEl = document.querySelector(".desktop-works-stage");
-          if (!wrapper || !stageEl) return;
+          if (!wrapper) return;
 
           const vw = wrapper.clientWidth;
           const vh = wrapper.clientHeight;
           
-          // Available height: subtract topbar if necessary.
-          // But visually, padding around the clock is good.
-          // Let's fit 1512x982 into the window with a bit of padding.
-          const scaleX = vw / 1512;
-          const scaleY = vh / 982;
-          
-          // Max scale of 1 (don't scale up), min to fit the screen
-          const scale = Math.min(scaleX, scaleY, 1) * 0.95; 
-          
-          stageEl.style.transform = `translate(-50%, -50%) scale(${scale})`;
+          // Constrain ellipse radii to fit cards (~320px wide and ~150px tall).
+          const rx = Math.max(Math.min(vw * 0.40, (vw / 2) - 180), 200);
+          const ry = Math.max(Math.min(vh * 0.45, (vh / 2) - 100), 180);
+
+          const cx = vw / 2;
+          const cy = vh / 2;
+
+          const cards = [
+            { el: document.querySelector('.work-card-1'), deg: -90 },
+            { el: document.querySelector('.work-card-2'), deg: -54 },
+            { el: document.querySelector('.work-card-3'), deg: -18 },
+            { el: document.querySelector('.work-card-4'), deg: 18 },
+            { el: document.querySelector('.work-card-5'), deg: 54 },
+            { el: document.querySelector('.work-card-6'), deg: 90 },
+            { el: document.querySelector('.work-card-7'), deg: 126 },
+            { el: document.querySelector('.work-card-8'), deg: 162 },
+            { el: document.querySelector('.work-card-9'), deg: 198 },
+            { el: document.querySelector('.work-card-10'), deg: 234 }
+          ];
+
+          cards.forEach(c => {
+            if (!c.el) return;
+            const rad = c.deg * (Math.PI / 180);
+            const x = cx + rx * Math.cos(rad);
+            const y = cy + ry * Math.sin(rad);
+
+            c.el.style.left = `${x}px`;
+            c.el.style.top = `${y}px`;
+            c.el.style.transform = `translate(-50%, -50%)`;
+          });
         }
 
-        window.addEventListener('resize', updateStageScale);
-        updateStageScale();
+        window.addEventListener('resize', updateStageLayout);
+        updateStageLayout();
       }
     </script>
   </body>
