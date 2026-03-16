@@ -1,581 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Theongyn Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <style>
-      @font-face {
-        font-family: "Cirrus Cumulus";
-        src: url("fonts/CirrusCumulus.otf") format("opentype");
-        font-display: swap;
-      }
 
-      @font-face {
-        font-family: "SF Pro Display";
-        src: url("fonts/SF-Pro-Display/SF-Pro-Display-Light.otf")
-          format("opentype");
-        font-weight: 300;
-        font-display: swap;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theongyn Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <style>
+    @font-face {
+      font-family: "Cirrus Cumulus";
+      src: url("fonts/CirrusCumulus.otf") format("opentype");
+      font-display: swap;
+    }
 
-      :root {
-        --theongyn-green: #3cd362;
-        --theongyn-pink: #fe45ee;
-        --theongyn-ink: #262626;
-        --theongyn-max-width: 1512px;
-        --theongyn-border: 1px solid var(--theongyn-ink);
-      }
+    @font-face {
+      font-family: "SF Pro Display";
+      src: url("fonts/SF-Pro-Display/SF-Pro-Display-Light.otf") format("opentype");
+      font-weight: 300;
+      font-display: swap;
+    }
 
-      html,
-      body {
-        min-height: 100%;
-      }
+    :root {
+      --theongyn-green: #3cd362;
+      --theongyn-pink: #fe45ee;
+      --theongyn-ink: #262626;
+      --theongyn-max-width: 1512px;
+      --theongyn-border: 1px solid var(--theongyn-ink);
+    }
 
-      body {
-        margin: 0;
-        background: var(--theongyn-green);
-        color: var(--theongyn-ink);
-        font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
+    html,
+    body {
+      min-height: 100%;
+    }
 
-      .bg-brand-green {
-        background: var(--theongyn-green);
-      }
+    body {
+      margin: 0;
+      background: var(--theongyn-green);
+      color: var(--theongyn-ink);
+      font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
 
-      .bg-brand-pink {
-        background: var(--theongyn-pink);
-      }
+    .bg-brand-green {
+      background: var(--theongyn-green);
+    }
 
-      .text-brand-ink {
-        color: var(--theongyn-ink);
-      }
+    .bg-brand-pink {
+      background: var(--theongyn-pink);
+    }
 
-      .border-brand {
-        border: var(--theongyn-border);
-      }
+    .text-brand-ink {
+      color: var(--theongyn-ink);
+    }
 
-      .homepage-shell {
-        min-height: 100vh;
-        overflow: hidden;
-      }
+    .border-brand {
+      border: var(--theongyn-border);
+    }
 
-      .desktop-home {
-        display: block;
-      }
+    .homepage-shell {
+      min-height: 100vh;
+      overflow: hidden;
+    }
 
-      .mobile-home {
-        display: none;
-      }
+    .desktop-home {
+      display: block;
+    }
 
-      .content-frame {
-        max-width: var(--theongyn-max-width);
-        margin: 0 auto;
-      }
+    .mobile-home {
+      display: none;
+    }
 
+    .content-frame {
+      max-width: var(--theongyn-max-width);
+      margin: 0 auto;
+    }
+
+    .site-menu {
+      height: 103px;
+      padding: 0 60px;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 257px;
+      height: 58px;
+      color: var(--theongyn-ink);
+      text-decoration: none;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark-text {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      margin: 0;
+      font-family: "Cirrus Cumulus", serif;
+      font-size: 48px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .menu-links {
+      gap: 32px;
+    }
+
+    .menu-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--theongyn-ink);
+      text-decoration: none;
+      flex: 0 0 auto;
+    }
+
+    .menu-box-text {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 300;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .menu-box.is-active .menu-box-text {
+      text-decoration: underline;
+    }
+
+    .hero-visual {
+      display: block;
+      width: 100%;
+      height: 623px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .intro-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 32px 60px;
+      border-top: var(--theongyn-border);
+    }
+
+    .intro-copy {
+      width: 1380.72px;
+      max-width: 100%;
+      margin: 0;
+      color: var(--theongyn-ink);
+      font-family: "Cirrus Cumulus", serif;
+      font-size: 48px;
+      line-height: 1;
+      text-wrap: pretty;
+      overflow-wrap: anywhere;
+    }
+
+    .mobile-home-shell {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background: var(--theongyn-green);
+    }
+
+    .mobile-topbar {
+      height: 80px;
+      padding: 0 20px;
+    }
+
+    .mobile-brand-mark {
+      position: relative;
+      width: 179px;
+      height: 43px;
+    }
+
+    .mobile-brand-mark .brand-mark-text {
+      font-size: 34px;
+    }
+
+    .mobile-menu-toggle {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 3px;
+      width: 60px;
+      height: 26px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .mobile-menu-line {
+      display: block;
+      height: 6px;
+      border: var(--theongyn-border);
+      background: var(--theongyn-pink);
+    }
+
+    .mobile-menu-line.line-1 {
+      width: 60px;
+    }
+
+    .mobile-menu-line.line-2 {
+      width: 50px;
+    }
+
+    .mobile-menu-line.line-3 {
+      width: 40px;
+    }
+
+    .mobile-hero {
+      width: 100%;
+    }
+
+    .mobile-hero-image {
+      display: block;
+      width: 100%;
+      height: 623px;
+      object-fit: cover;
+    }
+
+    .mobile-intro-panel {
+      padding: 20px;
+    }
+
+    .mobile-intro-copy {
+      margin: 0;
+      font-family: "Cirrus Cumulus", serif;
+      font-size: 34px;
+      line-height: 1;
+      text-wrap: pretty;
+      overflow-wrap: anywhere;
+    }
+
+    .mobile-slide-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      width: 129px;
+      height: 100vh;
+      padding: 38px 20px 60px;
+      background: var(--theongyn-ink);
+      color: #ffffff;
+      overflow: hidden;
+      transform: translateX(100%);
+      transition: transform 0.2s ease;
+    }
+
+    .mobile-slide-menu.is-open {
+      transform: translateX(0);
+    }
+
+    .mobile-close-button {
+      width: 54.962px;
+      height: 35.196px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .mobile-close-button img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 26px;
+      width: 89px;
+    }
+
+    .mobile-menu-links .menu-box {
+      min-height: 31px;
+      padding: 0;
+    }
+
+    .mobile-menu-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+      width: 79px;
+    }
+
+    .mobile-menu-footer img {
+      display: block;
+      width: 58.259px;
+      height: 49.178px;
+    }
+
+    .mobile-menu-footer-copy {
+      margin: 0;
+      width: 79px;
+      max-width: 79px;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1;
+      text-align: right;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 991.98px) {
       .site-menu {
-        height: 103px;
-        padding: 0 60px;
+        height: auto;
+        padding: 24px;
       }
 
       .brand-mark {
-        position: relative;
-        width: 257px;
-        height: 58px;
-        color: var(--theongyn-ink);
-        text-decoration: none;
-        flex: 0 0 auto;
+        width: auto;
+        min-width: 220px;
       }
 
       .brand-mark-text {
-        position: absolute;
-        top: -1px;
-        left: -1px;
-        margin: 0;
-        font-family: "Cirrus Cumulus", serif;
-        font-size: 48px;
-        line-height: 1;
-        white-space: nowrap;
+        position: static;
+        display: inline-block;
+        padding: 2px 10px 0;
+        font-size: 42px;
       }
 
       .menu-links {
-        gap: 32px;
+        width: 100%;
+        gap: 12px;
       }
 
       .menu-box {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--theongyn-ink);
-        text-decoration: none;
-        flex: 0 0 auto;
+        padding: 6px 10px;
       }
 
       .menu-box-text {
-        margin: 0;
-        font-size: 24px;
-        font-weight: 300;
-        line-height: normal;
-        white-space: nowrap;
-      }
-
-      .menu-box.is-active .menu-box-text {
-        text-decoration: underline;
+        font-size: 20px;
       }
 
       .hero-visual {
-        display: block;
-        width: 100%;
-        height: 623px;
-        object-fit: cover;
-        object-position: center;
+        height: auto;
       }
 
       .intro-panel {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 32px 60px;
-        border-top: var(--theongyn-border);
+        padding: 24px;
       }
 
       .intro-copy {
-        width: 1380.72px;
-        max-width: 100%;
-        margin: 0;
-        color: var(--theongyn-ink);
-        font-family: "Cirrus Cumulus", serif;
-        font-size: 48px;
-        line-height: 1;
-        text-wrap: pretty;
-        overflow-wrap: anywhere;
+        width: 100%;
+        font-size: clamp(28px, 6vw, 42px);
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .desktop-home {
+        display: none;
+      }
+
+      .mobile-home {
+        display: block;
+      }
+
+      .homepage-shell {
+        overflow-x: hidden;
       }
 
       .mobile-home-shell {
-        position: relative;
-        width: 100%;
         min-height: 100vh;
-        background: var(--theongyn-green);
-      }
-
-      .mobile-topbar {
-        height: 80px;
-        padding: 0 20px;
-      }
-
-      .mobile-brand-mark {
-        position: relative;
-        width: 179px;
-        height: 43px;
-      }
-
-      .mobile-brand-mark .brand-mark-text {
-        font-size: 34px;
-      }
-
-      .mobile-menu-toggle {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
-        gap: 3px;
-        width: 60px;
-        height: 26px;
-        padding: 0;
-        border: 0;
-        background: transparent;
-      }
-
-      .mobile-menu-line {
-        display: block;
-        height: 6px;
-        border: var(--theongyn-border);
-        background: var(--theongyn-pink);
-      }
-
-      .mobile-menu-line.line-1 {
-        width: 60px;
-      }
-
-      .mobile-menu-line.line-2 {
-        width: 50px;
-      }
-
-      .mobile-menu-line.line-3 {
-        width: 40px;
-      }
-
-      .mobile-hero {
-        width: 100%;
       }
 
       .mobile-hero-image {
-        display: block;
-        width: 100%;
-        height: 623px;
-        object-fit: cover;
+        height: auto;
+        aspect-ratio: 488 / 623;
       }
+    }
+  </style>
+</head>
 
-      .mobile-intro-panel {
-        padding: 20px;
-      }
-
-      .mobile-intro-copy {
-        margin: 0;
-        font-family: "Cirrus Cumulus", serif;
-        font-size: 34px;
-        line-height: 1;
-        text-wrap: pretty;
-        overflow-wrap: anywhere;
-      }
-
-      .mobile-slide-menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 20;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: space-between;
-        width: 129px;
-        height: 100vh;
-        padding: 38px 20px 60px;
-        background: var(--theongyn-ink);
-        color: #ffffff;
-        overflow: hidden;
-        transform: translateX(100%);
-        transition: transform 0.2s ease;
-      }
-
-      .mobile-slide-menu.is-open {
-        transform: translateX(0);
-      }
-
-      .mobile-close-button {
-        width: 54.962px;
-        height: 35.196px;
-        padding: 0;
-        border: 0;
-        background: transparent;
-      }
-
-      .mobile-close-button img {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-
-      .mobile-menu-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 26px;
-        width: 89px;
-      }
-
-      .mobile-menu-links .menu-box {
-        min-height: 31px;
-        padding: 0;
-      }
-
-      .mobile-menu-footer {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 12px;
-        width: 79px;
-      }
-
-      .mobile-menu-footer img {
-        display: block;
-        width: 58.259px;
-        height: 49.178px;
-      }
-
-      .mobile-menu-footer-copy {
-        margin: 0;
-        width: 79px;
-        max-width: 79px;
-        color: #ffffff;
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 1;
-        text-align: right;
-        white-space: normal;
-        overflow-wrap: anywhere;
-      }
-
-      @media (max-width: 991.98px) {
-        .site-menu {
-          height: auto;
-          padding: 24px;
-        }
-
-        .brand-mark {
-          width: auto;
-          min-width: 220px;
-        }
-
-        .brand-mark-text {
-          position: static;
-          display: inline-block;
-          padding: 2px 10px 0;
-          font-size: 42px;
-        }
-
-        .menu-links {
-          width: 100%;
-          gap: 12px;
-        }
-
-        .menu-box {
-          padding: 6px 10px;
-        }
-
-        .menu-box-text {
-          font-size: 20px;
-        }
-
-        .hero-visual {
-          height: auto;
-        }
-
-        .intro-panel {
-          padding: 24px;
-        }
-
-        .intro-copy {
-          width: 100%;
-          font-size: clamp(28px, 6vw, 42px);
-        }
-      }
-
-      @media (max-width: 575.98px) {
-        .desktop-home {
-          display: none;
-        }
-
-        .mobile-home {
-          display: block;
-        }
-
-        .homepage-shell {
-          overflow-x: hidden;
-        }
-
-        .mobile-home-shell {
-          min-height: 100vh;
-        }
-
-        .mobile-hero-image {
-          height: auto;
-          aspect-ratio: 488 / 623;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main
-      class="homepage-shell bg-brand-green text-brand-ink"
-      data-node-id="3944-2050"
-      data-figma-node-id="3944:2050"
-    >
-      <div class="desktop-home">
-        <header class="bg-brand-green">
-          <div class="content-frame">
-            <div
-              class="site-menu d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-3"
-            >
-              <a
-                class="brand-mark bg-brand-pink border-brand"
-                href="#"
-                aria-label="Theongyn home"
-              >
-                <span class="brand-mark-text">°˖Theongyn˖°</span>
-              </a>
-
-              <nav class="menu-links d-flex align-items-start align-items-lg-center">
-                <a
-                  class="menu-box bg-brand-pink border-brand"
-                  href="/works"
-                  data-route="/works"
-                >
-                  <span class="menu-box-text">Works</span>
-                </a>
-                <a
-                  class="menu-box bg-brand-pink border-brand"
-                  href="/about"
-                  data-route="/about"
-                >
-                  <span class="menu-box-text">About</span>
-                </a>
-                <a
-                  class="menu-box bg-brand-pink border-brand"
-                  href="/resume"
-                  data-route="/resume"
-                >
-                  <span class="menu-box-text">Resume</span>
-                </a>
-              </nav>
-            </div>
-          </div>
-        </header>
-
-        <section class="hero-section">
-          <div class="w-100">
-            <img
-              class="hero-visual"
-              src="./assets/images/home/desktop-home-hero.png"
-              alt="Theongyn portfolio home hero artwork"
-            />
-          </div>
-        </section>
-
-        <section class="intro-panel bg-brand-pink">
-          <div class="content-frame">
-            <p class="intro-copy">
-              Welcome. This is Theongyn (Thao Nguyen).<br />
-              Multidisciplinary Designer. Brand Designer @ Vinamilk.<br />
-              I build visual narratives that connect emotionally with audiences
-              and deliver clear strategic value for brands.
-            </p>
-          </div>
-        </section>
-      </div>
-
-      <div
-        class="mobile-home"
-        data-node-id="4018-9168"
-        data-figma-node-id="4018:9168"
-      >
-        <section class="mobile-home-shell">
-          <header class="mobile-topbar d-flex align-items-center justify-content-between">
-            <a
-              class="mobile-brand-mark brand-mark bg-brand-pink border-brand"
-              href="#"
-              aria-label="Theongyn home"
-            >
+<body>
+  <main class="homepage-shell bg-brand-green text-brand-ink" data-node-id="3944-2050" data-figma-node-id="3944:2050">
+    <div class="desktop-home">
+      <header class="bg-brand-green">
+        <div class="content-frame">
+          <div
+            class="site-menu d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-3">
+            <a class="brand-mark bg-brand-pink border-brand" href="#" aria-label="Theongyn home">
               <span class="brand-mark-text">°˖Theongyn˖°</span>
             </a>
-            <button
-              class="mobile-menu-toggle"
-              type="button"
-              aria-label="Open menu"
-              aria-controls="mobile-slide-menu"
-              aria-expanded="false"
-              data-menu-open
-            >
-              <span class="mobile-menu-line line-1"></span>
-              <span class="mobile-menu-line line-2"></span>
-              <span class="mobile-menu-line line-3"></span>
-            </button>
-          </header>
 
-          <section class="mobile-hero">
-            <img
-              class="mobile-hero-image"
-              src="./assets/images/home/mobile-home-hero.png"
-              alt="Theongyn portfolio mobile hero artwork"
-            />
-          </section>
+            <nav class="menu-links d-flex align-items-start align-items-lg-center">
+              <a class="menu-box bg-brand-pink border-brand" href="/works" data-route="/works">
+                <span class="menu-box-text">Works</span>
+              </a>
+              <a class="menu-box bg-brand-pink border-brand" href="/about" data-route="/about">
+                <span class="menu-box-text">About</span>
+              </a>
+              <a class="menu-box bg-brand-pink border-brand" href="/resume" data-route="/resume">
+                <span class="menu-box-text">Resume</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
 
-          <section class="mobile-intro-panel bg-brand-pink border-top border-dark">
-            <p class="mobile-intro-copy">
-              Welcome. This is Theongyn (Thao Nguyen). Multidisciplinary Designer.
-              Brand Designer @ Vinamilk. I build visual narratives that connect
-              emotionally with audiences and deliver clear strategic value for
-              brands.
-            </p>
-          </section>
+      <section class="hero-section">
+        <div class="w-100">
+          <img class="hero-visual" src="./assets/images/home/desktop-home-hero.png"
+            alt="Theongyn portfolio home hero artwork" />
+        </div>
+      </section>
+
+      <section class="intro-panel bg-brand-pink">
+        <div class="content-frame">
+          <p class="intro-copy">
+            Welcome. This is Theongyn (Thao Nguyen).<br />
+            Multidisciplinary Designer. Brand Designer @ Vinamilk.<br />
+            I build visual narratives that connect emotionally with audiences
+            and deliver clear strategic value for brands.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <div class="mobile-home" data-node-id="4018-9168" data-figma-node-id="4018:9168">
+      <section class="mobile-home-shell">
+        <header class="mobile-topbar d-flex align-items-center justify-content-between">
+          <a class="mobile-brand-mark brand-mark bg-brand-pink border-brand" href="#" aria-label="Theongyn home">
+            <span class="brand-mark-text">°˖Theongyn˖°</span>
+          </a>
+          <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-slide-menu"
+            aria-expanded="false" data-menu-open>
+            <span class="mobile-menu-line line-1"></span>
+            <span class="mobile-menu-line line-2"></span>
+            <span class="mobile-menu-line line-3"></span>
+          </button>
+        </header>
+
+        <section class="mobile-hero">
+          <img class="mobile-hero-image" src="./assets/images/home/mobile-home-hero.png"
+            alt="Theongyn portfolio mobile hero artwork" />
         </section>
 
-        <aside
-          id="mobile-slide-menu"
-          class="mobile-slide-menu"
-          data-node-id="4018-9293"
-          data-figma-node-id="4018:9293"
-          aria-hidden="true"
-        >
-          <button
-            class="mobile-close-button"
-            type="button"
-            aria-label="Close menu"
-            data-menu-close
-          >
-            <img
-              src="./assets/icons/menu/mobile-menu-close.svg"
-              alt=""
-            />
-          </button>
+        <section class="mobile-intro-panel bg-brand-pink border-top border-dark">
+          <p class="mobile-intro-copy">
+            Welcome. This is Theongyn (Thao Nguyen). Multidisciplinary Designer.
+            Brand Designer @ Vinamilk. I build visual narratives that connect
+            emotionally with audiences and deliver clear strategic value for
+            brands.
+          </p>
+        </section>
+      </section>
 
-          <nav class="mobile-menu-links">
-            <a
-              class="menu-box bg-brand-pink border-brand"
-              href="/works"
-              data-route="/works"
-            >
-              <span class="menu-box-text">Works</span>
-            </a>
-            <a
-              class="menu-box bg-brand-pink border-brand"
-              href="/about"
-              data-route="/about"
-            >
-              <span class="menu-box-text">About</span>
-            </a>
-            <a
-              class="menu-box bg-brand-pink border-brand"
-              href="/resume"
-              data-route="/resume"
-            >
-              <span class="menu-box-text">Resume</span>
-            </a>
-          </nav>
+      <aside id="mobile-slide-menu" class="mobile-slide-menu" data-node-id="4018-9293" data-figma-node-id="4018:9293"
+        aria-hidden="true">
+        <button class="mobile-close-button" type="button" aria-label="Close menu" data-menu-close>
+          <img src="./assets/icons/menu/mobile-menu-close.svg" alt="" />
+        </button>
 
-          <div class="mobile-menu-footer">
-            <img
-              src="./assets/icons/menu/mobile-menu-footer-mark.svg"
-              alt=""
-            />
-            <p class="mobile-menu-footer-copy">
-              HCMC, Vietnam.<br />
-              © 2026 Theongyn
-            </p>
-          </div>
-        </aside>
-      </div>
-    </main>
-    <script>
-      const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
-      document.querySelectorAll("[data-route]").forEach((link) => {
-        const route = link.getAttribute("data-route");
-        if (route === currentPath) {
-          link.classList.add("is-active");
-        }
-      });
+        <nav class="mobile-menu-links">
+          <a class="menu-box bg-brand-pink border-brand" href="/works" data-route="/works">
+            <span class="menu-box-text">Works</span>
+          </a>
+          <a class="menu-box bg-brand-pink border-brand" href="/about" data-route="/about">
+            <span class="menu-box-text">About</span>
+          </a>
+          <a class="menu-box bg-brand-pink border-brand" href="/resume" data-route="/resume">
+            <span class="menu-box-text">Resume</span>
+          </a>
+        </nav>
 
-      const slideMenu = document.querySelector("#mobile-slide-menu");
-      const openMenuButton = document.querySelector("[data-menu-open]");
-      const closeMenuButton = document.querySelector("[data-menu-close]");
-
-      if (slideMenu && openMenuButton && closeMenuButton) {
-        const setMenuState = (isOpen) => {
-          slideMenu.classList.toggle("is-open", isOpen);
-          slideMenu.setAttribute("aria-hidden", String(!isOpen));
-          openMenuButton.setAttribute("aria-expanded", String(isOpen));
-        };
-
-        openMenuButton.addEventListener("click", () => setMenuState(true));
-        closeMenuButton.addEventListener("click", () => setMenuState(false));
+        <div class="mobile-menu-footer">
+          <img src="./assets/icons/menu/mobile-menu-footer-mark.svg" alt="" />
+          <p class="mobile-menu-footer-copy">
+            Hanoi, Vietnam.<br />
+            © 2026 Theongyn
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <script>
+    const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+    document.querySelectorAll("[data-route]").forEach((link) => {
+      const route = link.getAttribute("data-route");
+      if (route === currentPath) {
+        link.classList.add("is-active");
       }
-    </script>
-  </body>
+    });
+
+    const slideMenu = document.querySelector("#mobile-slide-menu");
+    const openMenuButton = document.querySelector("[data-menu-open]");
+    const closeMenuButton = document.querySelector("[data-menu-close]");
+
+    if (slideMenu && openMenuButton && closeMenuButton) {
+      const setMenuState = (isOpen) => {
+        slideMenu.classList.toggle("is-open", isOpen);
+        slideMenu.setAttribute("aria-hidden", String(!isOpen));
+        openMenuButton.setAttribute("aria-expanded", String(isOpen));
+      };
+
+      openMenuButton.addEventListener("click", () => setMenuState(true));
+      closeMenuButton.addEventListener("click", () => setMenuState(false));
+    }
+  </script>
+</body>
+
 </html>

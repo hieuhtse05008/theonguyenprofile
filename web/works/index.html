@@ -140,6 +140,14 @@
         z-index: 50;
       }
 
+      .menu-box:hover {
+        background: var(--theongyn-yellow) !important;
+      }
+
+      .brand-mark:hover {
+        background: var(--theongyn-yellow) !important;
+      }
+
       /* ── Works Clock Stage ──────────────────────── */
       .works-stage-wrapper {
         position: absolute;
@@ -168,13 +176,23 @@
 
       /* Hover states */
       .work-card:hover {
-        z-index: 20;
+        z-index: 100;
       }
 
       .work-card:hover .work-card-number,
       .work-card:hover .work-card-year,
       .work-card:hover .work-card-title {
         background: var(--theongyn-pink);
+      }
+
+      .work-card:hover .work-card-title-inner {
+        font-family: "SF Pro Display", sans-serif;
+      }
+
+      .work-card:hover .work-card-category {
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto;
       }
 
       .work-card-index {
@@ -226,9 +244,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 181px;
+        width: 260px; /* Increased from 220px to prevent text overflow for complex titles */
         background: var(--theongyn-green);
         border: var(--theongyn-border);
+        transition: background 0.2s ease;
       }
 
       .work-card-title-inner {
@@ -252,6 +271,10 @@
         font-weight: 300;
         line-height: normal;
         white-space: nowrap;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none; /* Prevent overlap with neighboring cards when hidden */
+        transition: opacity 0.2s ease, visibility 0.2s;
       }
 
       .work-card-category-inner {
@@ -265,12 +288,12 @@
       /* ── Number sizing variants ─────────────────── */
       .work-card-number.num-lg {
         font-size: 48px;
-        height: 60px; /* fixed height for 1:1 box */
+        height: 60px;
       }
 
       .work-card-number.num-md {
         font-size: 37px;
-        height: 60px; /* fixed height for 1:1 box */
+        height: 60px;
       }
 
       /* ── Central clock decoration ───────────────── */
@@ -303,43 +326,259 @@
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transform: translate(-180.49px, -202.22px) rotate(0deg);
       }
+
+      /* ── Responsive logic ────────────────────────── */
+      .desktop-works {
+        display: block;
+      }
+
+      .mobile-works {
+        display: none;
+      }
+
+      @media (max-width: 575.98px) {
+        .desktop-works {
+          display: none;
+        }
+
+        .mobile-works {
+          display: block;
+          min-height: 100vh;
+        }
+
+        .desktop-topbar {
+          display: none;
+        }
+
+        .works-stage-wrapper {
+          display: none;
+        }
+
+        /* Mobile specific styles */
+        .mobile-topbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          height: 80px;
+          padding: 0 20px;
+          background: var(--theongyn-light-grey);
+          z-index: 100;
+        }
+
+        .mobile-brand-mark {
+          width: 179px;
+          height: 43px;
+        }
+
+        .mobile-brand-mark-text {
+          font-size: 34px;
+        }
+
+        .mobile-menu-toggle {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 3px;
+          padding: 0;
+          border: 0;
+          background: transparent;
+        }
+
+        .mobile-menu-line {
+          height: 6px;
+          background: var(--theongyn-pink);
+          border: var(--theongyn-border);
+        }
+
+        .mobile-menu-line.line-1 {
+          width: 60px;
+        }
+        .mobile-menu-line.line-2 {
+          width: 50px;
+        }
+        .mobile-menu-line.line-3 {
+          width: 40px;
+        }
+
+        /* Mobile Works List */
+        .mobile-works-list {
+          padding: 100px 20px 40px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .mobile-work-item {
+          display: flex;
+          gap: 3px;
+          align-items: flex-start;
+          text-decoration: none;
+          color: inherit;
+        }
+
+        .mobile-work-item:hover .bg-brand-green,
+        .mobile-work-item:hover .work-card-index > div,
+        .mobile-work-item:hover .work-card-number,
+        .mobile-work-item:hover .work-card-year,
+        .mobile-work-item:hover .work-card-title {
+          background: var(--theongyn-pink) !important;
+        }
+
+        .mobile-work-item:active .bg-brand-green,
+        .mobile-work-item:active .work-card-index > div,
+        .mobile-work-item:active .work-card-number,
+        .mobile-work-item:active .work-card-year,
+        .mobile-work-item:active .work-card-title {
+          background: var(--theongyn-pink) !important;
+        }
+
+        .mobile-work-item:hover .work-card-title-inner {
+          font-family: "SF Pro Display", sans-serif;
+        }
+
+        .mobile-work-category {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--theongyn-white);
+          border: var(--theongyn-border);
+          font-size: 20px;
+          font-weight: 300;
+          line-height: normal;
+          white-space: nowrap;
+          padding: 0 10px;
+        }
+
+        /* Override font sizes for mobile to match design */
+        .mobile-work-item .work-card-number.num-lg,
+        .mobile-work-item .work-card-number.num-md {
+          font-size: 34px;
+          height: 43px;
+        }
+
+        .mobile-work-item .work-card-title-inner {
+          font-size: 34px;
+        }
+
+        .mobile-work-item .work-card-year {
+          font-size: 16px;
+        }
+
+        .mobile-work-item .work-card-year.year-lg {
+          font-size: 20px;
+        }
+
+        /* Mobile Slide Menu (from index.html) */
+        .mobile-slide-menu {
+          position: fixed;
+          top: 0;
+          right: 0;
+          z-index: 200;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: space-between;
+          width: 129px;
+          height: 100vh;
+          padding: 38px 20px 60px;
+          background: var(--theongyn-ink);
+          color: #ffffff;
+          display: none; /* Hide by default on desktop to avoid footer leak */
+          transition: transform 0.2s ease, display 0s 0.2s;
+        }
+
+        .mobile-slide-menu.is-open {
+          display: flex;
+          transform: translateX(0);
+          transition: transform 0.2s ease, display 0s;
+        }
+
+        .mobile-close-button {
+          width: 55px;
+          height: 35px;
+          padding: 0;
+          border: 0;
+          background: transparent;
+        }
+
+        .mobile-close-button img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+
+        .mobile-menu-links {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 26px;
+        }
+
+        .mobile-menu-footer {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 12px;
+          width: 79px;
+        }
+
+        .mobile-menu-footer img {
+          display: block;
+          width: 58px;
+          height: 49px;
+        }
+
+        .mobile-menu-footer-copy {
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 1;
+          text-align: right;
+          color: white;
+          margin: 0;
+        }
+      }
     </style>
   </head>
   <body>
     <!-- ── Navbar ──────────────────────────────── -->
-    <header class="desktop-topbar">
-      <a
-        class="brand-mark bg-brand-pink border-brand"
-        href="/"
-        aria-label="Theongyn home"
-      >
-        <span class="brand-mark-text">°˖Theongyn˖°</span>
-      </a>
+    <div class="desktop-works">
+      <header class="desktop-topbar">
+        <a
+          class="brand-mark bg-brand-pink border-brand"
+          href="/"
+          aria-label="Theongyn home"
+        >
+          <span class="brand-mark-text">°˖Theongyn˖°</span>
+        </a>
 
-      <nav class="menu-links d-flex align-items-center">
-        <a
-          class="menu-box bg-brand-pink border-brand"
-          href="/works"
-          data-route="/works"
-        >
-          <span class="menu-box-text">Works</span>
-        </a>
-        <a
-          class="menu-box bg-brand-pink border-brand"
-          href="/about"
-          data-route="/about"
-        >
-          <span class="menu-box-text">About</span>
-        </a>
-        <a
-          class="menu-box bg-brand-pink border-brand"
-          href="/resume"
-          data-route="/resume"
-        >
-          <span class="menu-box-text">Resume</span>
-        </a>
-      </nav>
-    </header>
+        <nav class="menu-links d-flex align-items-center">
+          <a
+            class="menu-box bg-brand-pink border-brand"
+            href="/works"
+            data-route="/works"
+          >
+            <span class="menu-box-text">Works</span>
+          </a>
+          <a
+            class="menu-box bg-brand-pink border-brand"
+            href="/about"
+            data-route="/about"
+          >
+            <span class="menu-box-text">About</span>
+          </a>
+          <a
+            class="menu-box bg-brand-pink border-brand"
+            href="/resume"
+            data-route="/resume"
+          >
+            <span class="menu-box-text">Resume</span>
+          </a>
+        </nav>
+      </header>
 
     <main
       class="works-page"
@@ -630,10 +869,186 @@
           <div class="work-card-category">
             <p class="work-card-category-inner">Branding</p>
           </div>
-        </div>
-        </div>
+          </div> <!-- Closes desktop-works-stage -->
+        </div> <!-- Closes works-stage-wrapper -->
+      </main> <!-- Closes works-page -->
+    </div> <!-- Closes desktop-works -->
+    <!-- ── Mobile Version ────────────────────────── -->
+    <div class="mobile-works">
+      <header class="mobile-topbar">
+        <a class="mobile-brand-mark brand-mark bg-brand-pink border-brand" href="/" aria-label="Theongyn home">
+          <span class="brand-mark-text mobile-brand-mark-text">°˖Theongyn˖°</span>
+        </a>
+        <button class="mobile-menu-toggle" type="button" aria-label="Open menu" data-menu-open>
+          <span class="mobile-menu-line line-1"></span>
+          <span class="mobile-menu-line line-2"></span>
+          <span class="mobile-menu-line line-3"></span>
+        </button>
+      </header>
+
+      <div class="mobile-works-list">
+        <!-- Project 1 -->
+        <a href="#" class="mobile-work-item">
+          <div class="work-card-index">
+            <div class="work-card-number num-lg bg-brand-green border-brand"><p>1.</p></div>
+            <div class="work-card-year bg-brand-green border-brand"><p>2019</p><p>- Now</p></div>
+          </div>
+          <div class="work-card-title bg-brand-green border-brand">
+            <div class="work-card-title-inner"><p>Artworks</p><p>&amp; Posters</p></div>
+          </div>
+          <div class="mobile-work-category">
+            <div class="work-card-category-inner"><p>Digital</p><p>Art</p></div>
+          </div>
+        </a>
+
+        <!-- Project 2 -->
+        <a href="#" class="mobile-work-item">
+          <div class="work-card-index">
+            <div class="work-card-number num-lg bg-brand-green border-brand"><p>2.</p></div>
+            <div class="work-card-year bg-brand-green border-brand"><p>2020</p><p>- Now</p></div>
+          </div>
+          <div class="work-card-title bg-brand-green border-brand">
+            <div class="work-card-title-inner"><p>Logos</p><p>&amp; Marks</p></div>
+          </div>
+          <div class="mobile-work-category">
+            <div class="work-card-category-inner"><p>Logo</p><p>Design</p></div>
+          </div>
+        </a>
+
+        <!-- Project 3 -->
+        <a href="#" class="mobile-work-item">
+          <div class="work-card-index">
+            <div class="work-card-number num-lg bg-brand-green border-brand"><p>3.</p></div>
+            <div class="work-card-year bg-brand-green border-brand"><p>2020</p></div>
+          </div>
+          <div class="work-card-title bg-brand-green border-brand">
+            <div class="work-card-title-inner"><p>Len Huong</p><p>Red Envelope</p></div>
+          </div>
+          <div class="mobile-work-category">
+            <p class="work-card-category-inner">Merch</p>
+          </div>
+        </a>
+
+        <!-- Project 4 -->
+        <a href="#" class="mobile-work-item">
+          <div class="work-card-index">
+            <div class="work-card-number num-lg bg-brand-green border-brand"><p>4.</p></div>
+            <div class="work-card-year bg-brand-green border-brand"><p>2021</p><p>- 2023</p></div>
+          </div>
+          <div class="work-card-title bg-brand-green border-brand">
+            <div class="work-card-title-inner"><p>What</p><p>Remains</p></div>
+          </div>
+          <div class="mobile-work-category">
+            <div class="work-card-category-inner"><p>Editorial</p><p>Design</p></div>
+          </div>
+        </a>
+
+        <!-- Project 5 -->
+        <a href="#" class="mobile-work-item">
+          <div class="work-card-index">
+            <div class="work-card-number num-lg bg-brand-green border-brand"><p>5.</p></div>
+            <div class="work-card-year bg-brand-green border-brand"><p>2023</p><p>- Now</p></div>
+          </div>
+          <div class="work-card-title bg-brand-green border-brand">
+            <div class="work-card-title-inner"><p>Today</p><p>U Wear</p></div>
+          </div>
+          <div class="mobile-work-category">
+            <p class="work-card-category-inner">Branding</p>
+          </div>
+        </a>
+
+        <!-- Project 6 -->
+        <a href="#" class="mobile-work-item">
+          <div class="work-card-index">
+            <div class="work-card-number num-lg bg-brand-green border-brand"><p>6.</p></div>
+            <div class="work-card-year bg-brand-green border-brand"><p>2024</p></div>
+          </div>
+          <div class="work-card-title bg-brand-green border-brand">
+            <div class="work-card-title-inner"><p>Di Luon</p><p>Khong</p></div>
+          </div>
+          <div class="mobile-work-category">
+            <p class="work-card-category-inner">Branding</p>
+          </div>
+        </a>
+
+        <!-- Project 7 -->
+        <a href="#" class="mobile-work-item">
+          <div class="work-card-index">
+            <div class="work-card-number num-lg bg-brand-green border-brand"><p>7.</p></div>
+            <div class="work-card-year bg-brand-green border-brand"><p>2024</p></div>
+          </div>
+          <div class="work-card-title bg-brand-green border-brand">
+            <div class="work-card-title-inner"><p>Micro</p><p>Animation</p></div>
+          </div>
+          <div class="mobile-work-category">
+            <p class="work-card-category-inner">Animation</p>
+          </div>
+        </a>
+
+        <!-- Project 8 -->
+        <a href="#" class="mobile-work-item">
+          <div class="work-card-index">
+            <div class="work-card-number num-lg bg-brand-green border-brand"><p>8.</p></div>
+            <div class="work-card-year bg-brand-green border-brand"><p>2025</p></div>
+          </div>
+          <div class="work-card-title bg-brand-green border-brand">
+            <div class="work-card-title-inner"><p>The</p><p>Horse</p></div>
+          </div>
+          <div class="mobile-work-category">
+            <div class="work-card-category-inner"><p>Editorial</p><p>Design</p></div>
+          </div>
+        </a>
+
+        <!-- Project 9 -->
+        <a href="#" class="mobile-work-item">
+          <div class="work-card-index">
+            <div class="work-card-number num-lg bg-brand-green border-brand"><p>9.</p></div>
+            <div class="work-card-year bg-brand-green border-brand"><p>2026</p></div>
+          </div>
+          <div class="work-card-title bg-brand-green border-brand">
+            <div class="work-card-title-inner"><p>Ukiyo</p><p>Sushi Bar</p></div>
+          </div>
+          <div class="mobile-work-category">
+            <p class="work-card-category-inner">Branding</p>
+          </div>
+        </a>
+
+        <!-- Project 10 -->
+        <a href="#" class="mobile-work-item">
+          <div class="work-card-index">
+            <div class="work-card-number num-md bg-brand-green border-brand"><p>10.</p></div>
+            <div class="work-card-year bg-brand-green border-brand"><p>2026</p></div>
+          </div>
+          <div class="work-card-title bg-brand-green border-brand">
+            <div class="work-card-title-inner"><p>Vinamilk</p><p>Works</p></div>
+          </div>
+          <div class="mobile-work-category">
+            <div class="work-card-category-inner"><p>Branding &amp;</p><p>Packaging</p></div>
+          </div>
+        </a>
       </div>
-    </main>
+
+      <!-- Slide Menu -->
+      <aside id="mobile-slide-menu" class="mobile-slide-menu" aria-hidden="true">
+        <button class="mobile-close-button" type="button" aria-label="Close menu" data-menu-close>
+          <img src="../assets/icons/menu/mobile-menu-close.svg" alt="Close" />
+        </button>
+        <nav class="mobile-menu-links">
+          <a class="menu-box bg-brand-pink border-brand" href="/works" data-route="/works">
+            <span class="menu-box-text">Works</span>
+          </a>
+          <a class="menu-box bg-brand-pink border-brand" href="/about" data-route="/about">
+            <span class="menu-box-text">About</span>
+          </a>
+          <a class="menu-box bg-brand-pink border-brand" href="/resume" data-route="/resume">
+            <span class="menu-box-text">Resume</span>
+          </a>
+        </nav>
+        <div class="mobile-menu-footer">
+          <img src="../assets/icons/menu/mobile-menu-footer-mark.svg" alt="" />
+        </div>
+      </aside>
+    </div>
     <script>
       const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
       document.querySelectorAll("[data-route]").forEach((link) => {
@@ -668,7 +1083,7 @@
             
             let angleDeg = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
             
-            const offset = -150.56; 
+            const offset = -185.56; 
             const finalAngle = angleDeg + offset;
 
             clockHands.style.transform = `translate(-180.49px, -202.22px) rotate(${finalAngle}deg)`;
@@ -688,8 +1103,9 @@
           const vh = wrapper.clientHeight;
           
           // Constrain ellipse radii to fit cards (~320px wide and ~150px tall).
-          const rx = Math.max(Math.min(vw * 0.40, (vw / 2) - 180), 200);
-          const ry = Math.max(Math.min(vh * 0.45, (vh / 2) - 100), 180);
+          // Increased radii even more to prevent overlaps on smaller screens
+          const rx = Math.max(Math.min(vw * 0.45, (vw / 2) - 180), 220);
+          const ry = Math.max(Math.min(vh * 0.50, (vh / 2) - 100), 220);
 
           const cx = vw / 2;
           const cy = vh / 2;
@@ -718,9 +1134,37 @@
             c.el.style.transform = `translate(-50%, -50%)`;
           });
         }
+      }
 
-        window.addEventListener('resize', updateStageLayout);
-        updateStageLayout();
+      // Mobile Menu Logic
+      const slideMenu = document.querySelector("#mobile-slide-menu");
+      const openMenuButton = document.querySelector("[data-menu-open]");
+      const closeMenuButton = document.querySelector("[data-menu-close]");
+
+      if (slideMenu && openMenuButton && closeMenuButton) {
+        const setMenuState = (isOpen) => {
+          console.log("Setting mobile menu to:", isOpen ? "OPEN" : "CLOSED");
+          slideMenu.classList.toggle("is-open", isOpen);
+          slideMenu.setAttribute("aria-hidden", String(!isOpen));
+        };
+        // Use all matching buttons as there might be desktop/mobile variations
+        document.querySelectorAll("[data-menu-open]").forEach(btn => {
+          btn.addEventListener("click", () => setMenuState(true));
+        });
+        document.querySelectorAll("[data-menu-close]").forEach(btn => {
+          btn.addEventListener("click", () => setMenuState(false));
+        });
+      }
+
+      // Hide category pop-ups on resize if desktop update logic is active
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 575.98) {
+          if (typeof updateStageLayout === 'function') updateStageLayout();
+        }
+      });
+      
+      if (window.innerWidth > 575.98) {
+        if (typeof updateStageLayout === 'function') updateStageLayout();
       }
     </script>
   </body>
