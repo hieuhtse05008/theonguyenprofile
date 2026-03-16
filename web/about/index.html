@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Theongyn Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      @font-face {
+        font-family: "Cirrus Cumulus";
+        src: url("../../fonts/CirrusCumulus.otf") format("opentype");
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "SF Pro Display";
+        src: url("../../fonts/SF-Pro-Display/SF-Pro-Display-Light.otf")
+          format("opentype");
+        font-weight: 300;
+        font-display: swap;
+      }
+
+      :root {
+        --theongyn-green: #3cd362;
+        --theongyn-pink: #fe45ee;
+        --theongyn-ink: #262626;
+        --theongyn-border: 1px solid var(--theongyn-ink);
+        --theongyn-desktop-width: 1512px;
+        --theongyn-desktop-height: 1205px;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0;
+        background: var(--theongyn-green);
+        color: var(--theongyn-ink);
+        font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .bg-brand-green {
+        background: var(--theongyn-green);
+      }
+
+      .bg-brand-pink {
+        background: var(--theongyn-pink);
+      }
+
+      .text-brand-ink {
+        color: var(--theongyn-ink);
+      }
+
+      .text-brand-pink {
+        color: var(--theongyn-pink);
+      }
+
+      .border-brand {
+        border: var(--theongyn-border);
+      }
+
+      .brand-mark {
+        position: relative;
+        display: block;
+        width: 257px;
+        height: 58px;
+        color: var(--theongyn-ink);
+        text-decoration: none;
+      }
+
+      .brand-mark-text {
+        position: absolute;
+        inset: -1px;
+        margin: 0;
+        font-family: "Cirrus Cumulus", serif;
+        font-size: 48px;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .menu-links {
+        gap: 32px;
+      }
+
+      .menu-box {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1px 6px 3px;
+        color: var(--theongyn-ink);
+        text-decoration: none;
+      }
+
+      .menu-box-text {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .menu-box.is-active .menu-box-text {
+        text-decoration: underline;
+      }
+
+      .about-page {
+        min-height: 100vh;
+      }
+
+      .desktop-about {
+        display: block;
+      }
+
+      .mobile-about {
+        display: none;
+      }
+
+      .desktop-about-stage {
+        position: relative;
+        width: min(100%, var(--theongyn-desktop-width));
+        min-height: var(--theongyn-desktop-height);
+        margin: 0 auto;
+      }
+
+      .desktop-topbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 103px;
+        padding: 0 60px;
+      }
+
+      .desktop-about-copy {
+        position: absolute;
+        top: 191px;
+        left: 61px;
+        width: 1133px;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.1;
+      }
+
+      .desktop-about-copy p,
+      .desktop-about-list p,
+      .desktop-footer-copy p {
+        margin: 0;
+      }
+
+      .desktop-about-copy p + p {
+        margin-top: 12px;
+      }
+
+      .desktop-about-detail-grid {
+        position: absolute;
+        top: 685px;
+        left: 61px;
+        display: grid;
+        grid-template-columns: 332px 262px 339px;
+        column-gap: 98px;
+        align-items: start;
+      }
+
+      .desktop-about-section {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .desktop-about-section-title {
+        margin: 0;
+        font-family: "Cirrus Cumulus", serif;
+        font-size: 36px;
+        line-height: 1;
+        color: var(--theongyn-pink);
+      }
+
+      .desktop-about-list {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.1;
+      }
+
+      .desktop-about-list a,
+      .mobile-about-list a,
+      .desktop-contact-link,
+      .mobile-contact-link {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+      }
+
+      .desktop-contact-column {
+        display: flex;
+        flex-direction: column;
+        gap: 49px;
+      }
+
+      .desktop-about-horse {
+        position: absolute;
+        top: 861px;
+        right: 34px;
+        width: 254px;
+        height: 253px;
+        object-fit: cover;
+      }
+
+      .desktop-footer {
+        position: absolute;
+        left: 61px;
+        bottom: 69px;
+        display: flex;
+        align-items: end;
+        gap: 12px;
+      }
+
+      .desktop-footer img {
+        width: 58.259px;
+        height: 49.178px;
+      }
+
+      .desktop-footer-copy {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .mobile-about-shell {
+        position: relative;
+        min-height: 100vh;
+        background: var(--theongyn-green);
+      }
+
+      .mobile-topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        padding: 0 20px;
+      }
+
+      .mobile-brand-mark {
+        width: 179px;
+        height: 43px;
+      }
+
+      .mobile-brand-mark .brand-mark-text {
+        font-size: 34px;
+      }
+
+      .mobile-menu-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 3px;
+        width: 60px;
+        height: 26px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+      }
+
+      .mobile-menu-line {
+        display: block;
+        height: 6px;
+        border: var(--theongyn-border);
+        background: var(--theongyn-pink);
+      }
+
+      .mobile-menu-line.line-1 {
+        width: 60px;
+      }
+
+      .mobile-menu-line.line-2 {
+        width: 50px;
+      }
+
+      .mobile-menu-line.line-3 {
+        width: 40px;
+      }
+
+      .mobile-about-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 488px;
+        margin: 0 auto;
+        padding: 20px 20px 60px;
+      }
+
+      .mobile-about-copy {
+        font-size: 21px;
+        font-weight: 300;
+        line-height: 1.1;
+        text-wrap: pretty;
+        overflow-wrap: anywhere;
+      }
+
+      .mobile-about-copy p,
+      .mobile-about-list p,
+      .mobile-footer-copy p {
+        margin: 0;
+      }
+
+      .mobile-about-copy p + p {
+        margin-top: 12px;
+      }
+
+      .mobile-about-section {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .mobile-about-section.scope {
+        width: min(100%, 332px);
+      }
+
+      .mobile-about-section.clients {
+        width: min(100%, 262px);
+      }
+
+      .mobile-about-section-title {
+        margin: 0;
+        font-family: "Cirrus Cumulus", serif;
+        font-size: 34px;
+        line-height: 1;
+        color: var(--theongyn-pink);
+      }
+
+      .mobile-about-list {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.1;
+        text-wrap: pretty;
+        overflow-wrap: anywhere;
+      }
+
+      .mobile-contact-column {
+        display: flex;
+        flex-direction: column;
+        gap: 49px;
+        width: min(100%, 283px);
+      }
+
+      .mobile-footer-row {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 20px;
+      }
+
+      .mobile-footer {
+        display: flex;
+        align-items: end;
+        gap: 12px;
+        padding-bottom: 15px;
+        min-width: 0;
+      }
+
+      .mobile-footer img {
+        width: 45.017px;
+        height: 38px;
+        flex: 0 0 auto;
+      }
+
+      .mobile-footer-copy {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1;
+        text-wrap: pretty;
+      }
+
+      .mobile-about-horse {
+        width: 202px;
+        height: 202px;
+        object-fit: cover;
+        flex: 0 0 auto;
+      }
+
+      .mobile-slide-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 129px;
+        height: 100vh;
+        padding: 38px 20px 60px;
+        background: var(--theongyn-ink);
+        color: #ffffff;
+        overflow: hidden;
+        transform: translateX(100%);
+        transition: transform 0.2s ease;
+      }
+
+      .mobile-slide-menu.is-open {
+        transform: translateX(0);
+      }
+
+      .mobile-close-button {
+        width: 54.962px;
+        height: 35.196px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+      }
+
+      .mobile-close-button img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .mobile-menu-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 26px;
+        width: 89px;
+      }
+
+      .mobile-menu-links .menu-box {
+        min-height: 31px;
+        padding: 1px 6px 3px;
+      }
+
+      .mobile-menu-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px;
+        width: 79px;
+      }
+
+      .mobile-menu-footer img {
+        display: block;
+        width: 58.259px;
+        height: 49.178px;
+      }
+
+      .mobile-menu-footer-copy {
+        margin: 0;
+        width: 79px;
+        max-width: 79px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1;
+        text-align: right;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 1200px) {
+        .desktop-about-stage {
+          min-height: auto;
+          padding-bottom: 60px;
+        }
+
+        .desktop-topbar,
+        .desktop-about-copy,
+        .desktop-about-detail-grid,
+        .desktop-about-horse,
+        .desktop-footer {
+          position: static;
+        }
+
+        .desktop-topbar {
+          padding: 24px 32px;
+          height: auto;
+        }
+
+        .desktop-about-copy {
+          width: auto;
+          padding: 40px 32px 0;
+        }
+
+        .desktop-about-detail-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          row-gap: 40px;
+          padding: 60px 32px 0;
+        }
+
+        .desktop-contact-column {
+          width: 100%;
+        }
+
+        .desktop-about-horse {
+          display: block;
+          margin: 48px 32px 0 auto;
+        }
+
+        .desktop-footer {
+          padding: 48px 32px 0;
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .desktop-about {
+          display: none;
+        }
+
+        .mobile-about {
+          display: block;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .mobile-about-copy {
+          font-size: 20px;
+        }
+
+        .mobile-footer-row {
+          align-items: flex-end;
+        }
+
+        .mobile-about-horse {
+          width: min(42vw, 202px);
+          height: min(42vw, 202px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      class="about-page bg-brand-green text-brand-ink"
+      data-node-id="3945-2142"
+      data-figma-node-id="3945:2142"
+    >
+      <section class="desktop-about">
+        <div class="desktop-about-stage">
+          <header class="desktop-topbar">
+            <a
+              class="brand-mark bg-brand-pink border-brand"
+              href="/"
+              aria-label="Theongyn home"
+            >
+              <span class="brand-mark-text">°˖Theongyn˖°</span>
+            </a>
+
+            <nav class="menu-links d-flex align-items-center">
+              <a
+                class="menu-box bg-brand-pink border-brand"
+                href="/works"
+                data-route="/works"
+              >
+                <span class="menu-box-text">Works</span>
+              </a>
+              <a
+                class="menu-box bg-brand-pink border-brand"
+                href="/about"
+                data-route="/about"
+              >
+                <span class="menu-box-text">About</span>
+              </a>
+              <a
+                class="menu-box bg-brand-pink border-brand"
+                href="/resume"
+                data-route="/resume"
+              >
+                <span class="menu-box-text">Resume</span>
+              </a>
+            </nav>
+          </header>
+
+          <section class="desktop-about-copy">
+            <p>
+              Currently, Theongyn is a Brand Designer @ Vinamilk, specializing
+              in developing brand assets and packaging systems.
+            </p>
+            <p>
+              Before joining Vinamilk, Theo worked as a Multimedia Designer at
+              FPT Software, where she collaborated closely with UI/UX designers
+              to deliver graphic design, motion graphics, and UI support. During
+              this time, she contributed to large-scale projects for major brands
+              such as LG CNS, LG Electronics, Hyundai, ISUZU, and Vietcombank.
+            </p>
+            <p>
+              Earlier in her career, Theo was an R&amp;D Designer at Crabit
+              Studio, where she owned the full design process for stationary
+              &amp; editoral products, from research and ideation to final
+              production, ensuring consistency and high-quality outcomes. Two of
+              her projects became best-selling products: Planner 2023 (sold out
+              within one week) and Cat-lendar 2023 (sold out in three weeks).
+            </p>
+            <p>
+              Theo holds a BBA in Human Resources Management from Thuongmai
+              University. This business and people-focused background shapes her
+              approach to design, helping her connect brands with the humans
+              behind them.
+            </p>
+            <p>
+              Outside of corporate life, Theo enjoys designing merchandises and
+              artworks with her friends, using design as a way to share
+              thoughtful, encouraging messages with others.
+            </p>
+          </section>
+
+          <section class="desktop-about-detail-grid">
+            <div class="desktop-about-section">
+              <h2 class="desktop-about-section-title">✫Scope</h2>
+              <div class="desktop-about-list">
+                <p>Art Direction</p>
+                <p>Brand Identity</p>
+                <p>Strategic Visual Consulting</p>
+                <p>Packaging Design</p>
+                <p>Illustration (Digital Art)</p>
+                <p>Printing &amp; Editorial Design</p>
+                <p>POSM &amp; Digital Campaign Design</p>
+                <p>UI Concept</p>
+                <p>Micro Animation</p>
+              </div>
+            </div>
+
+            <div class="desktop-about-section">
+              <h2 class="desktop-about-section-title">✫Selected Clients</h2>
+              <div class="desktop-about-list">
+                <p>Cohe Studio</p>
+                <p>Square Media</p>
+                <p>The Manor Central Park</p>
+                <p>Freezedom</p>
+                <p>Today U Wear</p>
+                <p>Veosbykhanh</p>
+                <p>TEDxThuongmai</p>
+                <p>SimpleTwist Studio</p>
+              </div>
+            </div>
+
+            <div class="desktop-contact-column">
+              <div class="desktop-about-section">
+                <h2 class="desktop-about-section-title">✫Find Theo at</h2>
+                <div class="desktop-about-list">
+                  <p><a href="https://www.behance.net/theongyn">Behance</a></p>
+                  <p>
+                    <a href="https://www.linkedin.com/in/theongyn">LinkedIn</a>
+                  </p>
+                  <p>
+                    <a href="https://www.instagram.com/theongynn/">Instagram</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="desktop-about-section">
+                <h2 class="desktop-about-section-title">✫Contact</h2>
+                <div class="desktop-about-list">
+                  <p>
+                    Gmail:
+                    <a
+                      class="desktop-contact-link"
+                      href="mailto:theongyn.work@gmail.com"
+                    >
+                      Theongyn.work@gmail.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <img
+            class="desktop-about-horse"
+            src="../assets/images/about/desktop-about-horse.png"
+            alt="About page artwork"
+          />
+
+          <footer class="desktop-footer">
+            <img
+              src="../assets/icons/about/desktop-about-footer-mark.svg"
+              alt=""
+            />
+            <div class="desktop-footer-copy">
+              <p>Hanoi - HCMC, Vietnam.</p>
+              <p>© 2026 Theongyn</p>
+            </div>
+          </footer>
+        </div>
+      </section>
+
+      <section
+        class="mobile-about"
+        data-node-id="4023-9662"
+        data-figma-node-id="4023:9662"
+      >
+        <div class="mobile-about-shell">
+          <header class="mobile-topbar">
+            <a
+              class="mobile-brand-mark brand-mark bg-brand-pink border-brand"
+              href="/"
+              aria-label="Theongyn home"
+            >
+              <span class="brand-mark-text">°˖Theongyn˖°</span>
+            </a>
+
+            <button
+              class="mobile-menu-toggle"
+              type="button"
+              aria-label="Open menu"
+              aria-controls="mobile-slide-menu"
+              aria-expanded="false"
+              data-menu-open
+            >
+              <span class="mobile-menu-line line-1"></span>
+              <span class="mobile-menu-line line-2"></span>
+              <span class="mobile-menu-line line-3"></span>
+            </button>
+          </header>
+
+          <div class="mobile-about-content">
+            <section class="mobile-about-copy">
+              <p>
+                Currently, Theongyn is a Brand Designer at Vinamilk,
+                specializing in developing brand assets and packaging systems.
+              </p>
+              <p>
+                Before joining Vinamilk, Theo worked as a Multimedia Designer at
+                FPT Software, where she collaborated closely with UI/UX designers
+                to deliver graphic design, motion graphics, and UI support.
+                During this time, she contributed to large-scale projects for
+                major brands such as LG CNS, LG Electronics, Hyundai, ISUZU, and
+                Vietcombank.
+              </p>
+              <p>
+                Earlier in her career, Theo was an R&amp;D Designer at Crabit
+                Studio, where she owned the full design process for stationary
+                &amp; editoral products, from research and ideation to final
+                production, ensuring consistency and high-quality outcomes. Two
+                of her projects became best-selling products: Planner 2023 (sold
+                out within one week) and Cat-lendar 2023 (sold out in three
+                weeks).
+              </p>
+              <p>
+                Theo holds a BBA in Human Resources Management from Thuongmai
+                University. This business and people-focused background shapes
+                her approach to design, helping her connect brands with the
+                humans behind them.
+              </p>
+              <p>
+                Outside of corporate life, Theo enjoys designing merchandises
+                and artworks with her friends, using design as a way to share
+                thoughtful, encouraging messages with others.
+              </p>
+            </section>
+
+            <section class="mobile-about-section scope">
+              <h2 class="mobile-about-section-title">✫Scope</h2>
+              <div class="mobile-about-list">
+                <p>Art Direction</p>
+                <p>Brand Identity</p>
+                <p>Strategic Visual Consulting</p>
+                <p>Packaging Design</p>
+                <p>Illustration (Digital Art)</p>
+                <p>Printing &amp; Editorial Design</p>
+                <p>POSM &amp; Digital Campaign Design</p>
+                <p>UI Concept</p>
+                <p>Micro Animation</p>
+              </div>
+            </section>
+
+            <section class="mobile-about-section clients">
+              <h2 class="mobile-about-section-title">✫Selected Clients</h2>
+              <div class="mobile-about-list">
+                <p>Cohe Studio</p>
+                <p>Square Media</p>
+                <p>The Manor Central Park</p>
+                <p>Freezedom</p>
+                <p>Today U Wear</p>
+                <p>Veosbykhanh</p>
+                <p>TEDxThuongmai</p>
+                <p>SimpleTwist Studio</p>
+              </div>
+            </section>
+
+            <section class="mobile-contact-column">
+              <div class="mobile-about-section">
+                <h2 class="mobile-about-section-title">✫Find Theo at</h2>
+                <div class="mobile-about-list">
+                  <p><a href="https://www.behance.net/theongyn">Behance</a></p>
+                  <p>
+                    <a href="https://www.linkedin.com/in/theongyn">LinkedIn</a>
+                  </p>
+                  <p>
+                    <a href="https://www.instagram.com/theongynn/">Instagram</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="mobile-about-section">
+                <h2 class="mobile-about-section-title">✫Contact</h2>
+                <div class="mobile-about-list">
+                  <p>
+                    Gmail:
+                    <a
+                      class="mobile-contact-link"
+                      href="mailto:theongyn.work@gmail.com"
+                    >
+                      Theongyn.work@gmail.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <div class="mobile-footer-row">
+              <footer class="mobile-footer">
+                <img
+                  src="../assets/icons/about/mobile-about-footer-mark.svg"
+                  alt=""
+                />
+                <div class="mobile-footer-copy">
+                  <p>Hanoi - HCMC, Vietnam.</p>
+                  <p>© 2026 Theongyn</p>
+                </div>
+              </footer>
+
+              <img
+                class="mobile-about-horse"
+                src="../assets/images/about/mobile-about-horse.png"
+                alt="About page artwork"
+              />
+            </div>
+          </div>
+
+          <aside
+            id="mobile-slide-menu"
+            class="mobile-slide-menu"
+            data-node-id="4018-9293"
+            data-figma-node-id="4018:9293"
+            aria-hidden="true"
+          >
+            <button
+              class="mobile-close-button"
+              type="button"
+              aria-label="Close menu"
+              data-menu-close
+            >
+              <img src="../assets/icons/menu/mobile-menu-close.svg" alt="" />
+            </button>
+
+            <nav class="mobile-menu-links">
+              <a
+                class="menu-box bg-brand-pink border-brand"
+                href="/works"
+                data-route="/works"
+              >
+                <span class="menu-box-text">Works</span>
+              </a>
+              <a
+                class="menu-box bg-brand-pink border-brand"
+                href="/about"
+                data-route="/about"
+              >
+                <span class="menu-box-text">About</span>
+              </a>
+              <a
+                class="menu-box bg-brand-pink border-brand"
+                href="/resume"
+                data-route="/resume"
+              >
+                <span class="menu-box-text">Resume</span>
+              </a>
+            </nav>
+
+            <div class="mobile-menu-footer">
+              <img src="../assets/icons/menu/mobile-menu-footer-mark.svg" alt="" />
+              <p class="mobile-menu-footer-copy">
+                HCMC, Vietnam.<br />
+                © 2026 Theongyn
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const currentPath =
+        window.location.pathname
+          .replace(/index\.html$/, "")
+          .replace(/\/+$/, "") || "/";
+
+      document.querySelectorAll("[data-route]").forEach((link) => {
+        const route = link.getAttribute("data-route");
+        if (route === currentPath) {
+          link.classList.add("is-active");
+        }
+      });
+
+      const slideMenu = document.querySelector("#mobile-slide-menu");
+      const openMenuButton = document.querySelector("[data-menu-open]");
+      const closeMenuButton = document.querySelector("[data-menu-close]");
+
+      if (slideMenu && openMenuButton && closeMenuButton) {
+        const setMenuState = (isOpen) => {
+          slideMenu.classList.toggle("is-open", isOpen);
+          slideMenu.setAttribute("aria-hidden", String(!isOpen));
+          openMenuButton.setAttribute("aria-expanded", String(isOpen));
+        };
+
+        openMenuButton.addEventListener("click", () => setMenuState(true));
+        closeMenuButton.addEventListener("click", () => setMenuState(false));
+      }
+    </script>
+  </body>
+</html>
