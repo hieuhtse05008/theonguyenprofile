@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Theongyn Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../works/index.css"> <!-- Reusing some base styles if they exist, or I'll create a dedicated one -->
+    <style>
+        @font-face {
+            font-family: "Cirrus Cumulus";
+            src: url("../fonts/CirrusCumulus.otf") format("opentype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "SF Pro Display";
+            src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Light.otf") format("opentype");
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "SF Pro Display";
+            src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf") format("opentype");
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        :root {
+            --theongyn-green: #3cd362;
+            --theongyn-pink: #fe45ee;
+            --theongyn-ink: #262626;
+            --theongyn-white: #ffffff;
+            --theongyn-light-grey: #eaeaea;
+            --theongyn-border: 1px solid var(--theongyn-ink);
+        }
+
+        body {
+            background-color: var(--theongyn-light-grey);
+            color: var(--theongyn-ink);
+            font-family: "SF Pro Display", sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            height: 103px;
+            padding: 0 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            background-color: var(--theongyn-light-grey);
+            z-index: 1000;
+        }
+
+        .brand-mark {
+            background-color: var(--theongyn-pink);
+            border: var(--theongyn-border);
+            position: relative;
+            width: 257px;
+            height: 58px;
+            display: block;
+            text-decoration: none;
+            color: var(--theongyn-ink);
+        }
+
+        .brand-mark span {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            margin: 0;
+            font-family: "Cirrus Cumulus", serif;
+            font-size: 48px;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-link-box {
+            background-color: var(--theongyn-pink);
+            border: var(--theongyn-border);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--theongyn-ink);
+            font-size: 24px;
+            font-weight: 300;
+            line-height: normal;
+        }
+
+        .nav-link-box:hover {
+            background-color: #ffe343;
+        }
+
+        main {
+            padding: 0 60px 100px;
+        }
+
+        .project-header {
+            border-bottom: var(--theongyn-border);
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+
+        .project-title {
+            font-family: "Cirrus Cumulus", serif;
+            font-size: 48px;
+            color: var(--theongyn-pink);
+            margin-bottom: 8px;
+        }
+
+        .project-description {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.1;
+            max-width: 1392px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .meta-label {
+            font-family: "Cirrus Cumulus", serif;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .meta-value {
+            font-size: 24px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .meta-value::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background-color: var(--theongyn-ink);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .project-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .content-block {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1392px;
+        }
+
+        .content-block.align-left {
+            align-items: flex-start;
+        }
+
+        .content-block.align-right {
+            align-items: flex-end;
+        }
+
+        .content-block.align-center {
+            align-items: center;
+        }
+
+        .content-row {
+            display: flex;
+            gap: 2px;
+            width: 100%;
+        }
+
+        .row-image-wrapper {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            background-color: transparent;
+        }
+
+        .content-caption {
+            font-size: 16px;
+            font-weight: 300;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .scroll-top-btn {
+            display: flex;
+            justify-content: center;
+            padding: 60px 0;
+            cursor: pointer;
+        }
+
+        .scroll-top-btn img {
+            width: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: 80px;
+                padding: 0 20px;
+            }
+
+            .brand-mark {
+                width: 179px;
+                height: 43px;
+            }
+
+            .brand-mark span {
+                font-size: 34px;
+            }
+
+            .nav-links {
+                display: none; /* Mobile menu logic can be added later */
+            }
+
+            main {
+                padding: 0 20px 60px;
+            }
+
+            .project-title {
+                font-size: 34px;
+            }
+
+            .project-description {
+                font-size: 18px;
+            }
+
+            .meta-label {
+                font-size: 24px;
+            }
+
+            .meta-value {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="brand-mark">
+            <span>°˖Theongyn˖°</span>
+        </a>
+        <nav class="nav-links">
+            <a href="/works/" class="nav-link-box">Works</a>
+            <a href="/about/" class="nav-link-box">About</a>
+            <a href="#" class="nav-link-box" style="text-decoration: underline;">Resume</a>
+        </nav>
+    </header>
+
+    <main id="project-content">
+        <!-- Content will be populated by JS -->
+    </main>
+
+    <div class="scroll-top-btn" id="scroll-top">
+        <img src="../assets/icons/works/scroll-up.svg" alt="Scroll Up">
+    </div>
+
+    <script src="projects-data.js"></script>
+    <script>
+        function getProjectId() {
+            const params = new URLSearchParams(window.location.search);
+            return parseInt(params.get('id')) || 1;
+        }
+
+        function renderProject() {
+            const id = getProjectId();
+            const project = projectsData.find(p => p.id === id);
+
+            if (!project) {
+                document.getElementById('project-content').innerHTML = '<h1>Project not found</h1>';
+                return;
+            }
+
+            const scopeItems = project.scope.split(',').map(s => s.trim());
+            
+            let linksHtml = '';
+            if (project.links && project.links.length > 0) {
+                linksHtml = `
+                    <div class="meta-item">
+                        <div class="meta-label">Links:</div>
+                        <div class="meta-scope-list">
+                            ${project.links.map(link => `<div class="meta-value"><a href="${link.url}" style="text-decoration: underline;" target="_blank">${link.label}</a></div>`).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            let galleryHtml = '';
+            if (project.content && project.content.length > 0) {
+                galleryHtml = project.content.map(block => {
+                    let innerHtml = '';
+                    if (block.type === 'single') {
+                        innerHtml = `<img src="${block.src}" class="gallery-image" alt="">`;
+                    } else if (block.type === 'row') {
+                        innerHtml = `<div class="content-row" style="${block.gap ? `gap: ${block.gap};` : ''}">
+                            ${block.images.map(img => `<div class="row-image-wrapper"><img src="${img.src}" class="gallery-image" alt="" style="${img.objectFit ? `object-fit: ${img.objectFit};` : ''}"></div>`).join('')}
+                        </div>`;
+                    }
+                    
+                    let captionHtml = '';
+                    if (block.caption) {
+                        captionHtml = `<div class="content-caption">${block.caption}</div>`;
+                    }
+                    
+                    const alignClass = block.align ? `align-${block.align}` : 'align-center';
+                    const blockWidth = block.width ? `width: ${block.width};` : '';
+                    
+                    return `<div class="content-block ${alignClass}">
+                        <div style="display: flex; flex-direction: column; ${blockWidth}">
+                            ${innerHtml}
+                            ${captionHtml}
+                        </div>
+                    </div>`;
+                }).join('');
+            } else if (project.images && project.images.length > 0) {
+                galleryHtml = project.images.map(img => `<div class="content-block align-center"><img src="${img}" class="gallery-image" style="width: 100%; max-width: 1392px; border: var(--theongyn-border);" alt="${project.title}"></div>`).join('');
+            }
+
+            const content = `
+                <div class="project-header">
+                    <div class="project-title">${project.title}</div>
+                    <div class="project-description">${project.description}</div>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Year</div>
+                            <div class="meta-value">${project.year}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Project type</div>
+                            <div class="meta-value">${project.type}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Scope:</div>
+                            <div class="meta-scope-list">
+                                ${scopeItems.map(item => `<div class="meta-value">${item}</div>`).join('')}
+                            </div>
+                        </div>
+                        ${linksHtml}
+                    </div>
+                </div>
+                <div class="project-gallery">
+                    ${galleryHtml}
+                </div>
+            `;
+
+            document.getElementById('project-content').innerHTML = content;
+            document.title = `${project.title} | Theongyn Portfolio`;
+        }
+
+        document.getElementById('scroll-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        window.onload = renderProject;
+    </script>
+</body>
+</html>
