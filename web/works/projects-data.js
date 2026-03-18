@@ -31,29 +31,98 @@ const projectsData = [
     "title": "Logos & Marks",
     "year": "2021 - Now",
     "type": "Commission & Personal",
-    "scope": "Visual Identity",
+    "scope": "Logo Design",
     "description": "The objective of this project was to develop logo systems that are visually refined, strategically grounded, and aligned with each client\u2019s brand positioning. Beyond aesthetics, the focus was on creating practical and scalable identities that clearly communicate brand values and support long-term business goals. By balancing form and function, these marks are designed to leave a lasting impact across various touchpoints, ensuring a consistent and professional brand presence.",
-    "images": [
-      "../assets/images/projects/p2/img_1.png",
-      "../assets/images/projects/p2/img_2.png",
-      "../assets/images/projects/p2/img_3.png"
+    "badges": {
+      "label": "Badges",
+      "url": "https://www.behance.net/gallery/178087907/Logos-Marks-Vol01",
+      "images": [
+        "../assets/images/projects/p2/img_1.png",
+        "../assets/images/projects/p2/img_2.png"
+      ]
+    },
+    "content": [
+      {
+        "type": "grid",
+        "items": [
+          { "src": "../assets/images/projects/p2/img_1.png", "padding": "40px" },
+          { "src": "../assets/images/projects/p2/img_2.png" },
+          { "src": "../assets/images/projects/p2/img_3.png" },
+          { "src": "../assets/images/projects/p2/img_1.png" },
+          { "src": "../assets/images/projects/p2/img_2.png" },
+          { "src": "../assets/images/projects/p2/img_3.png" },
+          { "src": "../assets/images/projects/p2/img_1.png" },
+          { "src": "../assets/images/projects/p2/img_2.png" },
+          { "src": "../assets/images/projects/p2/img_3.png" },
+          { "html": "<div style=\"font-size: 120px; font-family: 'CirrusCumulus', serif; color: #262626;\">20</div>", "bgColor": "#eaeaea" },
+          { "src": "../assets/images/projects/p2/img_1.png" },
+          { "src": "../assets/images/projects/p2/img_2.png" },
+          { "src": "../assets/images/projects/p2/img_3.png" },
+          { "src": "../assets/images/projects/p2/img_1.png" },
+          { "src": "../assets/images/projects/p2/img_2.png" },
+          { "src": "../assets/images/projects/p2/img_3.png" },
+          { "src": "../assets/images/projects/p2/img_1.png" },
+          { "src": "../assets/images/projects/p2/img_2.png" },
+          { "src": "../assets/images/projects/p2/img_3.png" },
+          { "html": "<div style=\"display: flex; flex-direction: column; width: 100%; height: 100%;\"><div style=\"flex: 1; background: url('../assets/images/projects/p2/img_1.png') center/cover no-repeat; opacity: 0.5;\"></div><div style=\"height: 40px; font-size: 10px; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.2;\">21.0269° N, 105.7887° E<br>15.9784° N, 108.2621° E</div></div>", "bgColor": "#eaeaea", "padding": "40px" },
+          { "src": "../assets/images/projects/p2/img_1.png" },
+          { "src": "../assets/images/projects/p2/img_2.png" },
+          { "src": "../assets/images/projects/p2/img_3.png" },
+          { "src": "../assets/images/projects/p2/img_1.png" }
+        ]
+      }
     ],
     "bgColor": "#FE45EE"
   },
   {
     "id": 3,
-    "title": "Len Huong",
+    "title": "Len Huong: Red Envelope Collection",
     "year": "2020",
-    "type": "Personal",
-    "scope": "Zine Design, Visual Storytelling",
-    "description": "\u2018Len Huong\u2019 is an art project that captures the essence of childhood memories and the nostalgic beauty of traditional Vietnamese festivals. Through a series of zines and illustrations, the project reimagines familiar cultural symbols \u2013 from lanterns to folk games \u2013 using a contemporary, experimental visual language. The goal was to create a sensory experience that evokes a sense of wonder and connection to heritage, blending personal storytelling with cultural preservation. Each piece is a celebration of the vibrant colors and timeless spirit of Vietnam, inviting viewers to revisit the joy of their own past.",
-    "images": [
-      "../assets/images/projects/p3/img_1.png",
-      "../assets/images/projects/p3/img_2.png",
-      "../assets/images/projects/p3/img_3.png",
-      "../assets/images/projects/p3/img_4.png",
-      "../assets/images/projects/p3/img_5.png",
-      "../assets/images/projects/p3/img_6.png"
+    "type": "Non-profit",
+    "scope": "Design Direction, Illustration",
+    "description": "The goal of this project was to design a red envelope collection for the 2021 Lunar New Year that captures a shared desire for peace, renewal, and emotional uplift following a turbulent year. In response, the collection reimagines red envelopes as symbolic upgrades, blending a modern visual language with Vietnamese cultural motifs to deliver a sense of joy, reassurance, and quiet optimism for the year ahead.",
+    "team": [
+      { "name": "Duy Ph\u1ea1m (Copywriter)", "url": "https://www.behance.net/quocduy" }
+    ],
+    "content": [
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_1.png" },
+      { "type": "text", "text": "The pandemic has made everyone eager to fast-forward through 2020, much like skipping ads on YouTube.\nHeading into 2021, the universal desire is simply for peace. This very sentiment inspired our red envelope collection: \n\"2021: LEN HUONG - UPGRADE\"" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_2.png" },
+      { "type": "text", "text": "Bright, eye-catching colors define the design.\nRed, orange, and yellow reference the Vietnamese New Year, while blue and pink add a modern, dynamic touch that resonates with younger audiences." },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_3.png" },
+      { "type": "text", "text": "The familiar elements of the traditional New Year have also been designed in a simplified way to reach viewers more effectively." },
+      { "type": "row", "align": "center", "images": [
+        { "src": "../assets/images/projects/p3/img_4.png" },
+        { "src": "../assets/images/projects/p3/img_5.png" }
+      ]},
+      { "type": "row", "align": "center", "images": [
+        { "src": "../assets/images/projects/p3/img_6.png" },
+        { "src": "../assets/images/projects/p3/img_7.png" }
+      ]},
+      { "type": "row", "align": "center", "images": [
+        { "src": "../assets/images/projects/p3/img_8.png" },
+        { "src": "../assets/images/projects/p3/img_9.png" }
+      ]},
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_10.png" },
+      { "type": "text", "text": "We use patterns with New Year's elements and colors to make attached card sets.\nThe cards are also made from kraft paper." },
+      { "type": "row", "align": "center", "images": [
+        { "src": "../assets/images/projects/p3/img_11.png" },
+        { "src": "../assets/images/projects/p3/img_12.png" },
+        { "src": "../assets/images/projects/p3/img_13.png" }
+      ]},
+      { "type": "row", "align": "center", "images": [
+        { "src": "../assets/images/projects/p3/img_14.png" },
+        { "src": "../assets/images/projects/p3/img_15.png" },
+        { "src": "../assets/images/projects/p3/img_16.png" }
+      ]},
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_17.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_18.png" },
+      { "type": "row", "align": "center", "images": [
+        { "src": "../assets/images/projects/p3/img_19.png" },
+        { "src": "../assets/images/projects/p3/img_20.png" }
+      ]},
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_21.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_22.png" }
     ],
     "bgColor": "#FE45EE"
   },
