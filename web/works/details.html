@@ -1,520 +1,2291 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project Details | Theongyn Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../works/index.css"> <!-- Reusing some base styles if they exist, or I'll create a dedicated one -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <style>
-        @font-face {
-            font-family: "Cirrus Cumulus";
-            src: url("../fonts/CirrusCumulus.otf") format("opentype");
-            font-display: swap;
+      @font-face {
+        font-family: "Cirrus Cumulus";
+        src: url("../fonts/CirrusCumulus.otf") format("opentype");
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "SF Pro Display";
+        src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Light.otf")
+          format("opentype");
+        font-weight: 300;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "SF Pro Display";
+        src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf")
+          format("opentype");
+        font-weight: 100;
+        font-display: swap;
+      }
+
+      :root {
+        --theongyn-green: #3cd362;
+        --theongyn-pink: #fe45ee;
+        --theongyn-ink: #262626;
+        --theongyn-light-grey: #eaeaea;
+        --theongyn-yellow: #ffe343;
+        --theongyn-border: 1px solid var(--theongyn-ink);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0;
+        background: var(--theongyn-light-grey);
+        color: var(--theongyn-ink);
+        font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial,
+          sans-serif;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .brand-mark {
+        position: relative;
+        display: block;
+        width: 257px;
+        height: 58px;
+        color: var(--theongyn-ink);
+        text-decoration: none;
+        background: var(--theongyn-pink);
+        border: var(--theongyn-border);
+        flex: 0 0 auto;
+      }
+
+      .brand-mark-text {
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        margin: 0;
+        font-family: "Cirrus Cumulus", serif;
+        font-size: 48px;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .brand-mark:hover,
+      .menu-box:hover,
+      .mobile-close-button:hover {
+        background: var(--theongyn-yellow) !important;
+      }
+
+      .desktop-topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 103px;
+        padding: 0 60px;
+        background: var(--theongyn-light-grey);
+        z-index: 100;
+      }
+
+      .menu-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .menu-box {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        padding: 0;
+        color: var(--theongyn-ink);
+        text-decoration: none;
+        background: var(--theongyn-pink);
+        border: var(--theongyn-border);
+        flex: 0 0 auto;
+      }
+
+      .menu-box-text {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: normal;
+        white-space: nowrap;
+      }
+
+      .menu-box.is-active .menu-box-text {
+        text-decoration: underline;
+      }
+
+      .menu-box.is-disabled {
+        cursor: default;
+      }
+
+      .desktop-shell {
+        display: block;
+      }
+
+      .mobile-shell {
+        display: none;
+      }
+
+      main {
+        padding: 136px 60px 90px;
+      }
+
+      .details-shell {
+        width: 100%;
+        max-width: 1393px;
+        margin: 0 auto;
+      }
+
+      .logos-project-intro {
+        padding: 8px 0 15px;
+        border-bottom: var(--theongyn-border);
+      }
+
+      .logos-project-title {
+        margin: 0;
+        font-family: "Cirrus Cumulus", serif;
+        font-size: 48px;
+        line-height: 0.95;
+        color: var(--theongyn-pink);
+      }
+
+      .logos-project-description {
+        max-width: 1330px;
+        margin: 12px 0 16px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.1;
+      }
+
+      .logos-project-meta {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px 18px;
+      }
+
+      .logos-project-meta-item {
+        min-width: 0;
+      }
+
+      .logos-project-meta-label {
+        margin: 0 0 8px;
+        font-family: "Cirrus Cumulus", serif;
+        font-size: 32px;
+        line-height: 1;
+      }
+
+      .logos-project-meta-value {
+        margin: 0;
+        font-family: "SF Pro Display", sans-serif;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.1;
+      }
+
+      .logos-project-badges {
+        display: flex;
+        align-items: flex-start;
+        min-width: 0;
+      }
+
+
+
+      .logos-project-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        padding-top: 20px;
+      }
+
+      .logos-project-tile {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+      }
+
+      .logos-project-tile img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .scroll-top-footer {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        min-height: 136px;
+        padding: 40px 0 48px;
+      }
+
+      .scroll-top-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .scroll-top-btn img {
+        display: block;
+        width: 20px;
+        height: 33px;
+        filter: brightness(1.8);
+      }
+
+      .project-header {
+        border-bottom: var(--theongyn-border);
+        padding-bottom: 20px;
+      }
+
+      .project-title {
+        margin: 0 0 10px;
+        font-family: "Cirrus Cumulus", serif;
+        font-size: 48px;
+        line-height: 0.95;
+        color: var(--theongyn-pink);
+      }
+
+      .project-description {
+        max-width: 100%;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.1;
+        white-space: pre-wrap;
+      }
+
+      .project-meta {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .meta-item {
+        min-width: 0;
+      }
+
+      .meta-label {
+        margin: 0 0 6px;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1;
+      }
+
+      .meta-value,
+      .meta-list a,
+      .content-caption,
+      .content-text {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.1;
+      }
+
+      .meta-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .project-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 20px;
+      }
+
+      .content-block {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .content-block.align-left {
+        align-items: flex-start;
+      }
+
+      .content-block.align-center {
+        align-items: center;
+      }
+
+      .content-block.align-right {
+        align-items: flex-end;
+      }
+
+      .content-inner {
+        width: 100%;
+      }
+
+      .content-row {
+        display: flex;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .row-image-wrapper {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+
+      .gallery-image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .content-row .gallery-image {
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .grid-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 260px;
+        background: var(--theongyn-light-grey);
+        border: var(--theongyn-border);
+        overflow: hidden;
+      }
+
+      .grid-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .content-caption {
+        margin: 12px 0 0;
+        text-align: center;
+      }
+
+      .content-text {
+        margin: 0;
+        text-align: center;
+        white-space: pre-wrap;
+      }
+
+      .content-text-wrapper {
+        padding: 20px 0;
+      }
+
+      .content-text-wrapper p {
+        margin: 0;
+      }
+
+      .content-text-wrapper p + p {
+        margin-top: 0.5em;
+      }
+
+      .titled-text-block {
+        padding: 20px 0;
+      }
+
+      .titled-text-block .titled-text-title {
+        margin: 0 0 10px;
+        font-family: "Cirrus Cumulus", serif;
+        font-size: 32px;
+        line-height: normal;
+        color: var(--theongyn-ink);
+      }
+
+      .titled-text-block .titled-text-body {
+        margin: 0;
+        font-family: "SF Pro Display", sans-serif;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.1;
+        color: var(--theongyn-ink);
+      }
+
+      .titled-text-block .titled-text-body p {
+        margin: 0;
+      }
+
+      .titled-text-block .titled-text-body p + p {
+        margin-top: 0.5em;
+      }
+
+      .black-bg-centered-block {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1393 / 605;
+        background: #000;
+        overflow: hidden;
+      }
+
+      .black-bg-centered-block img {
+        position: absolute;
+        left: 33.36%;
+        top: 11.69%;
+        width: 33.27%;
+        height: 76.62%;
+        object-fit: contain;
+      }
+
+      /* ---- DLK (Project 6) specific ---- */
+      .dlk-two-col { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; padding: 20px 0; }
+      .dlk-section { display: flex; flex-direction: column; gap: 10px; }
+      .dlk-section-title { margin: 0; font-family: 'Cirrus Cumulus', serif; font-size: 32px; line-height: 1; }
+      .dlk-section-body { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 300; line-height: 1.1; }
+      .dlk-section-body p { margin: 0; }
+      .dlk-section-body p + p { margin-top: 12px; }
+      .dlk-section-list { list-style: disc; padding-left: 36px; font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 300; line-height: 1.1; margin: 0; }
+      .dlk-section-list li + li { margin-top: 0; }
+      .dlk-value-cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
+      .dlk-value-card { background: #fff; padding: 20px; }
+      .dlk-value-card-title { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.1; margin: 0 0 12px; }
+      .dlk-value-card-list { list-style: disc; padding-left: 24px; font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 300; line-height: 1.1; margin: 0; }
+      .dlk-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+      .dlk-pill { background: #fff; border-radius: 100px; padding: 12px 20px; font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.1; color: #262626; }
+      .dlk-color-bar { display: flex; width: 100%; margin-top: 20px; }
+      .dlk-color-bar-item { flex: 1; height: 97px; }
+      .dlk-team-logo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 20px 0; align-items: start; }
+      .dlk-team-logo-text { display: flex; flex-direction: column; justify-content: space-between; padding-right: 20px; gap: 20px; }
+      .dlk-team-logo-text-title { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.1; margin: 0 0 12px; }
+      .dlk-team-logo-text-body { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 300; line-height: 1.1; }
+      .dlk-team-logo-text-body p { margin: 0; }
+      .dlk-team-logo-text-body p + p { margin-top: 12px; }
+      .dlk-team-logo-variants { display: block; width: 100%; height: auto; }
+      .dlk-logo-overlay { position: relative; aspect-ratio: 1; overflow: hidden; }
+      .dlk-logo-overlay-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+      .dlk-logo-overlay-dim { position: absolute; inset: 0; background: rgba(0,0,0,0.2); }
+      .dlk-logo-overlay-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 52%; height: auto; }
+      .dlk-merch-section { position: relative; width: 100%; aspect-ratio: 1393/750; overflow: hidden; }
+      .dlk-merch-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .dlk-merch-bg-dim { position: absolute; inset: 0; background: rgba(0,0,0,0.3); }
+      .dlk-merch-product { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 45%; box-shadow: 0 4px 20px rgba(0,0,0,0.8); }
+      .dlk-merch-product img { display: block; width: 100%; height: auto; }
+      .dlk-merch-side { position: absolute; top: 50%; transform: translateY(-50%); width: 26%; height: auto; }
+      .dlk-merch-side.is-left { left: 2.4%; }
+      .dlk-merch-side.is-right { right: 2.4%; }
+      .dlk-text-section { padding: 20px 0; }
+      .dlk-text-section-title { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.1; margin: 0 0 12px; }
+      .dlk-text-section-body { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 300; line-height: 1.1; }
+      .dlk-text-section-body p { margin: 0; }
+      .dlk-text-section-body p + p { margin-top: 12px; }
+      .dlk-illustration-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0; }
+      .dlk-illustration-grid img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+
+      .meta-label {
+        margin: 0 0 8px;
+        font-family: "Cirrus Cumulus", serif;
+        font-size: 26px;
+        line-height: 1;
+      }
+
+      .meta-scope-list {
+        list-style: disc;
+        padding-left: 36px;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.1;
+      }
+
+      .meta-scope-list li {
+        margin-bottom: 0;
+      }
+
+      .meta-badges-row {
+        display: flex;
+        align-items: start;
+        gap: 8px;
+        min-height: 90px;
+      }
+
+      .meta-badges-row .meta-label {
+        margin: 0;
+      }
+
+      .meta-badges-link {
+        font-family: "Cirrus Cumulus", serif;
+        font-size: 32px;
+        line-height: 1;
+        color: var(--theongyn-ink);
+        text-decoration: underline;
+        transform: translateY(-8px);
+      }
+
+      .meta-badge-icons {
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .meta-badge-preview {
+        display: block;
+        width: 52px;
+        height: auto;
+        flex: 0 0 auto;
+      }
+
+      .tuw-project {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .tuw-gallery {
+        gap: 20px;
+      }
+
+      .tuw-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .tuw-section-title {
+        margin: 0;
+        font-family: "Cirrus Cumulus", serif;
+        font-size: 32px;
+        line-height: 1;
+      }
+
+      .tuw-section-copy {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.1;
+      }
+
+      .tuw-section-copy p,
+      .tuw-section-copy ul {
+        margin: 0;
+      }
+
+      .tuw-section-copy p + p,
+      .tuw-section-copy ul + p,
+      .tuw-section-copy p + ul {
+        margin-top: 0.5em;
+      }
+
+      .tuw-section-copy ul {
+        padding-left: 36px;
+      }
+
+      .tuw-section-copy li {
+        margin: 0;
+      }
+
+      .tuw-responsive-media,
+      .tuw-responsive-media img {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+      }
+
+      .tuw-bg-wrapper {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        background-color: transparent;
+        background-image: var(--bg-desk);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+      }
+
+      .tuw-product-real-panel.is-double .tuw-responsive-media{
+        background-size: cover;
+      }
+
+      @media (max-width: 767.98px) {
+        .tuw-bg-wrapper {
+          background-image: var(--bg-mob);
+        }
+      }
+
+      .tuw-brand-system {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .tuw-palette-grid,
+      .tuw-gradient-grid {
+        display: grid;
+      }
+
+      .tuw-palette-grid {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+      }
+
+      .tuw-gradient-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .tuw-palette-card,
+      .tuw-gradient-card {
+        min-width: 0;
+      }
+
+      .tuw-palette-card {
+        min-height: 293px;
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .tuw-palette-heading {
+        font-family: "SF Pro Display", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.1;
+      }
+
+      .tuw-palette-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.1;
+      }
+
+      .tuw-palette-meta p {
+        margin: 0;
+      }
+
+      .tuw-gradient-card {
+        min-height: 293px;
+      }
+
+      .tuw-gradient-card.gradient-1 {
+        background: linear-gradient(180deg, #ddd3ff 0%, #ffe3ec 38.942%, #ffffff 92.788%);
+      }
+
+      .tuw-gradient-card.gradient-2 {
+        background: linear-gradient(180deg, #e7e0ff 17.411%, #ffffff 100%);
+      }
+
+      .tuw-gradient-card.gradient-3 {
+        background: linear-gradient(180deg, #fde0e6 0%, #ffffff 86.1%);
+      }
+
+      .tuw-typography-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        align-items: center;
+        padding: 40px;
+        background: #fff9ed;
+      }
+
+      .tuw-typography-spec {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .tuw-typography-swatch,
+      .tuw-typography-swatch img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .tuw-typography-meta {
+        font-size: 18px;
+        line-height: 1;
+        color: #d06281;
+      }
+
+      .tuw-typography-meta p,
+      .tuw-typography-note p {
+        margin: 0;
+      }
+
+      .tuw-typography-note {
+        font-size: 16px;
+        line-height: 1.1;
+        color: #31214e;
+      }
+
+      .tuw-desktop-brand-cards,
+      .tuw-mobile-brand-cards {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .tuw-mobile-only {
+        display: none;
+      }
+
+      .tuw-comm-mockups {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 34px;
+        min-height: 690px;
+      }
+
+      .tuw-comm-card {
+        position: relative;
+      }
+
+      .tuw-comm-card.is-left {
+        width: 337px;
+        margin-top: 2px;
+        transform: rotate(-6.35deg);
+      }
+
+      .tuw-comm-card.is-right {
+        width: 365px;
+        margin-top: 86px;
+        transform: rotate(9.34deg);
+      }
+
+      .tuw-comm-card-base,
+      .tuw-comm-card-overlay {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .tuw-comm-card-overlay {
+        position: absolute;
+        inset: 0;
+      }
+
+      .tuw-comm-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+      }
+
+      .tuw-comm-grid img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .tuw-product-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        align-items: stretch;
+      }
+
+      .tuw-product-side {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .tuw-product-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.1;
+      }
+
+      .tuw-product-label::after {
+        content: ">";
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      .tuw-product-design-panel {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 20px;
+        background: var(--theongyn-light-grey);
+        border: var(--theongyn-border);
+        overflow: hidden;
+      }
+
+      .tuw-product-design-panel.is-column {
+        flex-direction: column;
+        gap: 30px;
+        /* height: 80vh; */
+      }
+
+      .tuw-product-design-panel.is-row {
+        flex-direction: row;
+        /* height: 80vh; */
+      }
+
+      .tuw-product-design-panel picture,
+      .tuw-product-design-panel img,
+      .tuw-product-real-panel picture,
+      .tuw-product-real-panel img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .tuw-product-crop {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .tuw-product-crop img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .tuw-product-crop.is-half {
+        height: 296px;
+      }
+
+      .tuw-product-crop.is-large {
+        height: 428px;
+      }
+
+      .tuw-product-crop.is-small {
+        height: 211px;
+      }
+
+      .tuw-product-crop-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        width: 100%;
+      }
+
+      .tuw-product-crop.is-top img,
+      .tuw-product-crop.is-main img {
+        object-position: top center;
+      }
+
+      .tuw-product-crop.is-bottom img {
+        object-position: bottom center;
+      }
+
+      .tuw-product-crop.is-detail-left img {
+        object-position: left bottom;
+      }
+
+      .tuw-product-crop.is-detail-right img {
+        object-position: right bottom;
+      }
+
+      .tuw-product-real-panel {
+        flex: 1;
+        display: grid;
+      }
+
+      .tuw-product-real-panel.is-double {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tuw-product-real-panel.is-single {
+        /* height: 80vh; */
+      }
+
+      .tuw-product-jersey-pair {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        align-items: center;
+      }
+
+      .tuw-product-jersey-pair img {
+        width: 100%;
+        height: auto;
+      }
+
+      .tuw-packaging-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+      }
+
+      .tuw-packaging-row img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .mobile-topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 80px;
+        padding: 0 20px;
+        background: var(--theongyn-light-grey);
+        z-index: 110;
+      }
+
+      .mobile-brand-mark {
+        width: 179px;
+        height: 43px;
+      }
+
+      .mobile-brand-mark .brand-mark-text {
+        font-size: 34px;
+      }
+
+      .mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 3px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+      }
+
+      .mobile-menu-line {
+        display: block;
+        height: 6px;
+        background: var(--theongyn-pink);
+        border: var(--theongyn-border);
+      }
+
+      .mobile-menu-line.line-1 {
+        width: 60px;
+      }
+
+      .mobile-menu-line.line-2 {
+        width: 50px;
+      }
+
+      .mobile-menu-line.line-3 {
+        width: 40px;
+      }
+
+      .mobile-slide-menu {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px 20px 32px;
+        background: var(--theongyn-pink);
+        transform: translateX(100%);
+        transition: transform 0.25s ease;
+        z-index: 200;
+      }
+
+      .mobile-slide-menu.is-open {
+        transform: translateX(0);
+      }
+
+      .mobile-slide-menu[aria-hidden="true"] {
+        visibility: hidden;
+      }
+
+      .mobile-slide-menu[aria-hidden="false"] {
+        visibility: visible;
+      }
+
+      .mobile-menu-top {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .mobile-close-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        border: var(--theongyn-border);
+        background: var(--theongyn-pink);
+      }
+
+      .mobile-close-button img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .mobile-menu-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 26px;
+      }
+
+      .mobile-menu-links .menu-box {
+        min-width: 0;
+      }
+
+      .mobile-menu-links .menu-box-text {
+        font-size: 32px;
+      }
+
+      .mobile-menu-footer {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .mobile-menu-footer img {
+        display: block;
+        width: 58px;
+        height: auto;
+      }
+
+      @media (max-width: 767.98px) {
+        .desktop-shell {
+          display: none;
         }
 
-        @font-face {
-            font-family: "SF Pro Display";
-            src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Light.otf") format("opentype");
-            font-weight: 300;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: "SF Pro Display";
-            src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf") format("opentype");
-            font-weight: 100;
-            font-display: swap;
-        }
-
-        :root {
-            --theongyn-green: #3cd362;
-            --theongyn-pink: #fe45ee;
-            --theongyn-ink: #262626;
-            --theongyn-white: #ffffff;
-            --theongyn-light-grey: #eaeaea;
-            --theongyn-border: 1px solid var(--theongyn-ink);
-        }
-
-        body {
-            background-color: var(--theongyn-light-grey);
-            color: var(--theongyn-ink);
-            font-family: "SF Pro Display", sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        header {
-            height: 103px;
-            padding: 0 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            background-color: var(--theongyn-light-grey);
-            z-index: 1000;
-        }
-
-        .brand-mark {
-            background-color: var(--theongyn-pink);
-            border: var(--theongyn-border);
-            position: relative;
-            width: 257px;
-            height: 58px;
-            display: block;
-            text-decoration: none;
-            color: var(--theongyn-ink);
-        }
-
-        .brand-mark span {
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            margin: 0;
-            font-family: "Cirrus Cumulus", serif;
-            font-size: 48px;
-            line-height: 1;
-            white-space: nowrap;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-        }
-
-        .nav-link-box {
-            background-color: var(--theongyn-pink);
-            border: var(--theongyn-border);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: var(--theongyn-ink);
-            font-size: 24px;
-            font-weight: 300;
-            line-height: normal;
-        }
-
-        .nav-link-box:hover {
-            background-color: #ffe343;
+        .mobile-shell {
+          display: block;
         }
 
         main {
-            padding: 0 60px 100px;
+          padding: 99px 24px 40px;
         }
 
-        .project-header {
-            border-bottom: var(--theongyn-border);
-            padding: 20px 0;
-            margin-bottom: 40px;
+        .details-shell {
+          max-width: 100%;
+        }
+
+        .logos-project-intro {
+          padding: 0 0 14px;
+        }
+
+        .logos-project-title {
+          font-size: 32px;
+        }
+
+        .logos-project-description {
+          margin: 8px 0 15px;
+          font-size: 13px;
+          line-height: 1.12;
+        }
+
+        .logos-project-meta {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 14px 24px;
+        }
+
+        .logos-project-meta-label {
+          font-size: 26px;
+        }
+
+        .logos-project-meta-value {
+          font-size: 20px;
+        }
+
+        .logos-project-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 20px;
+          padding-top: 21px;
+        }
+
+        .scroll-top-footer {
+          min-height: 112px;
+          padding: 24px 0 40px;
         }
 
         .project-title {
-            font-family: "Cirrus Cumulus", serif;
-            font-size: 48px;
-            color: var(--theongyn-pink);
-            margin-bottom: 8px;
+          font-size: 34px;
         }
 
-        .project-description {
-            font-size: 24px;
-            font-weight: 300;
-            line-height: 1.1;
-            max-width: 1392px;
+        .project-description,
+        .meta-label,
+        .meta-value,
+        .meta-list a,
+        .content-caption,
+        .content-text {
+          font-size: 16px;
         }
 
         .project-meta {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        .meta-item {
-            flex: 1;
-            min-width: 300px;
+        .content-row,
+        .gallery-grid,
+        .tuw-product-row {
+          grid-template-columns: 1fr;
+          flex-direction: column;
         }
 
-        .meta-label {
-            font-family: "Cirrus Cumulus", serif;
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
-
-        .meta-value {
-            font-size: 24px;
-            font-weight: 300;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .meta-value::before {
-            content: "";
-            width: 6px;
-            height: 6px;
-            background-color: var(--theongyn-ink);
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        .content-caption {
-            font-size: 24px;
-            font-weight: 300;
-            line-height: 1.1;
-            margin-top: 12px;
-            text-align: center;
-        }
-
-        .content-text {
-            font-size: 24px;
-            font-weight: 300;
-            line-height: 1.1;
-            padding: 20px 0;
-            text-align: center;
-            white-space: pre-wrap;
-        }
-
-        .project-gallery {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .content-block {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 1392px;
-        }
-
-        .content-block.align-left {
-            align-items: flex-start;
-        }
-
-        .content-block.align-right {
-            align-items: flex-end;
-        }
-
-        .content-block.align-center {
-            align-items: center;
-        }
-
-        .content-row {
-            display: flex;
-            gap: 2px;
-            width: 100%;
-        }
-
-        .row-image-wrapper {
-            flex: 1;
-            min-width: 0;
-            display: flex;
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .content-row .gallery-image {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            width: 100%;
-            max-width: 1392px;
+        .tuw-product-design-panel,
+        .tuw-product-real-panel {
+          height: 60vh;
         }
 
         .grid-item {
-            width: 450px;
-            height: 450px;
-            border: var(--theongyn-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--theongyn-light-grey);
-            position: relative;
-            overflow: hidden;
-            box-sizing: border-box;
+          min-height: 0;
+          aspect-ratio: 1;
         }
 
-        .grid-item img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        
-        .badges-container {
-            display: flex;
-            gap: 8px;
-            align-items: flex-start;
+        .titled-text-block .titled-text-title {
+          font-size: 26px;
         }
 
-        .badges-preview {
-            display: inline-grid;
-            grid-template-columns: max-content;
-            grid-template-rows: max-content;
-            margin-left: 10px;
+        .titled-text-block .titled-text-body {
+          font-size: 20px;
         }
 
-        .badges-mask {
-            grid-column: 1;
-            grid-row: 1;
-            width: 30px;
-            height: 55px;
-            background-color: #ccc; /* Placeholder */
-            mask-size: contain;
-            mask-repeat: no-repeat;
-            mask-position: center;
-            -webkit-mask-size: contain;
-            -webkit-mask-repeat: no-repeat;
-            -webkit-mask-position: center;
-            overflow: hidden;
-            position: relative;
+        .meta-scope-list {
+          font-size: 16px;
+          padding-left: 24px;
         }
 
-        @media (max-width: 768px) {
-            header {
-                height: 80px;
-                padding: 0 20px;
-            }
-
-            .brand-mark {
-                width: 179px;
-                height: 43px;
-            }
-
-            .brand-mark span {
-                font-size: 34px;
-            }
-
-            .nav-links {
-                display: none; /* Mobile menu logic can be added later */
-            }
-
-            main {
-                padding: 0 20px 60px;
-            }
-
-            .project-title {
-                font-size: 34px;
-            }
-
-            .project-description {
-                font-size: 18px;
-            }
-
-            .meta-label {
-                font-size: 24px;
-            }
-
-            .meta-value {
-                font-size: 18px;
-            }
-
-            .grid-item {
-                width: calc(50% - 6px);
-                height: auto;
-                aspect-ratio: 1 / 1;
-            }
-            
-            .gallery-grid {
-                gap: 12px;
-            }
-
-            .content-caption, .content-text {
-                font-size: 20px;
-            }
+        .meta-badges-link {
+          font-size: 26px;
         }
+
+        .meta-badge-preview {
+          width: 38px;
+        }
+
+        .black-bg-centered-block img {
+          max-width: 33%;
+        }
+
+        .project-description {
+          font-size: 20px;
+        }
+
+        /* DLK mobile overrides */
+        .dlk-two-col { grid-template-columns: 1fr; }
+        .dlk-section-title { font-size: 26px; }
+        .dlk-section-body,
+        .dlk-section-list,
+        .dlk-value-card-title,
+        .dlk-value-card-list,
+        .dlk-pill,
+        .dlk-team-logo-text-title,
+        .dlk-team-logo-text-body,
+        .dlk-text-section-title,
+        .dlk-text-section-body { font-size: 20px; }
+        .dlk-section-list { padding-left: 30px; }
+        .dlk-value-cards { grid-template-columns: 1fr; }
+        .dlk-color-bar-item { height: 56px; }
+        .dlk-team-logo-row { grid-template-columns: 1fr; gap: 12px; }
+        .dlk-team-logo-text { padding-right: 0; }
+        .dlk-merch-section { aspect-ratio: auto; min-height: 300px; }
+        .dlk-illustration-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+
+        .tuw-gallery {
+          gap: 16px;
+        }
+
+        .tuw-section {
+          gap: 16px;
+        }
+
+        .tuw-section-title {
+          font-size: 26px;
+        }
+
+        .tuw-section-copy {
+          font-size: 13px;
+        }
+
+        .tuw-section-copy ul {
+          padding-left: 20px;
+        }
+
+        .tuw-palette-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .tuw-gradient-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .tuw-palette-card {
+          min-height: 149px;
+          padding: 7px 12px 6px;
+        }
+
+        .tuw-palette-heading {
+          font-size: 16px;
+        }
+
+        .tuw-palette-meta {
+          gap: 8px;
+          font-size: 10.67px;
+        }
+
+        .tuw-gradient-card {
+          min-height: 149px;
+        }
+
+        .tuw-typography-row {
+          grid-template-columns: 1fr;
+          gap: 24px;
+          padding: 24px 20px;
+        }
+
+        .tuw-typography-spec {
+          justify-content: space-between;
+        }
+
+        .tuw-typography-meta {
+          font-size: 13px;
+        }
+
+        .tuw-typography-note {
+          font-size: 13px;
+        }
+
+        .tuw-desktop-only {
+          display: none;
+        }
+
+        .tuw-mobile-only {
+          display: block;
+        }
+
+        .tuw-desktop-brand-cards {
+          display: none;
+        }
+
+        .tuw-comm-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .tuw-product-row {
+          gap: 12px;
+        }
+
+        .tuw-product-side {
+          gap: 8px;
+        }
+
+        .tuw-product-label {
+          font-size: 16px;
+        }
+
+        .tuw-product-label::after {
+          font-size: 16px;
+        }
+
+        .tuw-product-design-panel,
+        .tuw-product-real-panel {
+          min-height: 218px;
+        }
+
+        .tuw-product-design-panel {
+          padding: 6px;
+          gap: 6px;
+        }
+
+        .tuw-product-design-panel.is-column {
+          gap: 8px;
+        }
+
+        .tuw-product-crop.is-half,
+        .tuw-product-crop.is-large {
+          height: 94px;
+        }
+
+        .tuw-product-crop.is-small {
+          height: 70px;
+        }
+
+        .tuw-product-crop-row {
+          gap: 6px;
+        }
+      }
     </style>
-</head>
-<body>
-    <header>
-        <a href="/" class="brand-mark">
-            <span>°˖Theongyn˖°</span>
+  </head>
+  <body>
+    <div class="desktop-shell">
+      <header class="desktop-topbar">
+        <a class="brand-mark" href="../index.html" aria-label="Theongyn home">
+          <span class="brand-mark-text">°˖Theongyn˖°</span>
         </a>
-        <nav class="nav-links">
-            <a href="/works/" class="nav-link-box" style="color: inherit; text-decoration: none;">Works</a>
-            <a href="/about/" class="nav-link-box" style="color: inherit; text-decoration: none;">About</a>
-            <a href="#" class="nav-link-box" style="color: inherit; text-decoration: underline;">Resume</a>
+        <nav class="menu-links" aria-label="Primary">
+          <a class="menu-box is-active" href="./index.html">
+            <span class="menu-box-text">Works</span>
+          </a>
+          <a class="menu-box" href="../about/index.html">
+            <span class="menu-box-text">About</span>
+          </a>
+          <a
+            class="menu-box is-disabled"
+            href="#"
+            aria-label="Resume coming soon"
+            data-disabled-link
+          >
+            <span class="menu-box-text">Resume</span>
+          </a>
         </nav>
-    </header>
+      </header>
+    </div>
 
-    <main id="project-content">
-        <!-- Content will be populated by JS -->
+    <div class="mobile-shell">
+      <header class="mobile-topbar">
+        <a
+          class="brand-mark mobile-brand-mark"
+          href="../index.html"
+          aria-label="Theongyn home"
+        >
+          <span class="brand-mark-text">°˖Theongyn˖°</span>
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="mobile-slide-menu"
+          aria-expanded="false"
+          data-menu-open
+        >
+          <span class="mobile-menu-line line-1"></span>
+          <span class="mobile-menu-line line-2"></span>
+          <span class="mobile-menu-line line-3"></span>
+        </button>
+      </header>
+
+      <aside id="mobile-slide-menu" class="mobile-slide-menu" aria-hidden="true">
+        <div class="mobile-menu-top">
+          <button
+            class="mobile-close-button"
+            type="button"
+            aria-label="Close menu"
+            data-menu-close
+          >
+            <img src="../assets/icons/menu/mobile-menu-close.svg" alt="" />
+          </button>
+        </div>
+
+        <nav class="mobile-menu-links" aria-label="Mobile navigation">
+          <a class="menu-box is-active" href="./index.html">
+            <span class="menu-box-text">Works</span>
+          </a>
+          <a class="menu-box" href="../about/index.html">
+            <span class="menu-box-text">About</span>
+          </a>
+          <a
+            class="menu-box is-disabled"
+            href="#"
+            aria-label="Resume coming soon"
+            data-disabled-link
+          >
+            <span class="menu-box-text">Resume</span>
+          </a>
+        </nav>
+
+        <div class="mobile-menu-footer">
+          <img src="../assets/icons/menu/mobile-menu-footer-mark.svg" alt="" />
+        </div>
+      </aside>
+    </div>
+
+    <main>
+      <div class="details-shell" id="project-content"></div>
     </main>
 
-    <div class="scroll-top-btn" id="scroll-top">
-        <img src="../assets/icons/works/scroll-up.svg" alt="Scroll Up">
+    <div class="scroll-top-footer">
+      <button class="scroll-top-btn" id="scroll-top" type="button" aria-label="Scroll to top">
+        <img src="../assets/icons/works/scroll-up.svg" alt="" />
+      </button>
     </div>
 
     <script src="projects-data.js"></script>
     <script>
-        function getProjectId() {
-            const params = new URLSearchParams(window.location.search);
-            return parseInt(params.get('id')) || 1;
+      const projectContent = document.getElementById("project-content");
+      const scrollTopButton = document.getElementById("scroll-top");
+      const menuOpenButton = document.querySelector("[data-menu-open]");
+      const menuCloseButton = document.querySelector("[data-menu-close]");
+      const mobileMenu = document.getElementById("mobile-slide-menu");
+
+      const logoProjectAssets = Array.from({ length: 24 }, (_, index) => {
+        const fileNumber = String(index + 1).padStart(2, "0");
+        return `../assets/images/projects/p2/logos/logo-${fileNumber}.png`;
+      });
+
+      const tuwPaletteCards = [
+        {
+          name: "Midnight Purple",
+          hex: "#31214E",
+          bg: "#31214e",
+          fg: "#ffffff",
+          cmyk: ["C: 37%", "M: 58%", "Y: 0%", "K: 69%"],
+          rgb: ["R: 49", "G: 33", "B: 78"],
+        },
+        {
+          name: "Dusky Periwinkle",
+          hex: "#A491E5",
+          bg: "#a491e5",
+          fg: "#ffffff",
+          cmyk: ["C: 28%", "M: 37%", "Y: 0%", "K: 10%"],
+          rgb: ["R: 164", "G: 145", "B: 229"],
+        },
+        {
+          name: "Lilac",
+          hex: "#DDD4FF",
+          bg: "#ddd4ff",
+          fg: "#31214e",
+          cmyk: ["C: 13%", "M: 17%", "Y: 0%", "K: 0%"],
+          rgb: ["R: 221", "G: 212", "B: 255"],
+        },
+        {
+          name: "Rare Rose",
+          hex: "#D06281",
+          bg: "#d06281",
+          fg: "#ffffff",
+          cmyk: ["C: 0%", "M: 53%", "Y: 38%", "K: 18%"],
+          rgb: ["R: 208", "G: 98", "B: 129"],
+        },
+        {
+          name: "Grapefruit Pink",
+          hex: "#EC7287",
+          bg: "#ec7287",
+          fg: "#ffffff",
+          cmyk: ["C: 0%", "M: 52%", "Y: 43%", "K: 8%"],
+          rgb: ["R: 236", "G: 114", "B: 135"],
+        },
+        {
+          name: "Little Girl Pink",
+          hex: "#FFCFDE",
+          bg: "#ffcfde",
+          fg: "#d06281",
+          cmyk: ["C: 0%", "M: 19%", "Y: 13%", "K: 0%"],
+          rgb: ["R: 255", "G: 207", "B: 222"],
+        },
+        {
+          name: "Fresh Cream",
+          hex: "#FFF9ED",
+          bg: "#fff9ed",
+          fg: "#31214e",
+          cmyk: ["C: 0%", "M: 2%", "Y: 7%", "K: 0%"],
+          rgb: ["R: 255", "G: 249", "B: 237"],
+        },
+      ];
+
+      function tuwAsset(fileName) {
+        return `../assets/images/projects/p5/tuw/${fileName}`;
+      }
+
+      function renderResponsiveImage(desktopFile, mobileFile, alt, className = "tuw-responsive-media") {
+        const desktopUrl = tuwAsset(desktopFile);
+        const mobileUrl = mobileFile ? tuwAsset(mobileFile) : desktopUrl;
+
+        return `
+          <div class="${className} tuw-bg-wrapper" style="--bg-desk: url('${desktopUrl}'); --bg-mob: url('${mobileUrl}');" role="img" aria-label="${alt}">
+            <picture style="visibility: hidden; display: block; width: 100%; height: auto; max-height: 100%; pointer-events: none;">
+              ${mobileFile ? `<source media="(max-width: 767.98px)" srcset="${tuwAsset(mobileFile)}" />` : ""}
+              <img src="${desktopUrl}" alt="" style="display: block; width: 100%; height: auto; max-height: 100%; object-fit: cover;" />
+            </picture>
+          </div>
+        `;
+      }
+
+      function renderTuwPaletteCards() {
+        return tuwPaletteCards
+          .map(
+            (card) => `
+              <div class="tuw-palette-card" style="background:${card.bg};color:${card.fg};">
+                <div class="tuw-palette-heading">
+                  <p>${card.name}</p>
+                  <p>${card.hex}</p>
+                </div>
+                <div class="tuw-palette-meta">
+                  <div>
+                    ${card.cmyk.map((item) => `<p>${item}</p>`).join("")}
+                  </div>
+                  <div>
+                    ${card.rgb.map((item) => `<p>${item}</p>`).join("")}
+                  </div>
+                </div>
+              </div>
+            `
+          )
+          .join("");
+      }
+
+      function renderTuwCommunicationGrid(desktopFiles, mobileFiles, altPrefix) {
+        return `
+          <div class="tuw-comm-grid">
+            ${desktopFiles
+              .map((desktopFile, index) =>
+                renderResponsiveImage(
+                  desktopFile,
+                  mobileFiles[index],
+                  `${altPrefix} ${index + 1}`
+                )
+              )
+              .join("")}
+          </div>
+        `;
+      }
+
+      function renderTuwProductRow(config) {
+        return `
+          <div class="tuw-product-row">
+            <div class="tuw-product-side">
+              <p class="tuw-product-label">Design</p>
+              <div class="tuw-product-design-panel ${config.designPanelClass || ""}">
+                ${config.designHtml}
+              </div>
+            </div>
+            <div class="tuw-product-side">
+              <p class="tuw-product-label">${config.realLabel || "Real product"}</p>
+              <div class="tuw-product-real-panel ${config.realPanelClass || "is-single"}">
+                ${config.realHtml}
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      function renderTuwProject(project) {
+        const scopeListHtml = project.scope
+          .split(",")
+          .map((item) => item.trim())
+          .map((item) => `<li>${item}</li>`)
+          .join("");
+
+        const communicationCopy = `
+          <div class="tuw-section-copy">
+            <p>My goal is to establish and continuously refine a graphic system and visual identity that aligns with the brand's direction and characteristics:</p>
+            <ul>
+              <li>Youthful</li>
+              <li>Active</li>
+              <li>Girly.</li>
+            </ul>
+            <p>To achieve this, I developed a cohesive color palette with pink and purple as the primary colors, along with a structured typographic system and defined graphic layouts.</p>
+            <p>For special campaigns, such as Black Friday, New Year's Eve, or Women's Day, I introduce subtle variations while maintaining the core elements of the visual identity to ensure consistency.</p>
+          </div>
+        `;
+
+        const productCopy = `
+          <div class="tuw-section-copy">
+            <p>Alongside my work in digital graphic design, I also played a role in bringing some of TUW's most notable apparel pieces to life.</p>
+            <p>From initial sketches to final products, I was involved in the design process, ensuring that each piece aligned with the brand's aesthetic and vision. Here are some of my designs that successfully transitioned from concept to reality.</p>
+          </div>
+        `;
+
+        return `
+          <section class="project-details tuw-project" aria-labelledby="project-title">
+            <div class="project-header">
+              <h1 class="project-title" id="project-title">${project.title}</h1>
+              <p class="project-description">${project.description}</p>
+              <div class="project-meta">
+                <div class="meta-item">
+                  <p class="meta-label">Year</p>
+                  <ul class="meta-scope-list"><li>${project.year}</li></ul>
+                </div>
+                <div class="meta-item">
+                  <p class="meta-label">Project type</p>
+                  <ul class="meta-scope-list"><li>${project.type}</li></ul>
+                </div>
+                <div class="meta-item">
+                  <p class="meta-label">Scope:</p>
+                  <ul class="meta-scope-list">
+                    ${scopeListHtml}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-gallery tuw-gallery">
+              <section class="tuw-section">
+                ${renderResponsiveImage("hero-desktop.png", "hero-mobile.png", "Today U Wear brand identity hero")}
+              </section>
+
+              <section class="tuw-section">
+                <h2 class="tuw-section-title">1. Brand Repositioning &amp; Art Direction</h2>
+                <div class="tuw-section-copy">
+                  <p>Prior to my involvement, TUW's brand assets were limited to a standalone logo, with no cohesive system in place. The core challenge was to build a complete brand foundation from the ground up.</p>
+                  <p>Starting from that existing logo, I developed a comprehensive branding system and brand guidelines alongside brand strategy and defining characteristics such as mood, tone, and overall visual direction.</p>
+                </div>
+                ${renderResponsiveImage("logo-row-desktop.png", "logo-row-mobile.png", "Today U Wear logo row")}
+                <div class="tuw-brand-system">
+                  <div class="tuw-palette-grid">
+                    ${renderTuwPaletteCards()}
+                  </div>
+                  <div class="tuw-gradient-grid">
+                    <div class="tuw-gradient-card gradient-1"></div>
+                    <div class="tuw-gradient-card gradient-2"></div>
+                    <div class="tuw-gradient-card gradient-3"></div>
+                  </div>
+                  <div class="tuw-typography-row">
+                    <div class="tuw-typography-spec">
+                      ${renderResponsiveImage("brand-headline-aa-desktop.png", "brand-headline-aa-mobile.png", "Headline type specimen", "tuw-typography-swatch")}
+                      <div class="tuw-typography-meta">
+                        <p>/Headlines</p>
+                        <p>Mallory</p>
+                        <p>Condensed</p>
+                        <p>Bold</p>
+                      </div>
+                    </div>
+                    <div class="tuw-typography-spec">
+                      ${renderResponsiveImage("brand-body-aa-desktop.png", "brand-body-aa-mobile.png", "Body text specimen", "tuw-typography-swatch")}
+                      <div class="tuw-typography-meta">
+                        <p>/Body text</p>
+                        <p>SF Display</p>
+                        <p>Pro</p>
+                        <p>Regular</p>
+                      </div>
+                    </div>
+                    <div class="tuw-typography-note">
+                      <p>* Campaign-specific display typefaces are allowed for headlines to enhance expression, as long as they remain aligned with brand characteristics and campaign messaging, with body text strictly adhering to the brand's primary typeface.</p>
+                    </div>
+                  </div>
+                  <div class="tuw-desktop-brand-cards">
+                    ${renderResponsiveImage("brand-card-1-desktop.png", "", "Today U Wear brand application 1")}
+                    ${renderResponsiveImage("brand-card-2-desktop.png", "", "Today U Wear brand application 2")}
+                    ${renderResponsiveImage("brand-card-3-desktop.png", "", "Today U Wear brand application 3")}
+                  </div>
+                  <div class="tuw-mobile-brand-cards tuw-mobile-only">
+                    ${renderResponsiveImage("brand-card-1-mobile.png", "", "Today U Wear brand application mobile 1")}
+                    ${renderResponsiveImage("brand-card-2-mobile.png", "", "Today U Wear brand application mobile 2")}
+                    ${renderResponsiveImage("brand-card-3-mobile.png", "", "Today U Wear brand application mobile 3")}
+                    ${renderResponsiveImage("brand-card-4-mobile.png", "", "Today U Wear brand application mobile 4")}
+                  </div>
+                </div>
+              </section>
+
+              <section class="tuw-section">
+                <h2 class="tuw-section-title">2. Communication Design</h2>
+                ${communicationCopy}
+                <div class="tuw-desktop-only">
+                  <div class="tuw-comm-mockups">
+                    <div class="tuw-comm-card is-left">
+                      <img class="tuw-comm-card-base" src="${tuwAsset("comm-mockup-b-desktop.png")}" alt="Today U Wear communication poster mockup left" />
+                      <img class="tuw-comm-card-overlay" src="${tuwAsset("comm-mockup-overlay-desktop.png")}" alt="" />
+                    </div>
+                    <div class="tuw-comm-card is-right">
+                      <img class="tuw-comm-card-base" src="${tuwAsset("comm-mockup-a-desktop.png")}" alt="Today U Wear communication poster mockup right" />
+                      <img class="tuw-comm-card-overlay" src="${tuwAsset("comm-mockup-overlay-desktop.png")}" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="tuw-mobile-only">
+                  ${renderResponsiveImage("comm-main-mobile.png", "", "Today U Wear communication hero mobile")}
+                </div>
+                ${renderTuwCommunicationGrid(
+                  ["comm-grid-1a-desktop.png", "comm-grid-1b-desktop.png", "comm-grid-1c-desktop.png"],
+                  ["comm-grid-1a-mobile.png", "comm-grid-1b-mobile.png", "comm-grid-1c-mobile.png"],
+                  "Today U Wear communication grid 1"
+                )}
+                ${renderTuwCommunicationGrid(
+                  ["comm-grid-2a-desktop.png", "comm-grid-2b-desktop.png", "comm-grid-2c-desktop.png"],
+                  ["comm-grid-2a-mobile.png", "comm-grid-2b-mobile.png", "comm-grid-2c-mobile.png"],
+                  "Today U Wear communication grid 2"
+                )}
+                ${renderTuwCommunicationGrid(
+                  ["comm-grid-3a-desktop.png", "comm-grid-3b-desktop.png", "comm-grid-3c-desktop.png"],
+                  ["comm-grid-3a-mobile.png", "comm-grid-3b-mobile.png", "comm-grid-3c-mobile.png"],
+                  "Today U Wear communication grid 3"
+                )}
+                ${renderTuwCommunicationGrid(
+                  ["comm-grid-4a-desktop.png", "comm-grid-4b-desktop.png", "comm-grid-4c-desktop.png"],
+                  ["comm-grid-4a-mobile.png", "comm-grid-4b-mobile.png", "comm-grid-4c-mobile.png"],
+                  "Today U Wear communication grid 4"
+                )}
+              </section>
+
+              <section class="tuw-section">
+                <h2 class="tuw-section-title">3. Product Design</h2>
+                ${productCopy}
+                ${renderTuwProductRow({
+                  realLabel: "Real product (Best-seller)",
+                  designPanelClass: "is-column",
+                  designHtml: `
+                    <div class="tuw-product-crop is-half">
+                      ${renderResponsiveImage("product-1-design-top-desktop.png", "product-1-design-top-mobile.png", "Today U Wear apparel concept front")}
+                    </div>
+                    <div class="tuw-product-crop is-half">
+                      ${renderResponsiveImage("product-1-design-bottom-desktop.png", "product-1-design-bottom-mobile.png", "Today U Wear apparel concept back")}
+                    </div>
+                  `,
+                  realHtml: renderResponsiveImage("product-1-real-desktop.png", "product-1-real-mobile.png", "Today U Wear best seller real product"),
+                })}
+                ${renderTuwProductRow({
+                  designPanelClass: "is-column",
+                  realPanelClass: "is-double",
+                  designHtml: `
+                    <div class="tuw-product-crop is-half">
+                      ${renderResponsiveImage("product-2-design-top-desktop.png", "product-2-design-top-mobile.png", "Today U Wear apparel concept top")}
+                    </div>
+                    <div class="tuw-product-crop is-half">
+                      ${renderResponsiveImage("product-2-design-bottom-desktop.png", "product-2-design-bottom-mobile.png", "Today U Wear apparel concept bottom")}
+                    </div>
+                  `,
+                  realHtml: `
+                    ${renderResponsiveImage("product-2-real-a-desktop.png", "product-2-real-a-mobile.png", "Today U Wear real product variation one")}
+                    ${renderResponsiveImage("product-2-real-b-desktop.png", "product-2-real-b-mobile.png", "Today U Wear real product variation two")}
+                  `,
+                })}
+                ${renderTuwProductRow({
+                  designPanelClass: "is-column",
+                  designHtml: `
+                    <div class="tuw-product-crop">
+                      ${renderResponsiveImage("product-3-design-composite-desktop.png", "product-3-design-composite-mobile.png", "Today U Wear design composite top")}
+                    </div>
+                  `,
+                  realHtml: renderResponsiveImage("product-3-real-desktop.png", "product-3-real-mobile.png", "Today U Wear real product"),
+                })}
+                ${renderTuwProductRow({
+                  designPanelClass: "is-column",
+                  designHtml: `
+                    <div class="tuw-product-crop">
+                      ${renderResponsiveImage("product-4-design-composite-desktop.png", "product-4-design-composite-mobile.png", "Today U Wear product concept main")}
+                    </div>
+                    
+                  `,
+                  realHtml: renderResponsiveImage("product-4-real-desktop.png", "product-4-real-mobile.png", "Today U Wear real product"),
+                })}
+                ${renderTuwProductRow({
+                  designPanelClass: "is-row",
+                  designHtml: `
+                    <div class="tuw-product-jersey-pair">
+                      ${renderResponsiveImage("product-5-design-front-desktop.png", "product-5-design-front-mobile.png", "Today U Wear jersey front concept")}
+                      ${renderResponsiveImage("product-5-design-back-desktop.png", "product-5-design-back-mobile.png", "Today U Wear jersey back concept")}
+                    </div>
+                  `,
+                  realHtml: renderResponsiveImage("product-5-real-desktop.png", "product-5-real-mobile.png", "Today U Wear jersey real product"),
+                })}
+              </section>
+
+              <section class="tuw-section">
+                <h2 class="tuw-section-title">4. Packaging Design</h2>
+                <div class="tuw-section-copy">
+                  <p>Targeting pickleball and tennis players, I developed a box and thank you card for TUW's spring collection. The design embodies a youthful, cute, active, and girly vibe, utilizing a lace and white palette and minimalist graphics to align with the brand's visual direction.</p>
+                </div>
+                <div class="tuw-packaging-row">
+                  ${renderResponsiveImage("packaging-1a-desktop.png", "packaging-1a-mobile.png", "Today U Wear packaging example 1")}
+                  ${renderResponsiveImage("packaging-1b-desktop.png", "packaging-1b-mobile.png", "Today U Wear packaging example 2")}
+                </div>
+                <div class="tuw-packaging-row">
+                  ${renderResponsiveImage("packaging-2a-desktop.png", "packaging-2a-mobile.png", "Today U Wear packaging example 3")}
+                  ${renderResponsiveImage("packaging-2b-desktop.png", "packaging-2b-mobile.png", "Today U Wear packaging example 4")}
+                </div>
+              </section>
+            </div>
+          </section>
+        `;
+      }
+
+      function getProjectId() {
+        const params = new URLSearchParams(window.location.search);
+        return Number.parseInt(params.get("id"), 10) || 1;
+      }
+
+      function setMenuState(isOpen) {
+        if (!mobileMenu || !menuOpenButton) {
+          return;
         }
 
-        function renderProject() {
-            const id = getProjectId();
-            const project = projectsData.find(p => p.id === id);
+        mobileMenu.classList.toggle("is-open", isOpen);
+        mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+        menuOpenButton.setAttribute("aria-expanded", String(isOpen));
+        document.body.style.overflow = isOpen ? "hidden" : "";
+      }
 
-            if (!project) {
-                document.getElementById('project-content').innerHTML = '<h1>Project not found</h1>';
-                return;
-            }
+      function renderLogosProject(project) {
+        const badgesPreview = project.badges && project.badges.images && project.badges.images.length
+          ? `
+            <div class="meta-badges-row">
+              <a class="meta-badges-link" href="${project.badges.url}" target="_blank" rel="noreferrer">
+                ${project.badges.label || "Badges:"}
+              </a>
+              <div class="meta-badge-icons">
+                ${project.badges.images.map(src => `<img class="logos-project-badge-export" src="${src}" alt="Badges" />`).join("")}
+              </div>
+            </div>
+          `
+          : "";
 
-            const scopeItems = project.scope.split(',').map(s => s.trim());
-            
-            let teamHtml = '';
-            if (project.team && project.team.length > 0) {
-                teamHtml = `
-                    <div class="meta-item">
-                        <div class="meta-label">Team:</div>
-                        <div class="meta-scope-list">
-                            ${project.team.map(member => `
-                                <div class="meta-value">
-                                    ${member.url ? `<a href="${member.url}" style="color: inherit; text-decoration: underline;" target="_blank">${member.name}</a>` : member.name}
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
-            }
+        const logoTiles = logoProjectAssets
+          .map(
+            (src, index) => `
+              <div class="logos-project-tile">
+                <img src="${src}" alt="${project.title} logo ${index + 1}" />
+              </div>
+            `
+          )
+          .join("");
 
-            let linksHtml = '';
-            if (project.links && project.links.length > 0) {
-                linksHtml = `
-                    <div class="meta-item">
-                        <div class="meta-label">Links:</div>
-                        <div class="meta-scope-list">
-                            ${project.links.map(link => `<div class="meta-value"><a href="${link.url}" style="color: inherit; text-decoration: underline;" target="_blank">${link.label}</a></div>`).join('')}
-                        </div>
-                    </div>
-                `;
-            }
-
-            let badgesHtml = '';
-            if (project.badges) {
-                // Simplified badges render for now as we don't have the exact mask images
-                badgesHtml = `
-                    <div class="meta-item">
-                         <div class="badges-container">
-                            <a href="${project.badges.url}" target="_blank" style="text-decoration: none;">
-                                <div class="meta-label" style="text-decoration: underline; cursor: pointer;">${project.badges.label || 'Badges'}:</div>
-                            </a>
-                            ${project.badges.images ? `
-                                <div class="badges-preview">
-                                    <!-- Placeholders for the complex mask effect in Figma -->
-                                     <div style="width: 30px; height: 50px; background: url('${project.badges.images[0]}') center/cover no-repeat; border: 1px solid #000;"></div>
-                                     <div style="width: 30px; height: 50px; background: url('${project.badges.images[1] || project.badges.images[0]}') center/cover no-repeat; border: 1px solid #000; margin-left: -15px; margin-top: 10px; z-index: -1;"></div>
-                                </div>
-                            ` : ''}
-                        </div>
-                    </div>
-                `;
-            }
-
-
-            let galleryHtml = '';
-            if (project.content && project.content.length > 0) {
-                galleryHtml = project.content.map(block => {
-                    if (block.type === 'text') {
-                        return `<div class="content-block align-center">
-                            <div class="content-text">${block.text}</div>
-                        </div>`;
-                    }
-                    if (block.type === 'grid') {
-                        const itemsHtml = block.items.map(item => {
-                            const paddingStyle = item.padding ? `padding: ${item.padding};` : '';
-                            const bgStyle = item.bgColor ? `background-color: ${item.bgColor};` : '';
-                            const content = item.src ? `<img src="${item.src}" alt="">` : (item.html || '');
-                            return `<div class="grid-item" style="${paddingStyle} ${bgStyle}">${content}</div>`;
-                        }).join('');
-                        return `<div class="gallery-grid">${itemsHtml}</div>`;
-                    }
-                    
-                    let innerHtml = '';
-                    if (block.type === 'single') {
-                        innerHtml = `<img src="${block.src}" class="gallery-image" alt="">`;
-                    } else if (block.type === 'row') {
-                        innerHtml = `<div class="content-row" style="${block.gap ? `gap: ${block.gap};` : ''}">
-                            ${block.images.map(img => `<div class="row-image-wrapper"><img src="${img.src}" class="gallery-image" alt="" style="${img.objectFit ? `object-fit: ${img.objectFit};` : ''}"></div>`).join('')}
-                        </div>`;
-                    }
-                    
-                    let captionHtml = '';
-                    if (block.caption) {
-                        captionHtml = `<div class="content-caption">${block.caption}</div>`;
-                    }
-                    
-                    const alignClass = block.align ? `align-${block.align}` : 'align-center';
-                    const blockWidth = block.width ? `width: ${block.width};` : '';
-                    
-                    return `<div class="content-block ${alignClass}">
-                        <div style="display: flex; flex-direction: column; ${blockWidth}">
-                            ${innerHtml}
-                            ${captionHtml}
-                        </div>
-                    </div>`;
-                }).join('');
-            } else if (project.images && project.images.length > 0) {
-                galleryHtml = project.images.map(img => `<div class="content-block align-center"><img src="${img}" class="gallery-image" style="width: 100%; max-width: 1392px; border: var(--theongyn-border);" alt="${project.title}"></div>`).join('');
-            }
-
-            const content = `
-                <div class="project-header">
-                    <div class="project-title">${project.title}</div>
-                    <div class="project-description">${project.description}</div>
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <div class="meta-label">Year</div>
-                            <div class="meta-value">${project.year}</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">Project type</div>
-                            <div class="meta-value">${project.type}</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">Scope:</div>
-                            <div class="meta-scope-list">
-                                ${scopeItems.map(item => `<div class="meta-value">${item}</div>`).join('')}
-                            </div>
-                        </div>
-                        ${teamHtml}
-                        ${linksHtml}
-                        ${badgesHtml}
-                    </div>
+        return `
+          <section class="logos-project" aria-labelledby="project-title">
+            <div class="logos-project-intro">
+              <h1 class="logos-project-title" id="project-title">${project.title}</h1>
+              <p class="logos-project-description">${project.description}</p>
+              <div class="logos-project-meta">
+                <div class="logos-project-meta-item">
+                  <p class="logos-project-meta-label">Year</p>
+                  <ul class="meta-scope-list"><li>${project.year}</li></ul>
                 </div>
-                <div class="project-gallery">
-                    ${galleryHtml}
+                <div class="logos-project-meta-item">
+                  <p class="logos-project-meta-label">Project type</p>
+                  <ul class="meta-scope-list"><li>${project.type}</li></ul>
                 </div>
+                <div class="logos-project-meta-item">
+                  <p class="logos-project-meta-label">Scope:</p>
+                  <ul class="meta-scope-list"><li>${project.scope}</li></ul>
+                </div>
+                <div class="logos-project-meta-item">
+                  ${badgesPreview}
+                </div>
+              </div>
+            </div>
+            <div class="logos-project-grid" aria-label="Logo gallery">
+              ${logoTiles}
+            </div>
+          </section>
+        `;
+      }
+
+      function renderGenericProject(project) {
+        const scopeItems = project.scope
+          ? project.scope.split(",").map((item) => item.trim())
+          : [];
+
+        let teamHtml = "";
+        if (project.team) {
+          if (typeof project.team === "string") {
+            const members = project.team.split(",").map(m => m.trim());
+            teamHtml = `
+              <div class="meta-item">
+                <p class="meta-label">Team</p>
+                <ul class="meta-scope-list">
+                  ${members.map(m => `<li>${m}</li>`).join("")}
+                </ul>
+              </div>
             `;
-
-            document.getElementById('project-content').innerHTML = content;
-            document.title = `${project.title} | Theongyn Portfolio`;
+          } else if (Array.isArray(project.team) && project.team.length) {
+            teamHtml = `
+              <div class="meta-item">
+                <p class="meta-label">Team</p>
+                <div class="meta-list">
+                  ${project.team
+                    .map((member) =>
+                      member.url
+                        ? `<a href="${member.url}" target="_blank" rel="noreferrer">${member.name}</a>`
+                        : `<span class="meta-value">${member.name}</span>`
+                    )
+                    .join("")}
+                </div>
+              </div>
+            `;
+          }
         }
 
-        document.getElementById('scroll-top').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        const linksHtml =
+          project.links && project.links.length
+            ? `
+              <div class="meta-item">
+                <p class="meta-label">Links</p>
+                <div class="meta-list">
+                  ${project.links
+                    .map(
+                      (link) =>
+                        `<a href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`
+                    )
+                    .join("")}
+                </div>
+              </div>
+            `
+            : "";
+
+        const badgesHtml =
+          project.badges && project.badges.url
+            ? `
+              <div class="meta-item">
+                <p class="meta-label">Badges</p>
+                <div class="meta-list">
+                  <a href="${project.badges.url}" target="_blank" rel="noreferrer">
+                    ${project.badges.label || "View badges"}
+                  </a>
+                </div>
+              </div>
+            `
+            : "";
+
+        let galleryHtml = "";
+
+        if (project.content && project.content.length) {
+          galleryHtml = project.content
+            .map((block) => {
+              if (block.type === "text") {
+                const paragraphs = block.text.split('\n').filter(p => p.trim());
+                const pHtml = paragraphs.map(p => `<p>${p}</p>`).join('');
+                return `
+                  <div class="content-block align-center">
+                    <div class="content-inner">
+                      <div class="content-text-wrapper" style="text-align:center;font-family:'SF Pro Display',sans-serif;font-size:24px;font-weight:300;line-height:1.1;">
+                        ${pHtml}
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }
+
+              if (block.type === "titled-text") {
+                const paragraphs = block.text.split('\n').filter(p => p.trim());
+                const pHtml = paragraphs.map(p => `<p>${p}</p>`).join('');
+                return `
+                  <div class="titled-text-block">
+                    <p class="titled-text-title">${block.title}</p>
+                    <div class="titled-text-body">${pHtml}</div>
+                  </div>
+                `;
+              }
+
+              if (block.type === "black-bg-centered") {
+                return `
+                  <div class="black-bg-centered-block">
+                    <img src="${block.src}" alt="" />
+                  </div>
+                `;
+              }
+
+              if (block.type === "dlk-body") {
+                const sectionsHtml = block.sections.map(sec => {
+                  if (sec.format === "paragraphs") {
+                    const ps = sec.text.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+                    return `<div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><div class="dlk-section-body">${ps}</div></div>`;
+                  }
+                  if (sec.format === "list") {
+                    const lis = sec.items.map(i => `<li>${i}</li>`).join('');
+                    return `<div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><ul class="dlk-section-list">${lis}</ul></div>`;
+                  }
+                  if (sec.format === "cards") {
+                    const cardsHtml = sec.cards.map(c => {
+                      const lis = c.items.map(i => `<li>${i}</li>`).join('');
+                      return `<div class="dlk-value-card"><p class="dlk-value-card-title">${c.title}</p><ul class="dlk-value-card-list">${lis}</ul></div>`;
+                    }).join('');
+                    return `<div class="dlk-section" style="padding:20px 0;"><p class="dlk-section-title">${sec.title}</p><div class="dlk-value-cards">${cardsHtml}</div></div>`;
+                  }
+                  if (sec.format === "direction") {
+                    const ps = sec.text.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+                    const pillsHtml = sec.pills.map(p => `<span class="dlk-pill">${p}</span>`).join('');
+                    const colorsHtml = sec.colors.map(c => `<div class="dlk-color-bar-item" style="background:${c};"></div>`).join('');
+                    return `<div class="dlk-section" style="padding:20px 0;"><div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><div class="dlk-section-body">${ps}</div></div><div class="dlk-pills">${pillsHtml}</div><div class="dlk-color-bar">${colorsHtml}</div></div>`;
+                  }
+                  return '';
+                }).join('');
+                // Pair A+B side-by-side on desktop
+                const abHtml = block.sections.length >= 2 && block.sections[0].id === "A" && block.sections[1].id === "B"
+                  ? `<div class="dlk-two-col">${sectionsHtml.substring(0, sectionsHtml.indexOf('</div></div>') + 12)}${sectionsHtml.substring(sectionsHtml.indexOf('</div></div>') + 12)}</div>`
+                  : sectionsHtml;
+                // Simpler: render A and B in a two-col, C and D stacked
+                const secA = block.sections.find(s => s.id === "A");
+                const secB = block.sections.find(s => s.id === "B");
+                const secC = block.sections.find(s => s.id === "C");
+                const secD = block.sections.find(s => s.id === "D");
+                const renderSec = (sec) => {
+                  if (!sec) return '';
+                  if (sec.format === "paragraphs") {
+                    const ps = sec.text.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+                    return `<div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><div class="dlk-section-body">${ps}</div></div>`;
+                  }
+                  if (sec.format === "list") {
+                    const lis = sec.items.map(i => `<li>${i}</li>`).join('');
+                    return `<div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><ul class="dlk-section-list">${lis}</ul></div>`;
+                  }
+                  if (sec.format === "cards") {
+                    const cardsHtml = sec.cards.map(c => {
+                      const lis = c.items.map(i => `<li>${i}</li>`).join('');
+                      return `<div class="dlk-value-card"><p class="dlk-value-card-title">${c.title}</p><ul class="dlk-value-card-list">${lis}</ul></div>`;
+                    }).join('');
+                    return `<div class="dlk-section" style="padding:20px 0;"><p class="dlk-section-title">${sec.title}</p><div class="dlk-value-cards">${cardsHtml}</div></div>`;
+                  }
+                  if (sec.format === "direction") {
+                    const ps = sec.text.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+                    const pillsHtml = sec.pills.map(p => `<span class="dlk-pill">${p}</span>`).join('');
+                    const colorsHtml = sec.colors.map(c => `<div class="dlk-color-bar-item" style="background:${c};"></div>`).join('');
+                    return `<div class="dlk-section" style="padding:20px 0;"><div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><div class="dlk-section-body">${ps}</div></div><div class="dlk-pills">${pillsHtml}</div><div class="dlk-color-bar">${colorsHtml}</div></div>`;
+                  }
+                  return '';
+                };
+                return `
+                  <div class="dlk-two-col">${renderSec(secA)}${renderSec(secB)}</div>
+                  ${renderSec(secC)}
+                  ${renderSec(secD)}
+                `;
+              }
+
+              if (block.type === "dlk-team-logo") {
+                return `
+                  <div class="dlk-team-logo-row">
+                    <div class="dlk-team-logo-text">
+                      <div>
+                        <p class="dlk-team-logo-text-title">${block.title}</p>
+                        <div class="dlk-team-logo-text-body">
+                          ${block.paragraphs.map(p => `<p>${p}</p>`).join('')}
+                        </div>
+                      </div>
+                      <img class="dlk-team-logo-variants" src="${block.logoVariants}" alt="Logo variants" />
+                    </div>
+                    <div class="dlk-logo-overlay">
+                      <img class="dlk-logo-overlay-bg" src="${block.overlayBg}" alt="" />
+                      <div class="dlk-logo-overlay-dim"></div>
+                      <img class="dlk-logo-overlay-icon" src="${block.overlayIcon}" alt="Team logo" />
+                    </div>
+                  </div>
+                `;
+              }
+
+              if (block.type === "dlk-merch") {
+                return `
+                  <div class="dlk-merch-section">
+                    <img class="dlk-merch-bg" src="${block.bgSrc}" alt="" />
+                    <div class="dlk-merch-bg-dim"></div>
+                    <div class="dlk-merch-product">
+                      <img src="${block.productSrc}" alt="Merchandise" />
+                    </div>
+                    <img class="dlk-merch-side is-left" src="${block.sideLogo}" alt="" />
+                    <img class="dlk-merch-side is-right" src="${block.sideLogo}" alt="" />
+                  </div>
+                `;
+              }
+
+              if (block.type === "dlk-project-logo") {
+                return `
+                  <div class="dlk-text-section">
+                    <p class="dlk-text-section-title">${block.title}</p>
+                    <div class="dlk-text-section-body">
+                      ${block.paragraphs.map(p => `<p>${p}</p>`).join('')}
+                    </div>
+                  </div>
+                `;
+              }
+
+              if (block.type === "dlk-illustration") {
+                return `
+                  <div class="dlk-text-section">
+                    <p class="dlk-text-section-title">${block.title}</p>
+                    <div class="dlk-text-section-body">
+                      <p>${block.text}</p>
+                    </div>
+                  </div>
+                  <div class="dlk-illustration-grid">
+                    ${block.images.map(src => `<img src="${src}" alt="Illustration" />`).join('')}
+                  </div>
+                `;
+              }
+
+              if (block.type === "grid") {
+                const itemsHtml = block.items
+                  .map((item) => {
+                    const styles = [
+                      item.padding ? `padding:${item.padding};` : "",
+                      item.bgColor ? `background:${item.bgColor};` : "",
+                    ].join("");
+
+                    const content = item.src
+                      ? `<img src="${item.src}" alt="" />`
+                      : item.html || "";
+
+                    return `<div class="grid-item" style="${styles}">${content}</div>`;
+                  })
+                  .join("");
+
+                return `<div class="gallery-grid">${itemsHtml}</div>`;
+              }
+
+              const alignClass = block.align ? `align-${block.align}` : "align-center";
+              const widthStyle = block.width ? `max-width:${block.width};` : "";
+              let mediaHtml = "";
+
+              if (block.type === "single") {
+                mediaHtml = `<img src="${block.src}" class="gallery-image" alt="" />`;
+              } else if (block.type === "row") {
+                mediaHtml = `
+                  <div class="content-row" style="${block.gap!=null ? `gap:${block.gap};` : ""}">
+                    ${block.images
+                      .map(
+                        (image) => `
+                          <div class="row-image-wrapper">
+                            <img
+                              src="${image.src}"
+                              class="gallery-image"
+                              alt=""
+                              style="${image.objectFit ? `object-fit:${image.objectFit};` : ""}"
+                            />
+                          </div>
+                        `
+                      )
+                      .join("")}
+                  </div>
+                `;
+              }
+
+              return `
+                <div class="content-block ${alignClass}">
+                  <div class="content-inner" style="${widthStyle}">
+                    ${mediaHtml}
+                    ${block.caption ? `<p class="content-caption">${block.caption}</p>` : ""}
+                  </div>
+                </div>
+              `;
+            })
+            .join("");
+        } else if (project.images && project.images.length) {
+          galleryHtml = project.images
+            .map(
+              (image) => `
+                <div class="content-block align-center">
+                  <div class="content-inner">
+                    <img src="${image}" class="gallery-image" alt="${project.title}" />
+                  </div>
+                </div>
+              `
+            )
+            .join("");
+        }
+
+        const scopeListHtml = scopeItems
+          .map((item) => `<li>${item}</li>`)
+          .join("");
+
+        const badgesMetaHtml =
+          project.badges && project.badges.url
+            ? `
+              <div class="meta-item">
+                <div class="meta-badges-row">
+                  <a class="meta-badges-link" href="${project.badges.url}" target="_blank" rel="noreferrer">
+                    ${project.badges.label || "Badges:"}
+                  </a>
+                  ${project.badges.images && project.badges.images.length
+                    ? `<div class="meta-badge-icons">
+                        ${project.badges.images.map(src => `<img class="meta-badge-preview" src="${src}" alt="Badges" />`).join("")}
+                      </div>`
+                    : ""}
+                </div>
+              </div>
+            `
+            : "";
+
+        return `
+          <section class="project-details" aria-labelledby="project-title">
+            <div class="project-header">
+              <h1 class="project-title" id="project-title">${project.title}</h1>
+              <p class="project-description">${project.description}</p>
+              <div class="project-meta">
+                <div class="meta-item">
+                  <p class="meta-label">Year</p>
+                  <ul class="meta-scope-list"><li>${project.year}</li></ul>
+                </div>
+                <div class="meta-item">
+                  <p class="meta-label">Project type</p>
+                  <ul class="meta-scope-list"><li>${project.type}</li></ul>
+                </div>
+                <div class="meta-item">
+                  <p class="meta-label">Scope:</p>
+                  <ul class="meta-scope-list">
+                    ${scopeListHtml}
+                  </ul>
+                </div>
+                ${teamHtml}
+                ${linksHtml}
+                ${badgesMetaHtml}
+              </div>
+            </div>
+            <div class="project-gallery">
+              ${galleryHtml}
+            </div>
+          </section>
+        `;
+      }
+
+      function renderProject() {
+        const projectId = getProjectId();
+        const project = projectsData.find((entry) => entry.id === projectId);
+
+        if (!project) {
+          projectContent.innerHTML = "<h1>Project not found</h1>";
+          return;
+        }
+
+        projectContent.innerHTML =
+          projectId === 2
+            ? renderLogosProject(project)
+            : projectId === 5
+              ? renderTuwProject(project)
+              : renderGenericProject(project);
+
+        document.title = `${project.title} | Theongyn Portfolio`;
+      }
+
+      document.querySelectorAll("[data-disabled-link]").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+        });
+      });
+
+      if (scrollTopButton) {
+        scrollTopButton.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      if (menuOpenButton && menuCloseButton && mobileMenu) {
+        menuOpenButton.addEventListener("click", () => setMenuState(true));
+        menuCloseButton.addEventListener("click", () => setMenuState(false));
+
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => setMenuState(false));
         });
 
-        window.onload = renderProject;
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            setMenuState(false);
+          }
+        });
+      }
+
+      renderProject();
     </script>
-</body>
+  </body>
 </html>

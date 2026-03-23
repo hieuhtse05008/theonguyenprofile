@@ -37,6 +37,8 @@ Use those folders as design references only. The live website should use assets 
 - Keep runtime fonts in `./assets/fonts/`.
 - If a design asset is needed on the live site, copy it into `./assets/`.
 - Do not make the website depend on `../Design png/` or `../source fonts/` at runtime.
+- **Strict Image Fidelity:** Do absolutely NOT reuse or loop existing images as placeholders if the Figma design contains unique images. Every image block must use its exact corresponding image.
+- **Missing Assets:** If a required image shown in Figma is missing from the local `./assets/` directory, you MUST extract the exact image asset directly from the Figma Dev Mode server (e.g., using `get_design_context` to find the localhost URL and downloading it via `Invoke-WebRequest` or `curl`) and save it locally. Do not guess or substitute.
 
 ## Styling Rules
 
@@ -44,6 +46,7 @@ Use those folders as design references only. The live website should use assets 
 - Use custom CSS only for brand-specific or design-specific details.
 - Match the provided desktop and mobile mockups instead of falling back to generic Bootstrap styling.
 - Keep the implementation lightweight and easy to open directly in a browser.
+- **Navigation buttons:** Do not add internal padding to navbar/menu buttons unless the user explicitly asks for it. If the Figma header looks off, fix sizing, width, line-height, or surrounding layout first, but keep button padding at `0` by default.
 
 ## Typography Rules
 
@@ -72,13 +75,24 @@ Use those folders as design references only. The live website should use assets 
 - The hero uses a responsive `<picture>` element.
 - The welcome block uses Cirrus Cumulus.
 
-## Important Homepage Caveat
+## Project Detail Page System (details.html)
 
-- A separate standalone hero source image was not clearly available in the provided asset set.
-- The current hero uses reference-based runtime images:
-  - `./assets/images/home-desktop-reference.png`
-  - `./assets/images/home-mobile-reference.png`
-- If a proper hero image is provided later, replace those files with the real asset.
+- **Data-Driven Rendering:** Uses `projects-data.js` to dynamically generate content.
+- **Content Blocks:** Supports a flexible `content` array with multiple block types:
+  - `single`: Full-width image.
+  - `row`: Multi-column images (use `gap: "0"` for seamless grids).
+  - `text` / `titled-text`: Structured typographic sections.
+  - `grid`: Flexible image/HTML grids.
+- **Custom Project Renderers:** Some projects use specialized render functions (e.g., `renderTuwProject`, `renderLogosProject`) for unique layout requirements.
+
+### Project Specific Patterns
+
+- **Project 5 (TUW):** 
+  - Uses CSS `background-image` with `url()` for product panels instead of `<img>` tags to ensure pixel-perfect alignment and centering.
+  - Desktop panels use `display: flex` with `align-items: stretch` to force equal heights between design and real-product panels.
+- **Project 6 (DLK):** 
+  - Extends the content block system with custom types: `dlk-body` (A-D sections), `dlk-team-logo` (split layout with overlays), `dlk-merch` (dark background products), and `dlk-illustration` (fixed 3-col square grid).
+  - Handles string-based `team` metadata in addition to object-array formats.
 
 ## HTML / CSS / JS Conventions
 
@@ -87,20 +101,21 @@ Use those folders as design references only. The live website should use assets 
 - Add `aria-label` values where helpful.
 - Avoid unnecessary abstractions.
 - Keep the code easy for another agent or human to continue.
+- **Gap Handling:** When rendering `gap` in rows, check `block.gap != null` to allow `0` as a valid value.
 
 ## Expectations For Future Changes
 
 - Extend the current visual language instead of redesigning the site by default.
-- Preserve the homepage behavior unless the user requests a redesign.
+- Preserve the homepage and detail page behaviors unless a redesign is requested.
 - Keep desktop and mobile parity with the mockups.
-- Update this file when new rules, pages, or structure are established.
+- Update this file when new rules, pages, or major rendering structures are established.
 
 ## Suggested Workflow
 
 1. Check the relevant mockup in `../Design png/`.
 2. Copy any needed runtime asset into `./assets/`.
 3. Reuse Bootstrap where it fits.
-4. Add custom CSS only for unique visual details.
+4. Add custom CSS only for unique visual details in `details.html`.
 5. Verify both desktop and mobile behavior after changes.
 6. Update this guide if the working rules change.
 
@@ -111,3 +126,6 @@ Use those folders as design references only. The live website should use assets 
 - Do not replace the chosen fonts with defaults unless the user asks.
 - Do not add a build system without explicit approval.
 - Do not assume missing design details carelessly; stay close to the references.
+- **Do not repeat previous images as placeholders** just because the specific asset isn't originally present in the local directory; fetch the exact asset from Figma instead.
+- **Do not use fixed heights for dynamic content columns** unless synchronization is required (like in TUW). Prefer flex/grid stretching.
+

@@ -34,12 +34,9 @@ const projectsData = [
     "scope": "Logo Design",
     "description": "The objective of this project was to develop logo systems that are visually refined, strategically grounded, and aligned with each client\u2019s brand positioning. Beyond aesthetics, the focus was on creating practical and scalable identities that clearly communicate brand values and support long-term business goals. By balancing form and function, these marks are designed to leave a lasting impact across various touchpoints, ensuring a consistent and professional brand presence.",
     "badges": {
-      "label": "Badges",
+      "label": "Badges:",
       "url": "https://www.behance.net/gallery/178087907/Logos-Marks-Vol01",
-      "images": [
-        "../assets/images/projects/p2/img_1.png",
-        "../assets/images/projects/p2/img_2.png"
-      ]
+      "images": ["../assets/images/projects/p2/badge_gr.png","../assets/images/projects/p2/badge_ai.png"]
     },
     "content": [
       {
@@ -131,14 +128,31 @@ const projectsData = [
     "title": "What Remains",
     "year": "2021 - 2023",
     "type": "Personal",
-    "scope": "Photo Zine, Storytelling",
-    "description": "\u2018What Remains\u2019 is an experimental photo zine exploring the concept of isolation and memory through the lens of abandoned architectural spaces. The project documentation captures the quiet, often overlooked details of decay, finding beauty in the stillness of forgotten environments. By pairing evocative photography with minimalist layouts, the zine creates a meditative journey that questions what we leave behind and how space holds onto the echoes of human presence. The intentional use of negative space and muted tones enhances the sense of solitude, inviting a deeper reflection on the passage of time and the fragility of our surroundings.",
-    "images": [
-      "../assets/images/projects/p4/img_1.png",
-      "../assets/images/projects/p4/img_2.png",
-      "../assets/images/projects/p4/img_3.png",
-      "../assets/images/projects/p4/img_4.png",
-      "../assets/images/projects/p4/img_5.png"
+    "scope": "Art Direction, Editorial Design",
+    "description": "What Remains is a booklet centering around a contemplative and philosophical journey. On that journey, both the author and the reader will search for what remains after a life of loving, performing, dedicating, and sacrificing for the mean of art. \nThe goal was to move beyond surface-level visuals to design with deeper meaning. The project pushed me to reflect more philosophically and think beyond aesthetics in my creative process.",
+    "badges": {
+      "label": "Badges:",
+      "url": "https://www.behance.net/gallery/181406763/What-Remains",
+      "images": ["../assets/images/projects/p4/badge-gr.png","../assets/images/projects/p4/badge-id.png"]
+    },
+    "content": [
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_hero.png" },
+      { "type": "text", "text": "The book includes photos that was taken on an old film camera by the author/ curator; raw sketches; a few poems from talented poets; and a couple of love letters from Trinh Cong Son to his muse. The booklet is divided into two main chapters: \n(1) Living & Giving;\n(2) What Remains." },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_2_new.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_12.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_13.png" },
+      { "type": "text", "text": "After two years of dedicated work, including honing my printing skills and overcoming challenges, I successfully completed the zine. I\u2019m proud to showcase my work on platforms like Behance and other social media.\nMy efforts have been recognized with Behance badges in Graphic Design: Editorial Field and InDesign. I guess this accomplishment is a testament to my perseverance and dedication for the journey." },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_14.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_6.png" },
+      { "type": "titled-text", "title": "The Museum of Unfinished Things.", "text": "I scattered these images across a page, crafting a miniature museum of the unfinished.  This curated chaos aims to explore the intersection of Art and Identity. Through these raw, unpolished fragments, I hope to reveal the universal truth of imperfection.\nEmbracing the in-between stages of creation, this work invites viewers to appreciate the beauty of the incomplete." },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_7.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_8.png" },
+      { "type": "titled-text", "title": "Curiosity took me further than I thought.", "text": "To convey the messages effectively, I experimented with various techniques.\nI incorporated personal elements like film photos from high school, sketches, and letters I wrote to myself during difficult times. I even intentionally burned a page of the zine. For your information, I smashed one of my family\u2019s eating bowls and edited it for the zine\u2019s cover.  \nUltimately, What Remains is more than just a conceptual artwork. \nIt\u2019s a reflection of my journey and a testament to my efforts to overcome negative thoughts." },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_9.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_10.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_11.png" },
+      { "type": "titled-text", "title": "And finally,", "text": "The process of designing this zine is not only about the journey of contemplation, but also a challenge to think deeper and way bigger in designing things than how I used to think before. \nI learned to not just focus on visualizing what was in my head, but I have to put a story, or even an ideal to my work as well. \nAfter all, it wouldn\u2019t be completed if there weren\u2019t my dear mentor Anh Nhat Minh, my friends and my supporters all around me." },
+      { "type": "black-bg-centered", "src": "../assets/images/projects/p4/img_final.png" }
     ],
     "bgColor": "#FE45EE"
   },
@@ -162,20 +176,107 @@ const projectsData = [
   },
   {
     "id": 6,
-    "title": "Di Luon Khong",
+    "title": "'Di Luon Khong' Brand Identity",
     "year": "2024",
     "type": "Non-profit",
     "scope": "Design Direction, Brand Identity & Positioning, Illustration",
-    "description": "This project focused on building a community-driven podcast positioned as an accessible cultural platform, inviting audiences to \u201ctake a stroll\u201d through personal narratives, friendships, and underrepresented perspectives of urban life. The identity system was designed to be distinctive yet flexible, combining bold typography, hand-drawn illustrations, and a solid color palette inspired by Hanoi\u2019s streets and everyday environments.",
-    "images": [
-      "../assets/images/projects/p6/img_1.png",
-      "../assets/images/projects/p6/img_2.png",
-      "../assets/images/projects/p6/img_3.png",
-      "../assets/images/projects/p6/img_4.png",
-      "../assets/images/projects/p6/img_5.png",
-      "../assets/images/projects/p6/img_6.png",
-      "../assets/images/projects/p6/img_7.png",
-      "../assets/images/projects/p6/img_8.png"
+    "team": "Hương Đặng (Co-host), Lan Nhi (Member)",
+    "description": "This project focused on building a community-driven podcast positioned as an accessible cultural platform, inviting audiences to \u201ctake a stroll\u201d through personal narratives, friendships, and underrepresented perspectives of urban life. \n\nFrom a strategic standpoint, I led the brand and visual identity development of \u201cDi luon khong?\u201d, aligning creative direction with audience insights and production constraints inherent to a self-produced format. The identity system was designed to be distinctive yet flexible, combining bold typography, hand-drawn illustrations, and a solid color palette inspired by Hanoi\u2019s streets and everyday environments. This approach created a culturally rooted brand that supports consistent communication, encourages engagement, and positions the podcast as a welcoming space for open dialogue and reflection.",
+    "content": [
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p6/hero.png" },
+      {
+        "type": "dlk-body",
+        "sections": [
+          {
+            "id": "A",
+            "title": "A. Project Format",
+            "format": "paragraphs",
+            "text": "One-on-one dialogues and conversations between the host and weekly guests. Guests come to share stories that align with the theme of each episode.\nThe host \u2013 by asking and listening \u2013 gradually explores the guest\u2019s story without offering any conclusions or judgments (asking open questions without making any judgments or assumptions)."
+          },
+          {
+            "id": "B",
+            "title": "B. Target Audience",
+            "format": "list",
+            "items": [
+              "Age: From 13 - 32",
+              "Key interests include: Family, friends, career, personal life, social issues (feminism, equal rights, etc.)",
+              "This audience is drawn to stories that offer diverse viewpoints and broaden their understanding of the world."
+            ]
+          },
+          {
+            "id": "C",
+            "title": "C. Core Values",
+            "format": "cards",
+            "cards": [
+              {
+                "title": "Truthful",
+                "items": ["Exploring & conveying the truth. ", "Conveying content objectively to the listeners."]
+              },
+              {
+                "title": "Entertaining",
+                "items": ["Creating a comfortable atmosphere, open space, without pessimism or negativity. ", "A close, familiar way of speaking with young people "]
+              },
+              {
+                "title": "Open-minded",
+                "items": ["Maintain a neutral attitude, avoid rude comments.", "Being open to challenging one\u2019s own beliefs, ethics, and mindset to understand stories from various perspectives."]
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "D. Visual Direction",
+            "format": "direction",
+            "text": "The visual direction prioritizes materials pertaining to Vietnamese culture, with a strong focus on Hanoi\u2019s urban environment and lifestyle.\n\u2192 Characteristics:",
+            "pills": ["Young", "Colorful", "Bold", "Vibrant", "Wholesome"],
+            "colors": ["#fb51b1", "#94f037", "#ff650e", "#996cfd", "#ffffff"]
+          }
+        ]
+      },
+      {
+        "type": "dlk-team-logo",
+        "title": "Team Logo",
+        "paragraphs": [
+          "Our logo is inspired by Khue Van Cac (The Pavilion of the Constellation of Literature), a cultural icon of Hanoi that embodies respect for knowledge, literature, and academic excellence. It reflects our pride in our hometown and our identity as Hanoi citizens.",
+          "The logo system includes two variations\u2014icon-led and type-led\u2014designed for flexible use across different backgrounds and formats.",
+          "Above all, the name \u201cHanoi\u2019s Voice Memorial\u201d speaks for itself: a platform that amplifies the voices and flavors of Hanoi, sharing the city\u2019s unique essence with the world."
+        ],
+        "logoVariants": "../assets/images/projects/p6/team_logo_variants.svg",
+        "overlayBg": "../assets/images/projects/p6/team_logo_bg.png",
+        "overlayIcon": "../assets/images/projects/p6/team_logo_icon.svg"
+      },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p6/brand_spread.png" },
+      {
+        "type": "dlk-merch",
+        "bgSrc": "../assets/images/projects/p6/merch_bg.png",
+        "productSrc": "../assets/images/projects/p6/merch_product.png",
+        "sideLogo": "../assets/images/projects/p6/merch_side_logo.svg"
+      },
+      {
+        "type": "dlk-project-logo",
+        "title": "Project Logo",
+        "paragraphs": [
+          "The podcast logo follows a type-led approach, featuring a bold and dynamic typeface that reflects a youthful spirit and delivers a direct, straightforward message to the audience. High-contrast, impactful color combinations are used to enhance visibility and energy.",
+          "To us, color represents character, and beyond that, it tells stories. Through the whole visual identity, we want to send out the message of embracing diversity and celebrating the unique personalities of every voice we feature."
+        ]
+      },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p6/project_logo.png" },
+      { "type": "row", "align": "center", "gap": "0", "images": [{ "src": "../assets/images/projects/p6/logo_color_1.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p6/logo_color_2.png", "objectFit": "cover" }] },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p6/logo_type.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p6/logo_mockup.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p6/logo_display.png" },
+      {
+        "type": "dlk-illustration",
+        "title": "Illustration",
+        "text": "I created bespoke illustrations for each episode, inspired by its theme and setting. Staying true to the brand\u2019s mood and tone, the illustrations embrace a raw, free, and unpolished aesthetic.",
+        "images": [
+          "../assets/images/projects/p6/illust_1.png",
+          "../assets/images/projects/p6/illust_2.png",
+          "../assets/images/projects/p6/illust_3.png",
+          "../assets/images/projects/p6/illust_4.png",
+          "../assets/images/projects/p6/illust_5.png",
+          "../assets/images/projects/p6/illust_6.png"
+        ]
+      }
     ],
     "bgColor": "#FE45EE"
   },

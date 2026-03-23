@@ -86,6 +86,8 @@
     }
 
     .menu-links {
+      display: flex;
+      align-items: center;
       gap: 32px;
     }
 
@@ -93,15 +95,20 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      width: fit-content;
+      padding: 0;
       color: var(--theongyn-ink);
       text-decoration: none;
+      background: var(--theongyn-pink);
+      border: var(--theongyn-border);
+      flex: 0 0 auto;
     }
 
     .menu-box-text {
       margin: 0;
       font-size: 24px;
       font-weight: 300;
-      line-height: 1;
+      line-height: normal;
       white-space: nowrap;
     }
 
@@ -551,7 +558,7 @@
             <a class="menu-box bg-brand-pink border-brand" href="/works" data-route="/works">
               <span class="menu-box-text">Works</span>
             </a>
-            <a class="menu-box bg-brand-pink border-brand" href="/about" data-route="/about">
+            <a class="menu-box bg-brand-pink border-brand is-active" href="/about" data-route="/about">
               <span class="menu-box-text">About</span>
             </a>
             <a class="menu-box bg-brand-pink border-brand" href="/resume" data-route="/resume">
@@ -795,7 +802,7 @@
             <a class="menu-box bg-brand-pink border-brand" href="/works" data-route="/works">
               <span class="menu-box-text">Works</span>
             </a>
-            <a class="menu-box bg-brand-pink border-brand" href="/about" data-route="/about">
+            <a class="menu-box bg-brand-pink border-brand is-active" href="/about" data-route="/about">
               <span class="menu-box-text">About</span>
             </a>
             <a class="menu-box bg-brand-pink border-brand" href="/resume" data-route="/resume">
