@@ -36,7 +36,7 @@ const projectsData = [
     "badges": {
       "label": "Badges:",
       "url": "https://www.behance.net/gallery/178087907/Logos-Marks-Vol01",
-      "images": ["../assets/images/projects/p2/badge_gr.png","../assets/images/projects/p2/badge_ai.png"]
+      "images": ["../assets/images/projects/p2/badge_gr.png", "../assets/images/projects/p2/badge_ai.png"]
     },
     "content": [
       {
@@ -88,36 +88,48 @@ const projectsData = [
       { "type": "text", "text": "Bright, eye-catching colors define the design.\nRed, orange, and yellow reference the Vietnamese New Year, while blue and pink add a modern, dynamic touch that resonates with younger audiences." },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_3.png" },
       { "type": "text", "text": "The familiar elements of the traditional New Year have also been designed in a simplified way to reach viewers more effectively." },
-      { "type": "row", "align": "center", "images": [
-        { "src": "../assets/images/projects/p3/img_4.png" },
-        { "src": "../assets/images/projects/p3/img_5.png" }
-      ]},
-      { "type": "row", "align": "center", "images": [
-        { "src": "../assets/images/projects/p3/img_6.png" },
-        { "src": "../assets/images/projects/p3/img_7.png" }
-      ]},
-      { "type": "row", "align": "center", "images": [
-        { "src": "../assets/images/projects/p3/img_8.png" },
-        { "src": "../assets/images/projects/p3/img_9.png" }
-      ]},
+      {
+        "type": "row", "align": "center", "images": [
+          { "src": "../assets/images/projects/p3/img_4.png" },
+          { "src": "../assets/images/projects/p3/img_5.png" }
+        ]
+      },
+      {
+        "type": "row", "align": "center", "images": [
+          { "src": "../assets/images/projects/p3/img_6.png" },
+          { "src": "../assets/images/projects/p3/img_7.png" }
+        ]
+      },
+      {
+        "type": "row", "align": "center", "images": [
+          { "src": "../assets/images/projects/p3/img_8.png" },
+          { "src": "../assets/images/projects/p3/img_9.png" }
+        ]
+      },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_10.png" },
       { "type": "text", "text": "We use patterns with New Year's elements and colors to make attached card sets.\nThe cards are also made from kraft paper." },
-      { "type": "row", "align": "center", "images": [
-        { "src": "../assets/images/projects/p3/img_11.png" },
-        { "src": "../assets/images/projects/p3/img_12.png" },
-        { "src": "../assets/images/projects/p3/img_13.png" }
-      ]},
-      { "type": "row", "align": "center", "images": [
-        { "src": "../assets/images/projects/p3/img_14.png" },
-        { "src": "../assets/images/projects/p3/img_15.png" },
-        { "src": "../assets/images/projects/p3/img_16.png" }
-      ]},
+      {
+        "type": "row", "align": "center", "images": [
+          { "src": "../assets/images/projects/p3/img_11.png" },
+          { "src": "../assets/images/projects/p3/img_12.png" },
+          { "src": "../assets/images/projects/p3/img_13.png" }
+        ]
+      },
+      {
+        "type": "row", "align": "center", "images": [
+          { "src": "../assets/images/projects/p3/img_14.png" },
+          { "src": "../assets/images/projects/p3/img_15.png" },
+          { "src": "../assets/images/projects/p3/img_16.png" }
+        ]
+      },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_17.png" },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_18.png" },
-      { "type": "row", "align": "center", "images": [
-        { "src": "../assets/images/projects/p3/img_19.png" },
-        { "src": "../assets/images/projects/p3/img_20.png" }
-      ]},
+      {
+        "type": "row", "align": "center", "images": [
+          { "src": "../assets/images/projects/p3/img_19.png" },
+          { "src": "../assets/images/projects/p3/img_20.png" }
+        ]
+      },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_21.png" },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_22.png" }
     ],
@@ -133,7 +145,7 @@ const projectsData = [
     "badges": {
       "label": "Badges:",
       "url": "https://www.behance.net/gallery/181406763/What-Remains",
-      "images": ["../assets/images/projects/p4/badge-gr.png","../assets/images/projects/p4/badge-id.png"]
+      "images": ["../assets/images/projects/p4/badge-gr.png", "../assets/images/projects/p4/badge-id.png"]
     },
     "content": [
       { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_hero.png" },
@@ -287,9 +299,45 @@ const projectsData = [
     "type": "Personal & Commission",
     "scope": "Micro Animation, Lottie Files Handling",
     "description": "Working within tech and software environments shaped my approach to motion as a strategic design tool rather than a decorative layer. Micro-animations demand a deep understanding of user behavior. The challenge is knowing when motion adds value, and when restraint matters more. By combining thoughtful interaction design with intentional motion, I craft web and mobile experiences that are seamless, intuitive, and emotionally resonant.",
-    "images": [
-      "../assets/images/projects/p7/img_1.png"
+    "content": [
+      {
+        "type": "row",
+        "align": "center",
+        "gap": "20px",
+        "images": [
+          { "src": "../assets/videos/projects/p7/vid_1.mp4", "objectFit": "cover" },
+          { "src": "../assets/videos/projects/p7/vid_2.mp4", "objectFit": "cover" }
+        ]
+      },
+      {
+        "type": "row",
+        "align": "center",
+        "gap": "20px",
+        "images": [
+          { "src": "../assets/videos/projects/p7/vid_3.mp4", "objectFit": "cover" },
+          { "src": "../assets/videos/projects/p7/vid_4.mp4", "objectFit": "cover" }
+        ]
+      },
+      {
+        "type": "row",
+        "align": "center",
+        "gap": "20px",
+        "images": [
+          { "src": "../assets/videos/projects/p7/vid_5.mp4", "objectFit": "contain" },
+          { "src": "../assets/videos/projects/p7/vid_6.mp4", "objectFit": "cover" }
+        ]
+      },
+      {
+        "type": "row",
+        "align": "center",
+        "gap": "20px",
+        "images": [
+          { "src": "../assets/videos/projects/p7/vid_7.mp4", "objectFit": "cover" },
+          { "src": "../assets/videos/projects/p7/vid_8.mp4", "objectFit": "cover" }
+        ]
+      }
     ],
+    "galleryGap": "20px",
     "bgColor": "#FE45EE"
   },
   {
@@ -298,12 +346,49 @@ const projectsData = [
     "year": "2025",
     "type": "Personal",
     "scope": "Zine Design",
-    "description": "During my studies in CalArts\u2019 Graphic Design specialization, the final assignment for the Image Making course challenged students to communicate a personal, emotionally driven narrative through experimental imagery. I developed a zine that functions as a visual metaphor for my internal state at the time: a restless horse drawn toward freedom while constrained by emotional weight.",
-    "images": [
-      "../assets/images/projects/p8/img_1.png",
-      "../assets/images/projects/p8/img_2.png",
-      "../assets/images/projects/p8/img_3.png",
-      "../assets/images/projects/p8/img_4.png"
+    "team": "Hương Đặng (Co-host), Lan Nhi (Member)",
+    "description": "During my studies in CalArts\u2019 Graphic Design specialization, the final assignment for the Image Making course challenged students to communicate a personal, emotionally driven narrative through experimental imagery. The brief required working with a single visual subject - represented by a horse in my project - and transforming its form, scale, composition, and mood across multiple spreads to convey meaning without the use of text.\n\nI developed a zine that functions as a visual metaphor for my internal state at the time: a restless horse drawn toward freedom while constrained by emotional weight. Through iterative image experimentation, I translated personal tension into an abstract visual language, using design as a tool for introspection, emotional clarity, and self-understanding.",
+    "content": [
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p8/img_1.png" },
+      {
+        "type": "row",
+        "align": "center",
+        "gap": "0",
+        "images": [
+          { "src": "../assets/images/projects/p8/img_2.png", "objectFit": "cover" },
+          { "src": "../assets/images/projects/p8/img_3.png", "objectFit": "cover" }
+        ]
+      },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p8/img_4.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p8/img_5.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p8/img_6.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p8/img_7.png" },
+      {
+        "type": "horse-text",
+        "items": [
+          {
+            "title": "First time selling zines",
+            "text": "In March 2025, I officially sold my zines at Mini-fair: Zines | Limited Prints in Hanoi. With 8 copies of this zine and 4 copies of my second zine available, all of them were sold out within one day. It was incredibly rewarding to receive positive feedback from visitors and fellow designers in the industry."
+          },
+          {
+            "title": "Stepping outside my comfort zone",
+            "text": "While I'm still developing my self-promotion skills, this opportunity was invaluable. It expanded my network, connected me with audiences who appreciated my work, and ultimately fueled my commitment to creating more thoughtful and innovative designs."
+          }
+        ]
+      },
+      {
+        "type": "horse-collage",
+        "items": [
+          { "id": "pink_splash", "src": "../assets/images/projects/p8/pink_splash.png" },
+          { "id": "stall_1", "src": "../assets/images/projects/p8/stall_1.png" },
+          { "id": "stall_2", "src": "../assets/images/projects/p8/stall_2.png" },
+          { "id": "stall_3", "src": "../assets/images/projects/p8/stall_3.png" },
+          { "id": "stall_4", "src": "../assets/images/projects/p8/stall_4.png" },
+          { "id": "star_1", "src": "../assets/images/projects/p8/star.png" },
+          { "id": "star_2", "src": "../assets/images/projects/p8/star.png" },
+          { "id": "star_3", "src": "../assets/images/projects/p8/star.png" }
+        ]
+      }
     ],
     "bgColor": "#FE45EE"
   },
@@ -313,35 +398,127 @@ const projectsData = [
     "year": "2026",
     "type": "Personal",
     "scope": "Art Direction, Brand Identity & Positioning, Spatial Design Concept",
-    "description": "UKIYO (\u6d6e\u4e16), a Tokyo-based sushi restaurant, was envisioned as more than a dining destination, but also a curated sensory retreat where culinary precision, intimate soundscapes, and collectible art converge. The design approach embraces restraint and intentionality - minimal yet profound - drawing from Japanese culture and Taoist philosophy of stillness.",
-    "images": [
-      "../assets/images/projects/p9/img_1.png",
-      "../assets/images/projects/p9/img_2.png",
-      "../assets/images/projects/p9/img_3.png",
-      "../assets/images/projects/p9/img_4.png",
-      "../assets/images/projects/p9/img_5.png",
-      "../assets/images/projects/p9/img_6.png",
-      "../assets/images/projects/p9/img_7.png",
-      "../assets/images/projects/p9/img_8.png"
+    "description": "UKIYO (\u6d6e\u4e16), a Tokyo-based sushi restaurant, was envisioned as more than a dining destination, but also a curated sensory retreat where culinary precision, intimate soundscapes, and collectible art converge. \n\nThe design approach embraces restraint and intentionality - minimal yet profound - drawing from the Japanese culture and Taoist philosophy of stillness, craftsmanship, and quiet immersion embedded in the UKIYO experience. The result is a refined brand language that does not compete for attention, but invites presence.",
+    "content": [
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/hero.png" },
+      {
+        "type": "ukiyo-history",
+        "title": "ukiyo Branding/ History",
+        "text": "Founded in 2015 by renowned chef Hiroshi Nakamura, UKIYO (\u6d6e\u4e16) was born from a dream: to bring the authentic flavors of Tokyo to the world. Inspired by his grandmother's traditional sushi recipes and his Michelin-starred culinary expertise, Nakamura envisioned a restaurant that would celebrate Japanese culture and artistry. Sourcing the finest ingredients from Tokyo's Tsukiji Market and drawing inspiration from Kyoto's tea houses, Ukiyo quickly gained acclaim for its meticulous attention to detail and elegant minimalism. Today, it stands as a cultural landmark, beloved by locals and international visitors alike, for its innovative fusion of tradition and modern Japanese cuisine.",
+        "images": ["../assets/images/projects/p9/chef_work.png", "../assets/images/projects/p9/sushi_close.png"]
+      },
+      {
+        "type": "text",
+        "align": "center",
+        "padding": "60px 0",
+        "text": "Keywords:\nWabi Sabi/ Tea House/ Cozy/ Intimate/ Serene/ Culinary Artistry/ Authenticity/ Attention to Detail/ Freshness."
+      },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/naming_section.png" },
+      {
+        "type": "text",
+        "align": "center",
+        "padding": "60px 0",
+        "text": "The circle holds profound significance in Japanese culture in particular, and in Taoist philosophy more broadly. It symbolizes the sun, the cycle of rebirth, Zen, meditation, and completeness. \n\nFor UKIYO, this contemplative, serene, and introspective spirit serves as the guiding principle in shaping a unified brand essence and visual identity. The circle, stylized to reflect the modern elegance of Tokyo, becomes the perfect symbol to represent UKIYO, bridging timeless philosophy with contemporary sophistication."
+      },
+      {
+        "type": "row",
+        "gap": "0",
+        "images": [
+          { "src": "../assets/images/projects/p9/wood_texture_left.png", "objectFit": "cover" },
+          { "src": "../assets/images/projects/p9/wood_texture_right.png", "objectFit": "cover" }
+        ]
+      },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/rect_1485.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/rect_1486.png" },
+      {
+        "type": "text",
+        "align": "center",
+        "padding": "60px 0",
+        "text": "The color palette was inspired by the organic & neutral color scheme used in old Japanese traditional paintings."
+      },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/rect_1487.png" },
+      {
+        "type": "ukiyo-fresh-taste",
+        "title": "ukiyo \u6d6e\u4e16\nA FRESH TASTE\nFROM TOKYO",
+        "text": "In the bustling metropolis of Tokyo, UKIYO (\u6d6e\u4e16) offers a tranquil escape. Step into a world where the art of sushi is celebrated alongside an intimate bar, a collection of unique art gifts\ufe0f, and the soothing power of music. We invite you to experience authentic Japanese cuisine, crafted with the highest quality ingredients, in an atmosphere that is both serene and sophisticated, safe and welcoming. Ukiyo is more than a restaurant; it's a journey of culinary and artistic discovery.",
+        "image": "../assets/images/projects/p9/fresh_taste_bg.png"
+      },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_mockups.png" },
+      {
+        "type": "row",
+        "gap": "0",
+        "images": [
+          { "src": "../assets/images/projects/p9/rect_1482.png", "objectFit": "cover" },
+          { "src": "../assets/images/projects/p9/rect_1484.png", "objectFit": "cover" }
+        ]
+      },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_menu.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_cards.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_bag_box.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_uniform.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_exterior.png" }
     ],
     "bgColor": "#FE45EE"
   },
   {
     "id": 10,
-    "title": "Vinamilk Works",
-    "year": "2026",
+    "title": "Vinamilk Selected Works",
+    "year": "2025 - 2026",
     "type": "Commission",
-    "scope": "Branding & Packaging",
-    "description": "A comprehensive branding and packaging project for Vinamilk's new range of premium dairy products. The focus was on creating a modern, fresh, and trustworthy visual language that stands out on the shelf and resonates with health-conscious consumers. The project involved redesigning core brand elements to emphasize natural quality and heritage.",
-    "images": [
-      "../assets/images/projects/p10/img_1.png",
-      "../assets/images/projects/p10/img_2.png",
-      "../assets/images/projects/p10/img_3.png",
-      "../assets/images/projects/p10/img_4.png",
-      "../assets/images/projects/p10/img_5.png",
-      "../assets/images/projects/p10/img_6.png"
+    "scope": "Packaging Design",
+    "team": "Vinamilk's creative team",
+    "description": "Over the past year at Vinamilk, I have contributed across a wide spectrum of brand design initiatives, spanning packaging systems, POSM, retail visual design, and merchandising executions. Among these, the packaging portfolios I directly led represent the most defining body of work. For each product line, the team and I oversaw the full creative process, from initial concept development and visual direction to final artwork refinement and print proof quality control, ensuring brand consistency and production excellence at every stage.\n\nThe following projects highlight selected packaging designs currently in market.",
+    "content": [
+      {
+        "type": "vnm-project-section",
+        "title": "Project #1: ADM A2",
+        "images": [
+          { "src": "../assets/images/projects/p10/adm_1.png", "objectFit": "contain" },
+          { "src": "../assets/images/projects/p10/adm_2.png", "objectFit": "contain" }
+        ]
+      },
+      {
+        "type": "vnm-project-section",
+        "title": "Project #2: Fino A2",
+        "images": [
+          { "src": "../assets/images/projects/p10/fino_1.png", "objectFit": "contain" },
+          { "src": "../assets/images/projects/p10/fino_2.png", "objectFit": "contain" },
+          { "src": "../assets/images/projects/p10/fino_3.png", "objectFit": "contain" }
+        ]
+      },
+      {
+        "type": "vnm-project-section",
+        "title": "Project #3: FM Collection - Box",
+        "images": [
+          { "src": "../assets/images/projects/p10/fm_1.png", "objectFit": "contain" },
+          { "src": "../assets/images/projects/p10/fm_2.png", "objectFit": "contain" },
+          { "src": "../assets/images/projects/p10/fm_3.png", "objectFit": "contain" }
+        ]
+      },
+      {
+        "type": "vnm-project-section",
+        "title": "Project #4: Oat Milk",
+        "images": [
+          { "src": "../assets/images/projects/p10/oat_1.png", "objectFit": "contain" },
+          { "src": "../assets/images/projects/p10/oat_2.png", "objectFit": "contain" }
+        ]
+      },
+      {
+        "type": "vnm-project-section",
+        "title": "Project #5: Magnet 50 Years",
+        "images": [
+          { "src": "../assets/images/projects/p10/magnet_1.png", "objectFit": "cover" },
+          { "src": "../assets/images/projects/p10/magnet_2.png", "objectFit": "cover" },
+          { "src": "../assets/images/projects/p10/magnet_3.png", "objectFit": "cover" }
+        ]
+      },
+      {
+        "type": "vnm-project-section",
+        "title": "To be updated...",
+        "images": []
+      }
     ],
-    "bgColor": "#FE45EE"
+    "bgColor": "#EAEAEA"
   }
 ];
 
