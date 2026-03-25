@@ -37,7 +37,6 @@
 
     body {
       margin: 0;
-      background: var(--theongyn-green);
       color: var(--theongyn-ink);
       font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
@@ -65,6 +64,7 @@
 
     .desktop-home {
       display: block;
+      min-height: 100vh;
     }
 
     .mobile-home {
@@ -99,6 +99,9 @@
       font-size: 48px;
       line-height: 1;
       white-space: nowrap;
+      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
+
     }
 
     .menu-links {
@@ -131,12 +134,40 @@
       text-decoration: underline;
     }
 
-    .hero-visual {
-      display: block;
+    .hero-carousel {
+      position: relative;
       width: 100%;
       height: 623px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: center;
+      opacity: 0;
+      animation: heroFade 21s infinite;
+    }
+
+    .hero-image:nth-child(1) { animation-delay: 0s; }
+    .hero-image:nth-child(2) { animation-delay: 3s; }
+    .hero-image:nth-child(3) { animation-delay: 6s; }
+    .hero-image:nth-child(4) { animation-delay: 9s; }
+    .hero-image:nth-child(5) { animation-delay: 12s; }
+    .hero-image:nth-child(6) { animation-delay: 15s; }
+    .hero-image:nth-child(7) { animation-delay: 18s; }
+
+    @keyframes heroFade {
+      0% { opacity: 0; }
+      4.76% { opacity: 1; }
+      14.28% { opacity: 1; }
+      19.04% { opacity: 0; }
+      100% { opacity: 0; }
     }
 
     .intro-panel {
@@ -158,13 +189,14 @@
       line-height: 1;
       text-wrap: pretty;
       overflow-wrap: anywhere;
+      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
     }
 
     .mobile-home-shell {
       position: relative;
       width: 100%;
       min-height: 100vh;
-      background: var(--theongyn-green);
     }
 
     .mobile-topbar {
@@ -180,6 +212,8 @@
 
     .mobile-brand-mark .brand-mark-text {
       font-size: 34px;
+      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
     }
 
     .mobile-menu-toggle {
@@ -236,6 +270,8 @@
       line-height: 1;
       text-wrap: pretty;
       overflow-wrap: anywhere;
+      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
     }
 
     .mobile-slide-menu {
@@ -315,7 +351,7 @@
       overflow-wrap: anywhere;
     }
 
-    @media (max-width: 991.98px) {
+    @media (max-width: 768px) {
       .site-menu {
         height: auto;
         padding: 24px;
@@ -331,6 +367,8 @@
         display: inline-block;
         padding: 2px 10px 0;
         font-size: 42px;
+        -webkit-text-stroke-width: 0.3px;
+        -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
       }
 
       .menu-links {
@@ -360,13 +398,14 @@
       }
     }
 
-    @media (max-width: 575.98px) {
+    @media (max-width: 768px) {
       .desktop-home {
         display: none;
       }
 
       .mobile-home {
         display: block;
+        min-height: 100vh;
       }
 
       .homepage-shell {
@@ -377,7 +416,7 @@
         min-height: 100vh;
       }
 
-      .mobile-hero-image {
+      .hero-carousel {
         height: auto;
         aspect-ratio: 488 / 623;
       }
@@ -403,7 +442,7 @@
               <a class="menu-box bg-brand-pink border-brand" href="/about" data-route="/about">
                 <span class="menu-box-text">About</span>
               </a>
-              <a class="menu-box bg-brand-pink border-brand" href="/resume" data-route="/resume">
+              <a class="menu-box bg-brand-pink border-brand" href="https://drive.google.com/drive/u/2/folders/1E3qgW-FttoqoTuiE9klyMaTLA-6FDMRH" target="_blank" rel="noopener noreferrer">
                 <span class="menu-box-text">Resume</span>
               </a>
             </nav>
@@ -412,9 +451,14 @@
       </header>
 
       <section class="hero-section">
-        <div class="w-100">
-          <img class="hero-visual" src="./assets/images/home/desktop-home-hero.png"
-            alt="Theongyn portfolio home hero artwork" />
+        <div class="hero-carousel">
+          <img class="hero-image" src="./assets/images/home/hero-1.png" alt="Hero Image 1" />
+          <img class="hero-image" src="./assets/images/home/hero-2.png" alt="Hero Image 2" />
+          <img class="hero-image" src="./assets/images/home/hero-3.png" alt="Hero Image 3" />
+          <img class="hero-image" src="./assets/images/home/hero-4.png" alt="Hero Image 4" />
+          <img class="hero-image" src="./assets/images/home/hero-5.png" alt="Hero Image 5" />
+          <img class="hero-image" src="./assets/images/home/hero-6.png" alt="Hero Image 6" />
+          <img class="hero-image" src="./assets/images/home/hero-7.png" alt="Hero Image 7" />
         </div>
       </section>
 
@@ -432,7 +476,7 @@
 
     <div class="mobile-home" data-node-id="4018-9168" data-figma-node-id="4018:9168">
       <section class="mobile-home-shell">
-        <header class="mobile-topbar d-flex align-items-center justify-content-between">
+        <header class="mobile-topbar d-flex align-items-center justify-content-between bg-brand-green">
           <a class="mobile-brand-mark brand-mark bg-brand-pink border-brand" href="#" aria-label="Theongyn home">
             <span class="brand-mark-text">°˖Theongyn˖°</span>
           </a>
@@ -445,8 +489,15 @@
         </header>
 
         <section class="mobile-hero">
-          <img class="mobile-hero-image" src="./assets/images/home/mobile-home-hero.png"
-            alt="Theongyn portfolio mobile hero artwork" />
+          <div class="hero-carousel">
+            <img class="hero-image" src="./assets/images/home/hero-1.png" alt="Hero Image 1" />
+            <img class="hero-image" src="./assets/images/home/hero-2.png" alt="Hero Image 2" />
+            <img class="hero-image" src="./assets/images/home/hero-3.png" alt="Hero Image 3" />
+            <img class="hero-image" src="./assets/images/home/hero-4.png" alt="Hero Image 4" />
+            <img class="hero-image" src="./assets/images/home/hero-5.png" alt="Hero Image 5" />
+            <img class="hero-image" src="./assets/images/home/hero-6.png" alt="Hero Image 6" />
+            <img class="hero-image" src="./assets/images/home/hero-7.png" alt="Hero Image 7" />
+          </div>
         </section>
 
         <section class="mobile-intro-panel bg-brand-pink border-top border-dark">
@@ -472,7 +523,7 @@
           <a class="menu-box bg-brand-pink border-brand" href="/about" data-route="/about">
             <span class="menu-box-text">About</span>
           </a>
-          <a class="menu-box bg-brand-pink border-brand" href="/resume" data-route="/resume">
+          <a class="menu-box bg-brand-pink border-brand" href="https://drive.google.com/drive/u/2/folders/1E3qgW-FttoqoTuiE9klyMaTLA-6FDMRH" target="_blank" rel="noopener noreferrer">
             <span class="menu-box-text">Resume</span>
           </a>
         </nav>

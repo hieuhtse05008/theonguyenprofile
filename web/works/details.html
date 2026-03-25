@@ -100,6 +100,8 @@
         font-size: 48px;
         line-height: 1;
         white-space: nowrap;
+        -webkit-text-stroke-width: 0.3px;
+        -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
       }
 
       .brand-mark:hover,
@@ -701,7 +703,7 @@
         background-size: cover;
       }
 
-      @media (max-width: 767.98px) {
+      @media (max-width: 768px) {
         .tuw-bg-wrapper {
           background-image: var(--bg-mob);
         }
@@ -1042,6 +1044,8 @@
 
       .mobile-brand-mark .brand-mark-text {
         font-size: 34px;
+      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
       }
 
       .mobile-menu-toggle {
@@ -1146,7 +1150,7 @@
         height: auto;
       }
 
-      @media (max-width: 767.98px) {
+      @media (max-width: 768px) {
         .desktop-shell {
           display: none;
         }
@@ -1423,10 +1427,11 @@
             <span class="menu-box-text">About</span>
           </a>
           <a
-            class="menu-box is-disabled"
-            href="#"
-            aria-label="Resume coming soon"
-            data-disabled-link
+            class="menu-box"
+            href="https://drive.google.com/drive/u/2/folders/1E3qgW-FttoqoTuiE9klyMaTLA-6FDMRH"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Resume"
           >
             <span class="menu-box-text">Resume</span>
           </a>
@@ -1477,10 +1482,11 @@
             <span class="menu-box-text">About</span>
           </a>
           <a
-            class="menu-box is-disabled"
-            href="#"
-            aria-label="Resume coming soon"
-            data-disabled-link
+            class="menu-box"
+            href="https://drive.google.com/drive/u/2/folders/1E3qgW-FttoqoTuiE9klyMaTLA-6FDMRH"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Resume"
           >
             <span class="menu-box-text">Resume</span>
           </a>
@@ -1585,7 +1591,7 @@
         return `
           <div class="${className} tuw-bg-wrapper" style="--bg-desk: url('${desktopUrl}'); --bg-mob: url('${mobileUrl}');" role="img" aria-label="${alt}">
             <picture style="visibility: hidden; display: block; width: 100%; height: auto; max-height: 100%; pointer-events: none;">
-              ${mobileFile ? `<source media="(max-width: 767.98px)" srcset="${tuwAsset(mobileFile)}" />` : ""}
+              ${mobileFile ? `<source media="(max-width: 768px)" srcset="${tuwAsset(mobileFile)}" />` : ""}
               <img src="${desktopUrl}" alt="" style="display: block; width: 100%; height: auto; max-height: 100%; object-fit: cover;" />
             </picture>
           </div>
