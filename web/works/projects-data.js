@@ -51,7 +51,7 @@ const projectsData = [
           { "src": "../assets/images/projects/p2/img_1.png" },
           { "src": "../assets/images/projects/p2/img_2.png" },
           { "src": "../assets/images/projects/p2/img_3.png" },
-          { "html": "<div style=\"font-size: 120px; font-family: 'CirrusCumulus', serif; color: #262626;\">20</div>", "bgColor": "#eaeaea" },
+          { "html": "<div style=\"font-size: 120px; font-family: 'CirrusCumulus', serif; -webkit-text-stroke-width: 0.3px; -webkit-text-stroke-color: #262626; color: #262626;\">20</div>", "bgColor": "#eaeaea" },
           { "src": "../assets/images/projects/p2/img_1.png" },
           { "src": "../assets/images/projects/p2/img_2.png" },
           { "src": "../assets/images/projects/p2/img_3.png" },

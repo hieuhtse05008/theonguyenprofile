@@ -137,32 +137,25 @@
     }
 
     .desktop-about-stage {
-      position: relative;
-      width: min(100%, var(--theongyn-desktop-width));
-      min-height: var(--theongyn-desktop-height);
+      max-width: var(--theongyn-max-width);
       margin: 0 auto;
+      padding: 0 60px 100px;
     }
 
     .desktop-topbar {
-      position: absolute;
-      top: 0;
-      left: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
       height: 103px;
-      padding: 0 60px;
+      margin-bottom: 88px;
     }
 
     .desktop-about-copy {
-      position: absolute;
-      top: 191px;
-      left: 61px;
-      width: 1133px;
       font-size: 24px;
       font-weight: 300;
       line-height: 1.1;
+      max-width: 1133px;
+      margin-bottom: 140px;
     }
 
     .desktop-about-copy p,
@@ -176,13 +169,7 @@
     }
 
     .desktop-about-detail-grid {
-      position: absolute;
-      top: 685px;
-      left: 61px;
-      display: grid;
-      grid-template-columns: 332px 262px 339px;
-      column-gap: 98px;
-      align-items: start;
+      margin-bottom: 60px;
     }
 
     .desktop-about-section {
@@ -194,6 +181,8 @@
     .desktop-about-section-title {
       margin: 0;
       font-family: "Cirrus Cumulus", serif;
+      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
       font-size: 36px;
       line-height: 1;
       color: var(--theongyn-pink);
@@ -220,21 +209,22 @@
       gap: 49px;
     }
 
+    .desktop-about-horse-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
     .desktop-about-horse {
-      position: absolute;
-      top: 861px;
-      right: 34px;
       width: 254px;
       height: 253px;
     }
 
     .desktop-footer {
-      position: absolute;
-      left: 61px;
-      bottom: 69px;
       display: flex;
       align-items: end;
       gap: 12px;
+      margin-top: auto;
     }
 
     .desktop-footer img {
@@ -350,6 +340,8 @@
     .mobile-about-section-title {
       margin: 0;
       font-family: "Cirrus Cumulus", serif;
+      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
       font-size: 34px;
       line-height: 1;
       color: var(--theongyn-pink);
@@ -603,98 +595,112 @@
           </nav>
         </header>
 
-        <section class="desktop-about-copy">
-          <p>
-            Currently, Theongyn is a Brand Designer @ Vinamilk, specializing
-            in developing brand assets and packaging systems.
-          </p>
-          <p>
-            Before joining Vinamilk, Theo worked as a Multimedia Designer at
-            FPT Software, where she collaborated closely with UI/UX designers
-            to deliver graphic design, motion graphics, and UI support. During
-            this time, she contributed to large-scale projects for major brands
-            such as LG CNS, LG Electronics, Hyundai, ISUZU, and Vietcombank.
-          </p>
-          <p>
-            Earlier in her career, Theo was an R&amp;D Designer at Crabit
-            Studio, where she owned the full design process for stationary
-            &amp; editoral products, from research and ideation to final
-            production, ensuring consistency and high-quality outcomes. Two of
-            her projects became best-selling products: Planner 2023 (sold out
-            within one week) and Cat-lendar 2023 (sold out in three weeks).
-          </p>
-          <p>
-            Theo holds a BBA in Human Resources Management from Thuongmai
-            University. This business and people-focused background shapes her
-            approach to design, helping her connect brands with the humans
-            behind them.
-          </p>
-          <p>
-            Outside of corporate life, Theo enjoys designing merchandises and
-            artworks with her friends, using design as a way to share
-            thoughtful, encouraging messages with others.
-          </p>
-        </section>
-
-        <section class="desktop-about-detail-grid">
-          <div class="desktop-about-section">
-            <h2 class="desktop-about-section-title">✫Scope</h2>
-            <div class="desktop-about-list">
-              <p>Art Direction</p>
-              <p>Brand Identity</p>
-              <p>Strategic Visual Consulting</p>
-              <p>Packaging Design</p>
-              <p>Illustration (Digital Art)</p>
-              <p>Printing &amp; Editorial Design</p>
-              <p>POSM &amp; Digital Campaign Design</p>
-              <p>UI Concept</p>
-              <p>Micro Animation</p>
+        <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-12">
+              <section class="desktop-about-copy">
+                <p>
+                  Currently, Theongyn is a Brand Designer @ Vinamilk, specializing
+                  in developing brand assets and packaging systems.
+                </p>
+                <p>
+                  Before joining Vinamilk, Theo worked as a Multimedia Designer at
+                  FPT Software, where she collaborated closely with UI/UX designers
+                  to deliver graphic design, motion graphics, and UI support. During
+                  this time, she contributed to large-scale projects for major brands
+                  such as LG CNS, LG Electronics, Hyundai, ISUZU, and Vietcombank.
+                </p>
+                <p>
+                  Earlier in her career, Theo was an R&amp;D Designer at Crabit
+                  Studio, where she owned the full design process for stationary
+                  &amp; editoral products, from research and ideation to final
+                  production, ensuring consistency and high-quality outcomes. Two of
+                  her projects became best-selling products: Planner 2023 (sold out
+                  within one week) and Cat-lendar 2023 (sold out in three weeks).
+                </p>
+                <p>
+                  Theo holds a BBA in Human Resources Management from Thuongmai
+                  University. This business and people-focused background shapes her
+                  approach to design, helping her connect brands with the humans
+                  behind them.
+                </p>
+                <p>
+                  Outside of corporate life, Theo enjoys designing merchandises and
+                  artworks with her friends, using design as a way to share
+                  thoughtful, encouraging messages with others.
+                </p>
+              </section>
             </div>
           </div>
 
-          <div class="desktop-about-section">
-            <h2 class="desktop-about-section-title">✫Selected Clients</h2>
-            <div class="desktop-about-list">
-              <p>Cohe Studio</p>
-              <p>Square Media</p>
-              <p>The Manor Central Park</p>
-              <p>Freezedom</p>
-              <p>Today U Wear</p>
-              <p>Veosbykhanh</p>
-              <p>TEDxThuongmai</p>
-              <p>SimpleTwist Studio</p>
-            </div>
-          </div>
-
-          <div class="desktop-contact-column">
-            <div class="desktop-about-section">
-              <h2 class="desktop-about-section-title">✫Find Theo at</h2>
-              <div class="desktop-about-list">
-                <p><a href="https://www.behance.net/theongyn">Behance</a></p>
-                <p>
-                  <a href="https://www.linkedin.com/in/theongyn">LinkedIn</a>
-                </p>
-                <p>
-                  <a href="https://www.instagram.com/theongynn/">Instagram</a>
-                </p>
+          <div class="row desktop-about-detail-grid">
+            <div class="col-lg-3">
+              <div class="desktop-about-section">
+                <h2 class="desktop-about-section-title">✫Scope</h2>
+                <div class="desktop-about-list">
+                  <p>Art Direction</p>
+                  <p>Brand Identity</p>
+                  <p>Strategic Visual Consulting</p>
+                  <p>Packaging Design</p>
+                  <p>Illustration (Digital Art)</p>
+                  <p>Printing &amp; Editorial Design</p>
+                  <p>POSM &amp; Digital Campaign Design</p>
+                  <p>UI Concept</p>
+                  <p>Micro Animation</p>
+                </div>
               </div>
             </div>
 
-            <div class="desktop-about-section">
-              <h2 class="desktop-about-section-title">✫Contact</h2>
-              <div class="desktop-about-list">
-                <p>
-                  Gmail:
-                  <a class="desktop-contact-link" href="mailto:theongyn.work@gmail.com">
-                    Theongyn.work@gmail.com
-                  </a>
-                </p>
+            <div class="col-lg-3">
+              <div class="desktop-about-section">
+                <h2 class="desktop-about-section-title">✫Selected Clients</h2>
+                <div class="desktop-about-list">
+                  <p>Cohe Studio</p>
+                  <p>Square Media</p>
+                  <p>The Manor Central Park</p>
+                  <p>Freezedom</p>
+                  <p>Today U Wear</p>
+                  <p>Veosbykhanh</p>
+                  <p>TEDxThuongmai</p>
+                  <p>SimpleTwist Studio</p>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
 
-        <div class="desktop-about-horse horse-anim" aria-label="About page artwork"></div>
+            <div class="col-lg-3">
+              <div class="desktop-contact-column">
+                <div class="desktop-about-section">
+                  <h2 class="desktop-about-section-title">✫Find Theo at</h2>
+                  <div class="desktop-about-list">
+                    <p><a href="https://www.behance.net/theongyn">Behance</a></p>
+                    <p>
+                      <a href="https://www.linkedin.com/in/theongyn">LinkedIn</a>
+                    </p>
+                    <p>
+                      <a href="https://www.instagram.com/theongynn/">Instagram</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="desktop-about-section">
+                  <h2 class="desktop-about-section-title">✫Contact</h2>
+                  <div class="desktop-about-list">
+                    <p>
+                      Gmail:
+                      <a class="desktop-contact-link" href="mailto:theongyn.work@gmail.com">
+                        Theongyn.work@gmail.com
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 desktop-about-horse-container">
+              <div class="desktop-about-horse horse-anim" aria-label="About page artwork"></div>
+            </div>
+          </div>
+        </div>
 
         <footer class="desktop-footer">
           <img src="../assets/icons/about/desktop-about-footer-mark.svg" alt="" />
