@@ -100,7 +100,7 @@
         font-size: 48px;
         line-height: 1;
         white-space: nowrap;
-        -webkit-text-stroke-width: 0.3px;
+        -webkit-text-stroke-width: 0.5px;
         -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
       }
 
@@ -122,6 +122,11 @@
         padding: 0 60px;
         background: var(--theongyn-light-grey);
         z-index: 100;
+        transition: transform 0.24s ease;
+      }
+
+      .desktop-topbar.is-hidden {
+        transform: translateY(-120%);
       }
 
       .menu-links {
@@ -185,7 +190,7 @@
       .logos-project-title {
         margin: 0;
         font-family: "Cirrus Cumulus", serif;
-      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-width: 0.5px;
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
         font-size: 48px;
         line-height: 0.95;
@@ -213,7 +218,7 @@
       .logos-project-meta-label {
         margin: 0 0 8px;
         font-family: "Cirrus Cumulus", serif;
-      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-width: 0.5px;
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
         font-size: 32px;
         line-height: 1;
@@ -288,7 +293,7 @@
       .project-title {
         margin: 0 0 10px;
         font-family: "Cirrus Cumulus", serif;
-      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-width: 0.5px;
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
         font-size: 48px;
         line-height: 0.95;
@@ -315,12 +320,6 @@
         min-width: 0;
       }
 
-      .meta-label {
-        margin: 0 0 6px;
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 1;
-      }
 
       .meta-value,
       .meta-list a,
@@ -443,7 +442,7 @@
       .titled-text-block .titled-text-title {
         margin: 0 0 10px;
         font-family: "Cirrus Cumulus", serif;
-      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-width: 0.5px;
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
         font-size: 32px;
         line-height: normal;
@@ -488,7 +487,7 @@
       .dlk-two-col { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; padding: 20px 0; }
       .dlk-section { display: flex; flex-direction: column; gap: 10px; }
       .dlk-section-title { margin: 0; font-family: 'Cirrus Cumulus', serif;
-      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-width: 0.5px;
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626); font-size: 32px; line-height: 1; }
       .dlk-section-body { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 300; line-height: 1.1; }
       .dlk-section-body p { margin: 0; }
@@ -513,15 +512,8 @@
       .dlk-logo-overlay { position: relative; aspect-ratio: 1; overflow: hidden; }
       .dlk-logo-overlay-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
       .dlk-logo-overlay-dim { position: absolute; inset: 0; background: rgba(0,0,0,0.2); }
-      .dlk-logo-overlay-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 52%; height: auto; }
       .dlk-merch-section { position: relative; width: 100%; aspect-ratio: 1393/750; overflow: hidden; }
       .dlk-merch-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-      .dlk-merch-bg-dim { position: absolute; inset: 0; background: rgba(0,0,0,0.3); }
-      .dlk-merch-product { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 45%; box-shadow: 0 4px 20px rgba(0,0,0,0.8); }
-      .dlk-merch-product img { display: block; width: 100%; height: auto; }
-      .dlk-merch-side { position: absolute; top: 50%; transform: translateY(-50%); width: 26%; height: auto; }
-      .dlk-merch-side.is-left { left: 2.4%; }
-      .dlk-merch-side.is-right { right: 2.4%; }
       .dlk-text-section { padding: 20px 0; }
       .dlk-text-section-title { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.1; margin: 0 0 12px; }
       .dlk-text-section-body { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 300; line-height: 1.1; }
@@ -534,7 +526,7 @@
       .horse-text-row { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; padding: 40px 0 20px; }
       .horse-text-item { display: flex; flex-direction: column; gap: 10px; }
       .horse-text-title { margin: 0; font-family: 'Cirrus Cumulus', serif;
-      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-width: 0.5px;
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626); font-size: 32px; line-height: 1.2; }
       .horse-text-body { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 300; line-height: 1.1; }
       
@@ -580,7 +572,7 @@
       /* ---- Vinamilk (Project 10) specific ---- */
       .vnm-project-block { border-bottom: var(--theongyn-border); padding: 20px 0; width: 100%; }
       .vnm-project-title { margin: 0 0 20px; font-family: "Cirrus Cumulus", serif;
-      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-width: 0.5px;
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626); font-size: 32px; line-height: 1; color: var(--theongyn-ink); }
 
       @media (max-width: 768px) {
@@ -594,12 +586,13 @@
       }
 
       .meta-label {
-        margin: 0 0 8px;
         font-family: "Cirrus Cumulus", serif;
-      -webkit-text-stroke-width: 0.3px;
-      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
-        font-size: 26px;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
         line-height: 1;
+        margin: 0 0 6px;
+        font-size: 32px;
+        font-weight: 300;
       }
 
       .meta-scope-list {
@@ -628,7 +621,7 @@
 
       .meta-badges-link {
         font-family: "Cirrus Cumulus", serif;
-      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-width: 0.5px;
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
         font-size: 32px;
         line-height: 1;
@@ -669,7 +662,7 @@
       .tuw-section-title {
         margin: 0;
         font-family: "Cirrus Cumulus", serif;
-      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-width: 0.5px;
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
         font-size: 32px;
         line-height: 1;
@@ -1055,6 +1048,11 @@
         padding: 0 20px;
         background: var(--theongyn-light-grey);
         z-index: 110;
+        transition: transform 0.24s ease;
+      }
+
+      .mobile-topbar.is-hidden {
+        transform: translateY(-120%);
       }
 
       .mobile-brand-mark {
@@ -1064,7 +1062,7 @@
 
       .mobile-brand-mark .brand-mark-text {
         font-size: 34px;
-      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-width: 0.5px;
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
       }
 
@@ -1207,7 +1205,7 @@
         }
 
         .logos-project-meta-label {
-          font-size: 26px;
+          font-size: 32px;
         }
 
         .logos-project-meta-value {
@@ -1235,7 +1233,7 @@
         .meta-list a,
         .content-caption,
         .content-text {
-          font-size: 16px;
+          font-size: 32px;
         }
 
         .project-meta {
@@ -1533,8 +1531,11 @@
       const projectContent = document.getElementById("project-content");
       const scrollTopButton = document.getElementById("scroll-top");
       const menuOpenButton = document.querySelector("[data-menu-open]");
+      const desktopTopbar = document.querySelector(".desktop-topbar");
+      const mobileTopbar = document.querySelector(".mobile-topbar");
       const menuCloseButton = document.querySelector("[data-menu-close]");
       const mobileMenu = document.getElementById("mobile-slide-menu");
+      let lastScrollY = window.scrollY;
 
       const logoProjectAssets = Array.from({ length: 24 }, (_, index) => {
         const fileNumber = String(index + 1).padStart(2, "0");
@@ -1920,6 +1921,38 @@
         mobileMenu.setAttribute("aria-hidden", String(!isOpen));
         menuOpenButton.setAttribute("aria-expanded", String(isOpen));
         document.body.style.overflow = isOpen ? "hidden" : "";
+        if (isOpen) {
+          setTopbarsHidden(false);
+        }
+      }
+
+      function setTopbarsHidden(isHidden) {
+        [desktopTopbar, mobileTopbar].forEach((topbar) => {
+          if (!topbar) {
+            return;
+          }
+
+          topbar.classList.toggle("is-hidden", isHidden);
+        });
+      }
+
+      function handleTopbarVisibility() {
+        const currentScrollY = window.scrollY;
+        const isMenuOpen = mobileMenu?.classList.contains("is-open");
+
+        if (isMenuOpen || currentScrollY <= 0) {
+          setTopbarsHidden(false);
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        if (currentScrollY > lastScrollY + 8) {
+          setTopbarsHidden(true);
+        } else if (currentScrollY < lastScrollY - 8) {
+          setTopbarsHidden(false);
+        }
+
+        lastScrollY = currentScrollY;
       }
 
       function renderLogosProject(project) {
@@ -2156,12 +2189,11 @@
                           ${block.paragraphs.map(p => `<p>${p}</p>`).join('')}
                         </div>
                       </div>
-                      <img class="dlk-team-logo-variants" src="${block.logoVariants}" alt="Logo variants" />
+                      <div>${block.logoVariants.map(e => `<img class="dlk-team-logo-variants" src="${e}" alt="Logo variants" />`).join('')}</div>
+                      
                     </div>
                     <div class="dlk-logo-overlay">
                       <img class="dlk-logo-overlay-bg" src="${block.overlayBg}" alt="" />
-                      <div class="dlk-logo-overlay-dim"></div>
-                      <img class="dlk-logo-overlay-icon" src="${block.overlayIcon}" alt="Team logo" />
                     </div>
                   </div>
                 `;
@@ -2171,12 +2203,6 @@
                 return `
                   <div class="dlk-merch-section">
                     <img class="dlk-merch-bg" src="${block.bgSrc}" alt="" />
-                    <div class="dlk-merch-bg-dim"></div>
-                    <div class="dlk-merch-product">
-                      <img src="${block.productSrc}" alt="Merchandise" />
-                    </div>
-                    <img class="dlk-merch-side is-left" src="${block.sideLogo}" alt="" />
-                    <img class="dlk-merch-side is-right" src="${block.sideLogo}" alt="" />
                   </div>
                 `;
               }
@@ -2460,6 +2486,8 @@
           }
         });
       }
+
+      window.addEventListener("scroll", handleTopbarVisibility, { passive: true });
 
       renderProject();
     </script>

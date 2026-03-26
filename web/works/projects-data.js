@@ -51,7 +51,7 @@ const projectsData = [
           { "src": "../assets/images/projects/p2/img_1.png" },
           { "src": "../assets/images/projects/p2/img_2.png" },
           { "src": "../assets/images/projects/p2/img_3.png" },
-          { "html": "<div style=\"font-size: 120px; font-family: 'CirrusCumulus', serif; -webkit-text-stroke-width: 0.3px; -webkit-text-stroke-color: #262626; color: #262626;\">20</div>", "bgColor": "#eaeaea" },
+          { "html": "<div style=\"font-size: 120px; font-family: 'CirrusCumulus', serif; -webkit-text-stroke-width: 0.5px; -webkit-text-stroke-color: #262626; color: #262626;\">20</div>", "bgColor": "#eaeaea" },
           { "src": "../assets/images/projects/p2/img_1.png" },
           { "src": "../assets/images/projects/p2/img_2.png" },
           { "src": "../assets/images/projects/p2/img_3.png" },
@@ -252,7 +252,11 @@ const projectsData = [
           "The logo system includes two variations\u2014icon-led and type-led\u2014designed for flexible use across different backgrounds and formats.",
           "Above all, the name \u201cHanoi\u2019s Voice Memorial\u201d speaks for itself: a platform that amplifies the voices and flavors of Hanoi, sharing the city\u2019s unique essence with the world."
         ],
-        "logoVariants": "../assets/images/projects/p6/team_logo_variants.svg",
+        "logoVariants": [
+          "../assets/images/projects/p6/team_logo_variants_1.png",
+          "../assets/images/projects/p6/team_logo_variants_2.png",
+          "../assets/images/projects/p6/team_logo_variants_3.png"
+        ],
         "overlayBg": "../assets/images/projects/p6/team_logo_bg.png",
         "overlayIcon": "../assets/images/projects/p6/team_logo_icon.svg"
       },
@@ -455,6 +459,7 @@ const projectsData = [
       { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_menu.png" },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_cards.png" },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_bag_box.png" },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_food_box.png" },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_uniform.png" },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_exterior.png" }
     ],
