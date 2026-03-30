@@ -79,10 +79,14 @@ Use those folders as design references only. The live website should use assets 
 
 - **Data-Driven Rendering:** Uses `projects-data.js` to dynamically generate content.
 - **Content Blocks:** Supports a flexible `content` array with multiple block types:
-  - `single`: Full-width image.
-  - `row`: Multi-column images (use `gap: "0"` for seamless grids).
-  - `text` / `titled-text`: Structured typographic sections.
-  - `grid`: Flexible image/HTML grids.
+  - `single`: Full-width image or video. Auto-detects `.mp4` and renders `<video autoplay loop muted playsinline>` instead of `<img>`.
+  - `row`: Multi-column images/videos. Same `.mp4` auto-detection per image entry. Use `gap: "0"` for seamless grids (check `block.gap != null`).
+  - `text`: Centered or aligned text block. Supports optional `align` (`"left"` / `"center"`) and `padding` (inline CSS string) fields.
+  - `titled-text`: Cirrus Cumulus heading + SF Pro body paragraph block.
+  - `black-bg-centered`: Fixed-ratio black background with an absolutely positioned centered image.
+  - `grid`: Flexible 3-col image/HTML grid. Items support `src`, `html`, `padding`, `bgColor`. Videos auto-detected.
+- **Block-level `className` field:** Any block that falls through to the generic `single`/`row` wrapper supports a `className` string that is appended to the outer `.content-block` div. Use `"skip-gap"` (CSS: `margin-top: -20px`) to collapse spacing between consecutive blocks.
+- **Project-level `galleryGap` field:** Applied as an inline `gap` style on the `.project-gallery` container. Overrides the default `20px` column gap for the whole project. Check `project.galleryGap != null` — `"0"` is valid.
 - **Custom Project Renderers:** Some projects use specialized render functions (e.g., `renderTuwProject`, `renderLogosProject`) for unique layout requirements.
 
 ### Project Specific Patterns
@@ -91,8 +95,20 @@ Use those folders as design references only. The live website should use assets 
   - Uses CSS `background-image` with `url()` for product panels instead of `<img>` tags to ensure pixel-perfect alignment and centering.
   - Desktop panels use `display: flex` with `align-items: stretch` to force equal heights between design and real-product panels.
 - **Project 6 (DLK):** 
-  - Extends the content block system with custom types: `dlk-body` (A-D sections), `dlk-team-logo` (split layout with overlays), `dlk-merch` (dark background products), and `dlk-illustration` (fixed 3-col square grid).
-  - Handles string-based `team` metadata in addition to object-array formats.
+  - Extends the content block system with custom types: `dlk-body` (A-D sections), `dlk-team-logo` (split layout with overlays), `dlk-merch` (dark-bg product panel), `dlk-project-logo` (text-only title + paragraphs block), and `dlk-illustration` (title + body + fixed 3-col square grid).
+  - `dlk-body` renders sections A+B side-by-side in a 2-col grid, then C and D stacked below. Sections support formats: `paragraphs`, `list`, `cards`, `direction` (pills + color bar).
+  - Handles string-based `team` metadata (comma-separated) in addition to object-array formats with `{ name, url }`.
+- **Project 8 (Horse):**
+  - Uses `horse-text` block: 2-col grid of title + body text pairs. Data shape: `{ type: "horse-text", items: [{ title, text }] }`.
+  - Uses `horse-collage` block: absolutely positioned overlapping collage. Data shape: `{ type: "horse-collage", items: [{ id, src }] }`. Each item gets CSS class `horse-collage-item is-<id>` (underscores → hyphens). `pink_splash` gets `mix-multiply` blend mode.
+  - CSS classes `.horse-collage-item.is-stall-1` through `.is-stall-4`, `.is-pink-splash`, `.is-star-1/2/3` define absolute position/size via percentage values.
+- **Project 9 (Ukiyo):**
+  - Uses `ukiyo-history` block: dark red split layout with text column and two stacked images. Data shape: `{ type: "ukiyo-history", title, text, images: [src, src] }`. "UKIYO (浮世)" occurrences are auto-wrapped in `<span>` for color highlight.
+  - Uses `ukiyo-fresh-taste` block: dark red split layout with styled title, body, and a full-height image. Data shape: `{ type: "ukiyo-fresh-taste", title, text, image: src }`. Title is split on `\n`; "UKIYO (浮世)" wrapped in `<b>`.
+  - Uses Gantari and Aboreto Google Fonts (loaded via CDN in `<head>`) for Ukiyo-specific typography.
+- **Project 10 (Vinamilk):**
+  - Uses `vnm-project-section` block: a bordered section with a Cirrus Cumulus title and a horizontal row of images. Data shape: `{ type: "vnm-project-section", title, images: [{ src, objectFit }] }`.
+  - First `vnm-project-block` child gets `margin-top: -20px` via `:first-child` rule to flush against the header border.
 
 ## HTML / CSS / JS Conventions
 
@@ -102,6 +118,7 @@ Use those folders as design references only. The live website should use assets 
 - Avoid unnecessary abstractions.
 - Keep the code easy for another agent or human to continue.
 - **Gap Handling:** When rendering `gap` in rows, check `block.gap != null` to allow `0` as a valid value.
+- **`galleryClass`:** A project-level string appended to the `.project-gallery` element's class list. Common value: `"no-gap"` (CSS: `gap: 0`). Distinct from `galleryGap`.
 
 ## Expectations For Future Changes
 
