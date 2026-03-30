@@ -16,8 +16,8 @@
 
     @font-face {
       font-family: "SF Pro Display";
-      src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Light.otf") format("opentype");
-      font-weight: 300;
+      src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf") format("opentype");
+      font-weight: 100;
       font-display: swap;
     }
 
@@ -41,6 +41,7 @@
       background: var(--theongyn-green);
       color: var(--theongyn-ink);
       font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 100;
     }
 
     a {
@@ -182,7 +183,7 @@
       margin: 0;
       font-family: "Cirrus Cumulus", serif;
       -webkit-text-stroke-width: 0.5px;
-      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
+      -webkit-text-stroke-color: var(--theongyn-pink);
       font-size: 36px;
       line-height: 1;
       color: var(--theongyn-pink);
@@ -225,6 +226,8 @@
       align-items: end;
       gap: 12px;
       margin-top: auto;
+      height: 82px;
+      justify-content: space-between;
     }
 
     .desktop-footer img {
@@ -544,7 +547,8 @@
     }
 
     .horse-anim {
-      background-position: center;
+      background-position: 0 12px;
+      background-repeat: no-repeat;
       background-size: cover;
       animation: horse-frames 1.6s infinite step-end;
     }
@@ -696,18 +700,22 @@
               </div>
             </div>
 
-            <div class="col-lg-3 desktop-about-horse-container">
-              <div class="desktop-about-horse horse-anim" aria-label="About page artwork"></div>
+            <div class="col-lg-3">              
             </div>
           </div>
         </div>
 
         <footer class="desktop-footer">
+          <div>
           <img src="../assets/icons/about/desktop-about-footer-mark.svg" alt="" />
           <div class="desktop-footer-copy">
             <p>Hanoi, Vietnam.</p>
             <p>© 2026 Theongyn</p>
           </div>
+          </div>
+          <div class="col-lg-3 desktop-about-horse-container">
+              <div class="desktop-about-horse horse-anim" aria-label="About page artwork"></div>
+            </div>
         </footer>
       </div>
     </section>

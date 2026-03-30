@@ -41,7 +41,7 @@ Use those folders as design references only. The live website should use assets 
 - **Missing Assets:** If a required image shown in Figma is missing from the local `./assets/` directory, you MUST extract the exact image asset directly from the Figma Dev Mode server (e.g., using `get_design_context` to find the localhost URL and downloading it via `Invoke-WebRequest` or `curl`) and save it locally. Do not guess or substitute.
 
 ## Styling Rules
-
+- For common css like text typography, background, etc. write in `web/assets/css/style.css` and use it in all pages.
 - Use Bootstrap for common layout, spacing, alignment, and utility styling.
 - Use custom CSS only for brand-specific or design-specific details.
 - Match the provided desktop and mobile mockups instead of falling back to generic Bootstrap styling.

@@ -17,47 +17,40 @@
         font-display: swap;
       }
 
-      @font-face {
-        font-family: "SF Pro Display";
-        src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Light.otf")
-          format("opentype");
-        font-weight: 300;
-        font-display: swap;
-      }
+    @font-face {
+      font-family: "SF Pro Display";
+      src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf")
+        format("opentype");
+      font-weight: 100;
+      font-display: swap;
+    }
 
-      @font-face {
-        font-family: "SF Pro Display";
-        src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf")
-          format("opentype");
-        font-weight: 100;
-        font-display: swap;
-      }
+    :root {
+      --theongyn-green: #3cd362;
+      --theongyn-pink: #fe45ee;
+      --theongyn-ink: #262626;
+      --theongyn-white: #ffffff;
+      --theongyn-light-grey: #eaeaea;
+      --theongyn-orange: #ff9424;
+      --theongyn-yellow: #ffe343;
+      --theongyn-border: 1px solid var(--theongyn-ink);
+      --theongyn-desktop-width: 1512px;
+      --theongyn-desktop-height: 982px;
+    }
 
-      :root {
-        --theongyn-green: #3cd362;
-        --theongyn-pink: #fe45ee;
-        --theongyn-ink: #262626;
-        --theongyn-white: #ffffff;
-        --theongyn-light-grey: #eaeaea;
-        --theongyn-orange: #ff9424;
-        --theongyn-yellow: #ffe343;
-        --theongyn-border: 1px solid var(--theongyn-ink);
-        --theongyn-desktop-width: 1512px;
-        --theongyn-desktop-height: 982px;
-      }
+    html,
+    body {
+      min-height: 100%;
+    }
 
-      html,
-      body {
-        min-height: 100%;
-      }
-
-      body {
-        margin: 0;
-        background: var(--theongyn-light-grey);
-        color: var(--theongyn-ink);
-        font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial,
-          sans-serif;
-      }
+    body {
+      margin: 0;
+      background: var(--theongyn-light-grey);
+      color: var(--theongyn-ink);
+      font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial,
+        sans-serif;
+      font-weight: 100;
+    }
 
       a {
         color: inherit;
@@ -247,7 +240,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 260px; /* Increased from 220px to prevent text overflow for complex titles */
+        width: auto;
+        padding: 0 12px;
         background: var(--theongyn-green);
         border: var(--theongyn-border);
         transition: background 0.2s ease;
@@ -260,6 +254,8 @@
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
         font-size: 48px;
         line-height: 1;
+        text-align: center;
+        white-space: nowrap;
       }
 
       .work-card-title-inner p {

@@ -16,13 +16,13 @@ const projectsData = [
       { "type": "single", "align": "left", "width": "800px", "src": "../assets/images/projects/p1/img_7.png", "caption": "Metamorphosis, 2021" },
       { "type": "single", "align": "right", "width": "800px", "src": "../assets/images/projects/p1/img_8.png", "caption": "Riso, 2021" },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p1/img_9.png" },
-      { "type": "single", "align": "center", "width": "884px", "src": "../assets/images/projects/p1/img_10.png", "caption": "Mom Exposed, 2025" },
-      { "type": "row", "align": "center", "images": [{ "src": "../assets/images/projects/p1/img_11.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p1/img_12.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p1/img_13.png", "objectFit": "cover" }], "caption": "Red Moon in Venus, 2025" },
-      { "type": "row", "align": "center", "images": [{ "src": "../assets/images/projects/p1/img_14.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p1/img_15.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p1/img_16.png", "objectFit": "cover" }], "caption": "An Yen, 2025" },
+      { "type": "single", "align": "center", "width": "884px", "textAlign": "text-center", "src": "../assets/images/projects/p1/img_10.gif", "caption": "Mom Exposed, 2025" },
+      { "type": "row", "align": "center", "textAlign": "text-center", "images": [{ "src": "../assets/images/projects/p1/img_11.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p1/img_12.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p1/img_13.png", "objectFit": "cover" }], "caption": "Red Moon in Venus, 2025" },
+      { "type": "row", "align": "center", "textAlign": "text-center", "images": [{ "src": "../assets/images/projects/p1/img_14.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p1/img_15.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p1/img_16.png", "objectFit": "cover" }], "caption": "An Yen, 2025" },
       { "type": "single", "align": "left", "width": "800px", "src": "../assets/images/projects/p1/img_17.png", "caption": "Bath, 2019" },
       { "type": "single", "align": "right", "width": "800px", "src": "../assets/images/projects/p1/img_18.png", "caption": "A Platonic Friend, 2022" },
-      { "type": "row", "align": "center", "images": [{ "src": "../assets/images/projects/p1/img_19.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p1/img_20.png", "objectFit": "cover" }], "caption": "Breath, 2022" },
-      { "type": "single", "align": "center", "src": "../assets/images/projects/p1/img_21.png", "caption": "Bon Voyage, 2025" }
+      { "type": "row", "align": "center", "textAlign": "text-center", "images": [{ "src": "../assets/images/projects/p1/img_19.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p1/img_20.png", "objectFit": "cover" }], "caption": "Breath, 2022" },
+      { "type": "single", "align": "center", "textAlign": "text-center", "src": "../assets/images/projects/p1/img_21.png", "caption": "Bon Voyage, 2025" }
     ],
     "bgColor": "#FE45EE"
   },
@@ -81,11 +81,12 @@ const projectsData = [
     "team": [
       { "name": "Duy Ph\u1ea1m (Copywriter)", "url": "https://www.behance.net/quocduy" }
     ],
+    "galleryClass": "no-gap",
     "content": [
       { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_1.png" },
       { "type": "text", "text": "The pandemic has made everyone eager to fast-forward through 2020, much like skipping ads on YouTube.\nHeading into 2021, the universal desire is simply for peace. This very sentiment inspired our red envelope collection: \n\"2021: LEN HUONG - UPGRADE\"" },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_2.png" },
-      { "type": "text", "text": "Bright, eye-catching colors define the design.\nRed, orange, and yellow reference the Vietnamese New Year, while blue and pink add a modern, dynamic touch that resonates with younger audiences." },
+      { "type": "text", "text": "Bright, eye-catching colors define the design.\nRed, orange, and yellow reference the Vietnamese New Year,\n while blue and pink add a modern, dynamic touch that resonates with younger audiences." },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p3/img_3.png" },
       { "type": "text", "text": "The familiar elements of the traditional New Year have also been designed in a simplified way to reach viewers more effectively." },
       {
@@ -147,6 +148,7 @@ const projectsData = [
       "url": "https://www.behance.net/gallery/181406763/What-Remains",
       "images": ["../assets/images/projects/p4/badge-gr.png", "../assets/images/projects/p4/badge-id.png"]
     },
+    "galleryClass": "no-gap",
     "content": [
       { "type": "single", "align": "center", "src": "../assets/images/projects/p4/img_hero.png" },
       { "type": "text", "text": "The book includes photos that was taken on an old film camera by the author/ curator; raw sketches; a few poems from talented poets; and a couple of love letters from Trinh Cong Son to his muse. The booklet is divided into two main chapters: \n(1) Living & Giving;\n(2) What Remains." },
@@ -188,12 +190,12 @@ const projectsData = [
   },
   {
     "id": 6,
-    "title": "'Di Luon Khong' Brand Identity",
+    "title": "‘Di Luon Khong’ Brand Identity",
     "year": "2024",
     "type": "Non-profit",
     "scope": "Design Direction, Brand Identity & Positioning, Illustration",
     "team": "Hương Đặng (Co-host), Lan Nhi (Member)",
-    "description": "This project focused on building a community-driven podcast positioned as an accessible cultural platform, inviting audiences to \u201ctake a stroll\u201d through personal narratives, friendships, and underrepresented perspectives of urban life. \n\nFrom a strategic standpoint, I led the brand and visual identity development of \u201cDi luon khong?\u201d, aligning creative direction with audience insights and production constraints inherent to a self-produced format. The identity system was designed to be distinctive yet flexible, combining bold typography, hand-drawn illustrations, and a solid color palette inspired by Hanoi\u2019s streets and everyday environments. This approach created a culturally rooted brand that supports consistent communication, encourages engagement, and positions the podcast as a welcoming space for open dialogue and reflection.",
+    "description": "This project focused on building a community-driven podcast positioned as an accessible cultural platform, inviting audiences to \u201ctake a stroll\u201d through personal narratives, friendships, and underrepresented perspectives of urban life. <span class=\"empty-line\"></span>From a strategic standpoint, I led the brand and visual identity development of \u201cDi luon khong?\u201d, aligning creative direction with audience insights and production constraints inherent to a self-produced format. The identity system was designed to be distinctive yet flexible, combining bold typography, hand-drawn illustrations, and a solid color palette inspired by Hanoi\u2019s streets and everyday environments. This approach created a culturally rooted brand that supports consistent communication, encourages engagement, and positions the podcast as a welcoming space for open dialogue and reflection.",
     "content": [
       { "type": "single", "align": "center", "src": "../assets/images/projects/p6/hero.png" },
       {
@@ -217,7 +219,7 @@ const projectsData = [
           },
           {
             "id": "C",
-            "title": "C. Core Values",
+            "title": `C.<br class="d-none d-md-block"> Core Values`,
             "format": "cards",
             "cards": [
               {
@@ -260,9 +262,10 @@ const projectsData = [
         "overlayBg": "../assets/images/projects/p6/team_logo_bg.png",
         "overlayIcon": "../assets/images/projects/p6/team_logo_icon.svg"
       },
-      { "type": "single", "align": "center", "src": "../assets/images/projects/p6/brand_spread.png" },
+      { "type": "single", "align": "center", "className": "skip-gap", "src": "../assets/images/projects/p6/brand_spread.png" },
       {
         "type": "dlk-merch",
+        "className": "skip-gap",
         "bgSrc": "../assets/images/projects/p6/merch_bg.png",
         "productSrc": "../assets/images/projects/p6/merch_product.png",
         "sideLogo": "../assets/images/projects/p6/merch_side_logo.svg"
@@ -275,11 +278,11 @@ const projectsData = [
           "To us, color represents character, and beyond that, it tells stories. Through the whole visual identity, we want to send out the message of embracing diversity and celebrating the unique personalities of every voice we feature."
         ]
       },
-      { "type": "single", "align": "center", "src": "../assets/images/projects/p6/project_logo.png" },
-      { "type": "row", "align": "center", "gap": "0", "images": [{ "src": "../assets/images/projects/p6/logo_color_1.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p6/logo_color_2.png", "objectFit": "cover" }] },
-      { "type": "single", "align": "center", "src": "../assets/images/projects/p6/logo_type.png" },
-      { "type": "single", "align": "center", "src": "../assets/images/projects/p6/logo_mockup.png" },
-      { "type": "single", "align": "center", "src": "../assets/images/projects/p6/logo_display.png" },
+      { "type": "single", "align": "center", "className": "skip-gap", "src": "../assets/images/projects/p6/project_logo.png" },
+      { "type": "row", "align": "center","className": "skip-gap", "gap": "0", "images": [{ "src": "../assets/images/projects/p6/logo_color_1.png", "objectFit": "cover" }, { "src": "../assets/images/projects/p6/logo_color_2.png", "objectFit": "cover" }] },
+      { "type": "single", "align": "center", "className": "skip-gap", "src": "../assets/images/projects/p6/logo_type.png" },
+      { "type": "single", "align": "center", "className": "skip-gap", "src": "../assets/images/projects/p6/logo_mockup.png" },
+      { "type": "single", "align": "center", "className": "skip-gap", "src": "../assets/images/projects/p6/logo_display.png" },
       {
         "type": "dlk-illustration",
         "title": "Illustration",
@@ -350,8 +353,8 @@ const projectsData = [
     "year": "2025",
     "type": "Personal",
     "scope": "Zine Design",
-    "team": "Hương Đặng (Co-host), Lan Nhi (Member)",
-    "description": "During my studies in CalArts\u2019 Graphic Design specialization, the final assignment for the Image Making course challenged students to communicate a personal, emotionally driven narrative through experimental imagery. The brief required working with a single visual subject - represented by a horse in my project - and transforming its form, scale, composition, and mood across multiple spreads to convey meaning without the use of text.\n\nI developed a zine that functions as a visual metaphor for my internal state at the time: a restless horse drawn toward freedom while constrained by emotional weight. Through iterative image experimentation, I translated personal tension into an abstract visual language, using design as a tool for introspection, emotional clarity, and self-understanding.",
+    "description": "During my studies in CalArts\u2019 Graphic Design specialization, the final assignment for the Image Making course challenged students to communicate a personal, emotionally driven narrative through experimental imagery. The brief required working with a single visual subject - represented by a horse in my project - and transforming its form, scale, composition, and mood across multiple spreads to convey meaning without the use of text.<span class=\"empty-line\"></span>I developed a zine that functions as a visual metaphor for my internal state at the time: a restless horse drawn toward freedom while constrained by emotional weight. Through iterative image experimentation, I translated personal tension into an abstract visual language, using design as a tool for introspection, emotional clarity, and self-understanding.",
+    "galleryClass": "no-gap",
     "content": [
       { "type": "single", "align": "center", "src": "../assets/images/projects/p8/img_1.png" },
       {
@@ -402,7 +405,8 @@ const projectsData = [
     "year": "2026",
     "type": "Personal",
     "scope": "Art Direction, Brand Identity & Positioning, Spatial Design Concept",
-    "description": "UKIYO (\u6d6e\u4e16), a Tokyo-based sushi restaurant, was envisioned as more than a dining destination, but also a curated sensory retreat where culinary precision, intimate soundscapes, and collectible art converge. \n\nThe design approach embraces restraint and intentionality - minimal yet profound - drawing from the Japanese culture and Taoist philosophy of stillness, craftsmanship, and quiet immersion embedded in the UKIYO experience. The result is a refined brand language that does not compete for attention, but invites presence.",
+    "description": "UKIYO (\u6d6e\u4e16), a Tokyo-based sushi restaurant, was envisioned as more than a dining destination, but also a curated sensory retreat where culinary precision, intimate soundscapes, and collectible art converge. <span class=\"empty-line\"></span>The design approach embraces restraint and intentionality - minimal yet profound - drawing from the Japanese culture and Taoist philosophy of stillness, craftsmanship, and quiet immersion embedded in the UKIYO experience. The result is a refined brand language that does not compete for attention, but invites presence.",
+    "galleryClass": "no-gap",
     "content": [
       { "type": "single", "align": "center", "src": "../assets/images/projects/p9/hero.png" },
       {
@@ -415,14 +419,15 @@ const projectsData = [
         "type": "text",
         "align": "center",
         "padding": "60px 0",
-        "text": "Keywords:\nWabi Sabi/ Tea House/ Cozy/ Intimate/ Serene/ Culinary Artistry/ Authenticity/ Attention to Detail/ Freshness."
+        "text": "Keywords: Wabi Sabi/ Tea House/ Cozy/ Intimate/ Serene/ Culinary Artistry/ Authenticity/ Attention to Detail/ Freshness."
       },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/ukiyo.png" },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p9/naming_section.png" },
       {
         "type": "text",
-        "align": "center",
+        "align": "left",
         "padding": "60px 0",
-        "text": "The circle holds profound significance in Japanese culture in particular, and in Taoist philosophy more broadly. It symbolizes the sun, the cycle of rebirth, Zen, meditation, and completeness. \n\nFor UKIYO, this contemplative, serene, and introspective spirit serves as the guiding principle in shaping a unified brand essence and visual identity. The circle, stylized to reflect the modern elegance of Tokyo, becomes the perfect symbol to represent UKIYO, bridging timeless philosophy with contemporary sophistication."
+        "text": "The circle holds profound significance in Japanese culture in particular, and in Taoist philosophy more broadly. It symbolizes the sun, the cycle of rebirth, Zen, meditation, and completeness. <span class=\"empty-line\"></span>For UKIYO, this contemplative, serene, and introspective spirit serves as the guiding principle in shaping a unified brand essence and visual identity. The circle, stylized to reflect the modern elegance of Tokyo, becomes the perfect symbol to represent UKIYO, bridging timeless philosophy with contemporary sophistication."
       },
       {
         "type": "row",
@@ -471,8 +476,8 @@ const projectsData = [
     "year": "2025 - 2026",
     "type": "Commission",
     "scope": "Packaging Design",
-    "team": "Vinamilk's creative team",
-    "description": "Over the past year at Vinamilk, I have contributed across a wide spectrum of brand design initiatives, spanning packaging systems, POSM, retail visual design, and merchandising executions. Among these, the packaging portfolios I directly led represent the most defining body of work. For each product line, the team and I oversaw the full creative process, from initial concept development and visual direction to final artwork refinement and print proof quality control, ensuring brand consistency and production excellence at every stage.\n\nThe following projects highlight selected packaging designs currently in market.",
+    "team": "Vinamilk's Creative Team",
+    "description": "Over the past year at Vinamilk, I have contributed across a wide spectrum of brand design initiatives, spanning packaging systems, POSM, retail visual design, and merchandising executions. Among these, the packaging portfolios I directly led represent the most defining body of work. For each product line, the team and I oversaw the full creative process, from initial concept development and visual direction to final artwork refinement and print proof quality control, ensuring brand consistency and production excellence at every stage.<span class=\"empty-line\"></span>The following projects highlight selected packaging designs currently in market.",
     "content": [
       {
         "type": "vnm-project-section",
