@@ -244,7 +244,7 @@
         align-items: center;
         justify-content: center;
         width: auto;
-        padding: 0 12px;
+        padding: 0;
         background: var(--theongyn-green);
         border: var(--theongyn-border);
         transition: background 0.2s ease;
@@ -327,7 +327,6 @@
         left: 0;
         /* Center pivot: needle origin in the SVG is exactly 180.49px, 202.22px */
         transform-origin: 180.49px 202.22px;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transform: translate(-180.49px, -202.22px) rotate(0deg);
       }
 
@@ -1088,34 +1087,38 @@
       const workCards = document.querySelectorAll(".work-card");
       const stage = document.querySelector(".desktop-works-stage");
       
-      if (clockHands && workCards.length > 0 && stage) {
+      if (clockHands && stage) {
         clockHands.style.transform = `translate(-180.49px, -202.22px) rotate(0deg)`;
+        let currentAngle = 0;
+        let isFirstMove = true;
 
-        workCards.forEach((card) => {
-          card.addEventListener("mouseenter", () => {
-            const stageRect = stage.getBoundingClientRect();
-            
-            // Pivot is exactly 50%, 50% relative to stage
-            const pivotX = stageRect.left + stageRect.width / 2;
-            const pivotY = stageRect.top + stageRect.height / 2;
+        window.addEventListener("mousemove", (e) => {
+          const stageRect = stage.getBoundingClientRect();
+          
+          // Pivot is exactly 50%, 50% relative to stage
+          const pivotX = stageRect.left + stageRect.width / 2;
+          const pivotY = stageRect.top + stageRect.height / 2;
 
-            const cardRect = card.getBoundingClientRect();
-            const cardCenterX = cardRect.left + cardRect.width / 2;
-            const cardCenterY = cardRect.top + cardRect.height / 2;
+          const deltaX = e.clientX - pivotX;
+          const deltaY = e.clientY - pivotY;
+          
+          let angleDeg = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+          
+          const offset = -220; 
+          let targetAngle = angleDeg + offset;
 
-            const deltaX = cardCenterX - pivotX;
-            const deltaY = cardCenterY - pivotY;
-            
-            let angleDeg = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-            
-            const offset = -155.56; 
-            const finalAngle = angleDeg + offset;
+          if (isFirstMove) {
+            currentAngle = targetAngle;
+            isFirstMove = false;
+          } else {
+            // Find the shortest path (prevents 360deg spin issues)
+            let deltaAngle = targetAngle - currentAngle;
+            deltaAngle = ((deltaAngle + 180) % 360 + 360) % 360 - 180;
+            currentAngle += deltaAngle;
+          }
 
-            clockHands.style.transform = `translate(-180.49px, -202.22px) rotate(${finalAngle}deg)`;
-          });
-
-          card.addEventListener("mouseleave", () => {
-            clockHands.style.transform = `translate(-180.49px, -202.22px) rotate(0deg)`;
+          requestAnimationFrame(() => {
+            clockHands.style.transform = `translate(-180.49px, -202.22px) rotate(${currentAngle}deg)`;
           });
         });
 
