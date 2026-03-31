@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Details | Theongyn Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Gantari:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <style>
-      @font-face {
-        font-family: "Cirrus Cumulus";
-        src: url("../fonts/CirrusCumulus.otf") format("opentype");
-        font-display: swap;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details | Theongyn Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Aboreto&family=Gantari:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/svg" href="../assets/icons/about/desktop-about-footer-mark.svg" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <style>
+    @font-face {
+      font-family: "Cirrus Cumulus";
+      src: url("../fonts/CirrusCumulus.otf") format("opentype");
+      font-display: swap;
+    }
 
     @font-face {
       font-family: "SF Pro Display";
-      src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf")
-        format("opentype");
+      src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf") format("opentype");
       font-weight: 100;
       font-display: swap;
     }
 
-    
+
     @font-face {
       font-family: "SF Pro Display";
-      src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Bold.otf")
-        format("opentype");
+      src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Bold.otf") format("opentype");
       font-weight: 600;
       font-display: swap;
     }
@@ -53,6 +51,7 @@
     html,
     body {
       min-height: 100%;
+      cursor: url('../assets/icons/about/desktop-about-footer-mark.svg'), auto;
     }
 
     body {
@@ -65,1539 +64,1989 @@
       overflow-x: hidden;
     }
 
-      a {
-        color: inherit;
+    a {
+      color: inherit;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .brand-mark {
+      position: relative;
+      display: block;
+      width: 257px;
+      height: 58px;
+      color: var(--theongyn-ink);
+      text-decoration: none;
+      background: var(--theongyn-pink);
+      border: var(--theongyn-border);
+      flex: 0 0 auto;
+    }
+
+    .brand-mark-text {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      margin: 0;
+      font-family: "Cirrus Cumulus", serif;
+      font-size: 48px;
+      line-height: 1;
+      white-space: nowrap;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
+    }
+
+    .brand-mark:hover,
+    .menu-box:hover,
+    .mobile-close-button:hover {
+      background: var(--theongyn-yellow) !important;
+    }
+
+    .desktop-topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 103px;
+      padding: 0 60px;
+      background: var(--theongyn-light-grey);
+      z-index: 100;
+      transition: transform 0.24s ease;
+    }
+
+    .desktop-topbar.is-hidden {
+      transform: translateY(-120%);
+    }
+
+    .empty-line {
+      display: block;
+      height: 8px;
+    }
+
+    .menu-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .menu-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      padding: 0;
+      color: var(--theongyn-ink);
+      text-decoration: none;
+      background: var(--theongyn-pink);
+      border: var(--theongyn-border);
+      flex: 0 0 auto;
+    }
+
+    .menu-box-text {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 300;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .menu-box.is-active .menu-box-text {
+      text-decoration: underline;
+    }
+
+    .menu-box.is-disabled {
+      cursor: default;
+    }
+
+    .desktop-shell {
+      display: block;
+    }
+
+    .mobile-shell {
+      display: none;
+    }
+
+    main {
+      padding: 136px 60px 35px 60px;
+    }
+
+    .details-shell {
+      width: 100%;
+      max-width: 1393px;
+      margin: 0 auto;
+    }
+
+    .project-intro {
+      padding: 8px 0 20px;
+      border-bottom: var(--theongyn-border);
+    }
+
+    .project-title {
+      margin: 0 0 10px;
+      font-family: "Cirrus Cumulus", serif;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--theongyn-pink);
+      font-size: 48px;
+      line-height: 0.95;
+      color: var(--theongyn-pink);
+    }
+
+    .project-description {
+      max-width: 1330px;
+      margin: 0 0 20px;
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 1.1;
+    }
+
+    .logos-project-badges {
+      display: flex;
+      align-items: flex-start;
+      min-width: 0;
+    }
+
+    .logos-project-badge-export {
+      width: 52px;
+      height: auto;
+    }
+
+    .logos-project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      padding-top: 40px;
+    }
+
+    .logos-project-tile {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+    }
+
+    .logos-project-tile img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .scroll-top-footer {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      min-height: 70px;
+    }
+
+    .scroll-top-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .scroll-top-btn img {
+      display: block;
+      width: 20px;
+      height: 33px;
+      filter: brightness(1.8);
+    }
+
+    .scroll-top-btn:hover img {
+      /* This filter converts the image to #fe45ee */
+      filter: invert(44%) sepia(87%) saturate(4186%) hue-rotate(287deg) brightness(101%) contrast(101%);
+      transition: filter 0.3s ease;
+    }
+
+    .project-header {
+      border-bottom: var(--theongyn-border);
+      padding-bottom: 20px;
+    }
+
+    .project-title {
+      margin: 0 0 8px;
+      /* 8pt as requested for multiple projects */
+      font-family: "Cirrus Cumulus", serif;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--theongyn-pink);
+      font-size: 48px;
+      line-height: 0.95;
+      color: var(--theongyn-pink);
+    }
+
+    .project-description {
+      max-width: 100%;
+      margin: 0;
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 1.1;
+      white-space: pre-wrap;
+    }
+
+    .project-meta {
+      margin-top: 20px;
+    }
+
+    .skip-gap {
+      margin-top: -20px;
+    }
+
+    .meta-item {
+      margin-bottom: 20px;
+    }
+
+
+    .meta-value,
+    .meta-list a,
+    .content-caption,
+    .content-text {
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 1.1;
+    }
+
+    .meta-list a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .meta-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .project-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .no-gap {
+      gap: 0;
+    }
+
+    .content-block {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .content-block.align-left {
+      align-items: flex-start;
+    }
+
+    .content-block.align-center {
+      align-items: center;
+    }
+
+    .content-block.align-right {
+      align-items: flex-end;
+    }
+
+    .content-inner {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-row {
+      display: flex;
+      width: 100%;
+    }
+
+    .row-image-wrapper {
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+    }
+
+    .gallery-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .content-row .gallery-image {
+      width: 100.1%;
+      height: 100%;
+      object-fit: cover;
+      flex: 1;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .grid-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      background: var(--theongyn-light-grey);
+      border: var(--theongyn-border);
+      overflow: hidden;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .content-caption {
+      margin: 12px 0 0;
+    }
+
+    .content-text {
+      margin: 0;
+      text-align: center;
+      white-space: pre-wrap;
+    }
+
+    .content-text-wrapper {
+      padding: 20px 0;
+    }
+
+    .content-text-wrapper p {
+      margin: 0;
+    }
+
+    .titled-text-block {
+      padding: 20px 0;
+    }
+
+    .titled-text-block .titled-text-title {
+      margin: 0 0 10px;
+      font-family: "Cirrus Cumulus", serif;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
+      font-size: 32px;
+      line-height: normal;
+      color: var(--theongyn-ink);
+    }
+
+    .titled-text-block .titled-text-body {
+      margin: 0;
+      font-family: "SF Pro Display", sans-serif;
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 1.1;
+      color: var(--theongyn-ink);
+    }
+
+    .titled-text-block .titled-text-body p {
+      margin: 0;
+    }
+
+    .black-bg-centered-block {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1393 / 605;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .black-bg-centered-block img {
+      position: absolute;
+      left: 33.36%;
+      top: 11.69%;
+      width: 33.27%;
+      height: 76.62%;
+      object-fit: contain;
+    }
+
+    /* ---- DLK (Project 6) specific ---- */
+    .dlk-two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      padding: 20px 0;
+    }
+
+    .dlk-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dlk-section-title {
+      margin: 0;
+      font-family: 'Cirrus Cumulus', serif;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .dlk-section-body {
+      font-family: 'SF Pro Display', sans-serif;
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 1.1;
+    }
+
+    .dlk-section-body p {
+      margin: 0;
+    }
+
+    .dlk-section-list {
+      list-style: disc;
+      padding-left: 36px;
+      font-family: 'SF Pro Display', sans-serif;
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .dlk-section-list li::marker {
+      font-size: 0.8em;
+    }
+
+    .tuw-section-copy li::marker {
+      font-size: 0.8em;
+    }
+
+    .dlk-section-list li+li {
+      margin-top: 0;
+    }
+
+    .dlk-value-cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .dlk-value-card {
+      background: #fff;
+      padding: 20px;
+    }
+
+    .dlk-value-card-title {
+      font-family: 'SF Pro Display', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+
+    .dlk-value-card-list {
+      list-style: disc;
+      padding-left: 24px;
+      font-family: 'SF Pro Display', sans-serif;
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .dlk-value-card-list li::marker {
+      font-size: 0.8em;
+    }
+
+    .dlk-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .dlk-pill {
+      background: #fff;
+      border-radius: 100px;
+      padding: 12px 20px;
+      font-family: 'SF Pro Display', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.1;
+      color: #262626;
+    }
+
+    .dlk-color-bar {
+      display: flex;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .dlk-color-bar-item {
+      flex: 1;
+      height: 97px;
+    }
+
+    .dlk-team-logo-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: start;
+    }
+
+    .dlk-team-logo-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-right: 52px;
+      gap: 20px;
+    }
+
+    .dlk-team-logo-text-title {
+      font-family: 'SF Pro Display', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+
+    .dlk-team-logo-text-body {
+      font-family: 'SF Pro Display', sans-serif;
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 1.1;
+    }
+
+    .dlk-team-logo-text-body p {
+      margin: 0;
+    }
+
+    .dlk-team-logo-variants {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .dlk-logo-overlay {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+
+    .dlk-logo-overlay-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .dlk-logo-overlay-dim {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .dlk-merch-section {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1393/750;
+      overflow: hidden;
+    }
+
+    .dlk-merch-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .dlk-text-section {
+      padding: 20px 0;
+    }
+
+    .dlk-text-section-title {
+      font-family: 'SF Pro Display', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+
+    .dlk-text-section-body {
+      font-family: 'SF Pro Display', sans-serif;
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 1.1;
+    }
+
+    .dlk-text-section-body p {
+      margin: 0;
+    }
+
+    .dlk-illustration-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .dlk-illustration-grid img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    /* ---- Horse (Project 8) specific ---- */
+    .horse-text-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      padding: 40px 0 20px;
+    }
+
+    .horse-text-item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .horse-text-title {
+      margin: 0;
+      font-family: 'Cirrus Cumulus', serif;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    .horse-text-body {
+      font-family: 'SF Pro Display', sans-serif;
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 1.1;
+    }
+
+    .horse-collage {
+      position: relative;
+      width: 100%;
+      max-width: 976px;
+      margin: 40px auto;
+      aspect-ratio: 976 / 917;
+    }
+
+    .horse-collage-item {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .horse-collage-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .horse-collage-item.mix-multiply {
+      mix-blend-mode: multiply;
+    }
+
+    .horse-collage-item.is-stall-1 {
+      left: 41.46%;
+      top: 35.68%;
+      width: 52.73%;
+      height: 64.32%;
+    }
+
+    .horse-collage-item.is-stall-1 .inner {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .horse-collage-item.is-stall-2 {
+      left: 0%;
+      top: 9.17%;
+      width: 73.07%;
+      height: 61.02%;
+    }
+
+    .horse-collage-item.is-stall-2 .inner {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .horse-collage-item.is-stall-3 {
+      left: 58.73%;
+      top: 4.27%;
+      width: 37.21%;
+      height: 41.26%;
+    }
+
+    .horse-collage-item.is-stall-3 .inner {
+      overflow: hidden;
+    }
+
+    .horse-collage-item.is-stall-4 {
+      left: 1.08%;
+      top: 60.58%;
+      width: 35.34%;
+      height: 39.42%;
+    }
+
+    .horse-collage-item.is-pink-splash {
+      left: 19.64%;
+      top: 2%;
+      width: 21.29%;
+      height: 13.14%;
+    }
+
+    .horse-collage-item.is-pink-splash .inner {
+      transform: scaleY(-1) rotate(188deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    .horse-collage-item.is-star-1 {
+      left: 95.94%;
+      top: 33.4%;
+      width: 4.06%;
+    }
+
+    .horse-collage-item.is-star-2 {
+      left: 36.53%;
+      top: 70.97%;
+      width: 4.06%;
+    }
+
+    .horse-collage-item.is-star-3 {
+      left: 5.11%;
+      top: 7.54%;
+      width: 4.06%;
+    }
+
+    /* ---- Ukiyo (Project 9) specific ---- */
+    .ukiyo-history {
+      display: flex;
+      background-color: #ac3c31;
+      min-height: 600px;
+      color: white;
+    }
+
+    .ukiyo-history-content {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .ukiyo-history-title {
+      font-family: 'Gantari', sans-serif;
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #c3b098;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .ukiyo-history-body {
+      font-family: 'Gantari', sans-serif;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 100;
+    }
+
+    .ukiyo-history-body span {
+      color: #c3b098;
+      font-weight: 500;
+    }
+
+    .ukiyo-history-images {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ukiyo-history-images img {
+      width: 100%;
+      height: 50%;
+      object-fit: cover;
+    }
+
+    .ukiyo-fresh-taste {
+      display: flex;
+      background-color: #ac3c31;
+      min-height: 600px;
+      color: white;
+    }
+
+    .ukiyo-fresh-content {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .ukiyo-fresh-title {
+      font-family: 'Aboreto', sans-serif;
+      font-size: 50px;
+      line-height: 1;
+      color: #c3b098;
+    }
+
+    .ukiyo-fresh-title div {
+      font-family: 'SeoulHangang CM', serif;
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 0.8em;
+    }
+
+    .ukiyo-fresh-title p {
+      font-size: 0.6em;
+      color: white;
+      margin: 10px 0 0;
+    }
+
+    .ukiyo-fresh-body {
+      font-family: 'Gantari', sans-serif;
+      font-size: 18px;
+      line-height: 1.3;
+      font-weight: 100;
+    }
+
+    .ukiyo-fresh-body b {
+      color: #c3b098;
+      font-weight: 500;
+    }
+
+    .ukiyo-fresh-image {
+      flex: 3.2;
+    }
+
+    .ukiyo-fresh-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ---- Vinamilk (Project 10) specific ---- */
+    .vnm-project-block {
+      border-bottom: var(--theongyn-border);
+      width: 100%;
+    }
+
+    .vnm-project-block:first-child {
+      margin-top: -20px;
+    }
+
+    .vnm-project-title {
+      margin: 0 0 20px;
+      font-family: "Cirrus Cumulus", serif;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
+      font-size: 32px;
+      line-height: 1;
+      color: var(--theongyn-ink);
+    }
+
+    @media (max-width: 768px) {
+
+      .ukiyo-history,
+      .ukiyo-fresh-taste {
+        flex-direction: column;
       }
 
-      .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
+      .ukiyo-history-images img {
+        height: auto;
       }
 
-      .brand-mark {
-        position: relative;
-        display: block;
-        width: 257px;
-        height: 58px;
-        color: var(--theongyn-ink);
-        text-decoration: none;
-        background: var(--theongyn-pink);
-        border: var(--theongyn-border);
-        flex: 0 0 auto;
+      .ukiyo-naming-main {
+        font-size: 60px;
       }
 
-      .brand-mark-text {
-        position: absolute;
-        top: -1px;
-        left: -1px;
-        margin: 0;
-        font-family: "Cirrus Cumulus", serif;
-        font-size: 48px;
-        line-height: 1;
-        white-space: nowrap;
-        -webkit-text-stroke-width: 0.5px;
-        -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
+      .ukiyo-naming-jp {
+        height: 60px;
       }
 
-      .brand-mark:hover,
-      .menu-box:hover,
-      .mobile-close-button:hover {
-        background: var(--theongyn-yellow) !important;
+      .ukiyo-naming-line {
+        width: 80%;
       }
 
-      .desktop-topbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        height: 103px;
-        padding: 0 60px;
-        background: var(--theongyn-light-grey);
-        z-index: 100;
-        transition: transform 0.24s ease;
+      .ukiyo-naming-meaning {
+        font-size: 18px;
       }
 
-      .desktop-topbar.is-hidden {
-        transform: translateY(-120%);
+      .ukiyo-fresh-title {
+        font-size: 30px;
       }
+    }
 
-      .empty-line {
-        display: block;
-        height: 8px;
-      }
-      .menu-links {
-        display: flex;
-        align-items: center;
-        gap: 32px;
-      }
+    .meta-label {
+      font-family: "Cirrus Cumulus", serif;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
+      line-height: 1;
+      margin: 0 0 6px;
+      font-size: 32px;
+      font-weight: 100;
+    }
 
-      .menu-box {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: fit-content;
-        padding: 0;
-        color: var(--theongyn-ink);
-        text-decoration: none;
-        background: var(--theongyn-pink);
-        border: var(--theongyn-border);
-        flex: 0 0 auto;
-      }
+    .meta-scope-list {
+      list-style: disc;
+      padding-left: 36px;
+      margin: 0;
+      font-size: 24px;
+      /* 16pt approx */
+      font-weight: 100;
+      line-height: 1.1;
+    }
 
-      .menu-box-text {
-        margin: 0;
-        font-size: 24px;
-        font-weight: 300;
-        line-height: normal;
-        white-space: nowrap;
-      }
+    .meta-scope-list li {
+      margin-bottom: 0;
+    }
 
-      .menu-box.is-active .menu-box-text {
-        text-decoration: underline;
-      }
+    .meta-scope-list li::marker {
+      font-size: 0.8em;
+    }
 
-      .menu-box.is-disabled {
-        cursor: default;
-      }
+    .meta-badges-row {
+      display: flex;
+      align-items: start;
+      gap: 8px;
+      min-height: 90px;
+    }
 
+    .meta-badges-row .meta-label {
+      margin: 0;
+    }
+
+    .meta-badges-link {
+      font-family: "Cirrus Cumulus", serif;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
+      font-size: 32px;
+      line-height: 1;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      display: inline-block;
+      transform: translateY(-8px);
+    }
+
+    .meta-badge-icons {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .meta-badge-preview {
+      display: block;
+      width: 52px;
+      height: auto;
+      flex: 0 0 auto;
+    }
+
+    .tuw-project {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .tuw-gallery {
+      gap: 20px;
+      margin-top: 0;
+    }
+
+    .tuw-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .tuw-section-title {
+      margin: 0;
+      font-family: "Cirrus Cumulus", serif;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .tuw-section-copy {
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 1.1;
+    }
+
+    .tuw-section-copy p,
+    .tuw-section-copy ul {
+      margin: 0;
+    }
+
+    .tuw-section-copy ul {
+      padding-left: 36px;
+    }
+
+    .tuw-section-copy li {
+      margin: 0;
+    }
+
+    .tuw-responsive-media,
+    .tuw-responsive-media img {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+    }
+
+    .tuw-bg-wrapper {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      background-color: transparent;
+      background-image: var(--bg-desk);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    .tuw-product-real-panel.is-double .tuw-responsive-media {
+      background-size: cover;
+    }
+
+    @media (max-width: 768px) {
+      .tuw-bg-wrapper {
+        background-image: var(--bg-mob);
+      }
+    }
+
+    .tuw-brand-system {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .tuw-palette-grid,
+    .tuw-gradient-grid {
+      display: grid;
+    }
+
+    .tuw-palette-grid {
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+
+    .tuw-gradient-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .tuw-palette-card,
+    .tuw-gradient-card {
+      min-width: 0;
+    }
+
+    .tuw-palette-card {
+      min-height: 293px;
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tuw-palette-heading {
+      font-family: "SF Pro Display", sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .tuw-palette-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.1;
+    }
+
+    .tuw-palette-meta p {
+      margin: 0;
+    }
+
+    .tuw-gradient-card {
+      min-height: 293px;
+    }
+
+    .tuw-gradient-card.gradient-1 {
+      background: linear-gradient(180deg, #ddd3ff 0%, #ffe3ec 38.942%, #ffffff 92.788%);
+    }
+
+    .tuw-gradient-card.gradient-2 {
+      background: linear-gradient(180deg, #e7e0ff 17.411%, #ffffff 100%);
+    }
+
+    .tuw-gradient-card.gradient-3 {
+      background: linear-gradient(180deg, #fde0e6 0%, #ffffff 86.1%);
+    }
+
+    .tuw-typography-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      align-items: center;
+      padding: 40px;
+      background: #fff9ed;
+    }
+
+    .tuw-typography-spec {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .tuw-typography-swatch,
+    .tuw-typography-swatch img {
+      display: block;
+      width: auto;
+      max-height: 178px;
+      height: auto;
+    }
+
+    .tuw-typography-meta {
+      font-size: 18px;
+      line-height: 1;
+      color: #d06281;
+    }
+    .tuw-typography-meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: stretch;
+      height: auto;
+    }
+    .tuw-typography-meta p,
+    .tuw-typography-note p {
+      margin: 0;
+    }
+
+    .tuw-typography-note {
+      font-size: 16px;
+      line-height: 1.1;
+      color: #31214e;
+    }
+
+    .tuw-desktop-brand-cards,
+    .tuw-mobile-brand-cards {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tuw-mobile-only {
+      display: none;
+    }
+
+    .tuw-comm-mockups {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 34px;
+      min-height: 690px;
+    }
+
+    .tuw-comm-card {
+      position: relative;
+    }
+
+    .tuw-comm-card.is-left {
+      width: 337px;
+      margin-top: 2px;
+      transform: rotate(-6.35deg);
+    }
+
+    .tuw-comm-card.is-right {
+      width: 365px;
+      margin-top: 86px;
+      transform: rotate(9.34deg);
+    }
+
+    .tuw-comm-card-base,
+    .tuw-comm-card-overlay {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .tuw-comm-card-overlay {
+      position: absolute;
+      inset: 0;
+    }
+
+    .tuw-comm-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .tuw-comm-grid .tuw-bg-wrapper {
+      background-size: cover;
+      transform: scale(1.005);
+    }
+
+    .tuw-comm-grid img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .tuw-product-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .tuw-product-side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .tuw-product-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 1.1;
+    }
+
+    .tuw-product-label::after {
+      content: url('../assets/images/projects/p5/tuw/pointer-down.svg');
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .tuw-product-design-panel {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 20px;
+      background: var(--theongyn-light-grey);
+      border: var(--theongyn-border);
+      overflow: hidden;
+    }
+
+    .tuw-product-design-panel.is-column {
+      flex-direction: column;
+      gap: 30px;
+      /* height: 80vh; */
+    }
+
+    .tuw-product-design-panel.is-row {
+      flex-direction: row;
+      /* height: 80vh; */
+    }
+
+    .tuw-product-design-panel picture,
+    .tuw-product-design-panel img,
+    .tuw-product-real-panel picture,
+    .tuw-product-real-panel img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .tuw-product-crop {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .tuw-product-crop img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tuw-product-crop.is-half {
+      height: 296px;
+    }
+
+    .tuw-product-crop.is-large {
+      height: 428px;
+    }
+
+    .tuw-product-crop.is-small {
+      height: 211px;
+    }
+
+    .tuw-product-crop-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      width: 100%;
+    }
+
+    .tuw-product-crop.is-top img,
+    .tuw-product-crop.is-main img {
+      object-position: top center;
+    }
+
+    .tuw-product-crop.is-bottom img {
+      object-position: bottom center;
+    }
+
+    .tuw-product-crop.is-detail-left img {
+      object-position: left bottom;
+    }
+
+    .tuw-product-crop.is-detail-right img {
+      object-position: right bottom;
+    }
+
+    .tuw-product-real-panel {
+      flex: 1;
+      display: grid;
+    }
+
+    .tuw-product-real-panel.is-double {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tuw-product-real-panel.is-single {
+      /* height: 80vh; */
+    }
+
+    .tuw-product-jersey-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      align-items: center;
+    }
+
+    .tuw-product-jersey-pair img {
+      width: 100%;
+      height: auto;
+    }
+
+    .tuw-packaging-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .tuw-packaging-row img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .mobile-topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 80px;
+      padding: 0 20px;
+      background: var(--theongyn-light-grey);
+      z-index: 110;
+      transition: transform 0.24s ease;
+    }
+
+    .mobile-topbar.is-hidden {
+      transform: translateY(-120%);
+    }
+
+    .mobile-brand-mark {
+      width: 179px;
+      height: 43px;
+    }
+
+    .mobile-brand-mark .brand-mark-text {
+      font-size: 34px;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .mobile-menu-line {
+      display: block;
+      height: 6px;
+      background: var(--theongyn-pink);
+      border: var(--theongyn-border);
+    }
+
+    .mobile-menu-line.line-1 {
+      width: 60px;
+    }
+
+    .mobile-menu-line.line-2 {
+      width: 50px;
+    }
+
+    .mobile-menu-line.line-3 {
+      width: 40px;
+    }
+
+    .mobile-slide-menu {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 20px 32px;
+      background: var(--theongyn-pink);
+      transform: translateX(100%);
+      transition: transform 0.25s ease;
+      z-index: 200;
+    }
+
+    .mobile-slide-menu.is-open {
+      transform: translateX(0);
+    }
+
+    .mobile-slide-menu[aria-hidden="true"] {
+      visibility: hidden;
+    }
+
+    .mobile-slide-menu[aria-hidden="false"] {
+      visibility: visible;
+    }
+
+    .mobile-menu-top {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .mobile-close-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      border: var(--theongyn-border);
+      background: var(--theongyn-pink);
+    }
+
+    .mobile-close-button img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 26px;
+    }
+
+    .mobile-menu-links .menu-box {
+      min-width: 0;
+    }
+
+    .mobile-menu-links .menu-box-text {
+      font-size: 32px;
+    }
+
+    .mobile-menu-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .mobile-menu-footer img {
+      display: block;
+      width: 58px;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
       .desktop-shell {
-        display: block;
-      }
-
-      .mobile-shell {
         display: none;
       }
 
+      .mobile-shell {
+        display: block;
+      }
+
       main {
-        padding: 136px 60px 35px 60px;
+        padding: 99px 24px 40px;
       }
 
       .details-shell {
-        width: 100%;
-        max-width: 1393px;
-        margin: 0 auto;
+        max-width: 100%;
       }
 
       .project-intro {
-        padding: 8px 0 20px;
-        border-bottom: var(--theongyn-border);
+        padding: 0 0 14px;
       }
 
       .project-title {
-        margin: 0 0 10px;
-        font-family: "Cirrus Cumulus", serif;
-      -webkit-text-stroke-width: 0.5px;
-      -webkit-text-stroke-color: var(--theongyn-pink);
-        font-size: 48px;
-        line-height: 0.95;
-        color: var(--theongyn-pink);
+        font-size: 32px;
       }
 
       .project-description {
-        max-width: 1330px;
-        margin: 0 0 20px;
-        font-size: 24px;
-        font-weight: 100;
-        line-height: 1.1;
+        margin: 8px 0 15px;
+        font-size: 13px;
+        line-height: 1.12;
       }
 
-      .logos-project-badges {
-        display: flex;
-        align-items: flex-start;
-        min-width: 0;
+      .project-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 24px;
       }
 
-      .logos-project-badge-export {
-        width: 52px;
-        height: auto;
+      .project-meta-label {
+        font-size: 32px;
+      }
+
+      .project-meta-value {
+        font-size: 20px;
       }
 
       .logos-project-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
-        padding-top: 40px;
-      }
-
-      .logos-project-tile {
-        display: block;
-        width: 100%;
-        aspect-ratio: 1;
-      }
-
-      .logos-project-tile img {
-        display: block;
-        width: 100%;
-        height: 100%;
+        gap: 22px;
+        padding-top: 20px;
       }
 
       .scroll-top-footer {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        width: 100%;
-        min-height: 70px;
-      }
-
-      .scroll-top-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        border: 0;
-        background: transparent;
-        cursor: pointer;
-      }
-
-      .scroll-top-btn img {
-        display: block;
-        width: 20px;
-        height: 33px;
-        filter: brightness(1.8);
-      }
-
-      .project-header {
-        border-bottom: var(--theongyn-border);
-        padding-bottom: 20px;
+        min-height: 112px;
+        padding: 24px 0 40px;
       }
 
       .project-title {
-        margin: 0 0 8px; /* 8pt as requested for multiple projects */
-        font-family: "Cirrus Cumulus", serif;
-        -webkit-text-stroke-width: 0.5px;
-        -webkit-text-stroke-color: var(--theongyn-pink);
-        font-size: 48px;
-        line-height: 0.95;
-        color: var(--theongyn-pink);
+        font-size: 34px;
       }
 
-      .project-description {
-        max-width: 100%;
-        margin: 0;
-        font-size: 24px;
-        font-weight: 100;
-        line-height: 1.1;
-        white-space: pre-wrap;
-      }
-
-      .project-meta {
-        margin-top: 20px;
-      }
-
-      .skip-gap {
-        margin-top: -20px;
-      }
-
-      .meta-item {
-        margin-bottom: 20px;
-      }
-
-
+      .project-description,
+      .meta-label,
       .meta-value,
       .meta-list a,
       .content-caption,
       .content-text {
-        font-size: 24px;
-        font-weight: 100;
-        line-height: 1.1;
+        font-size: 26px;
       }
 
-      .meta-list {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
+      .project-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .project-gallery {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin-top: 40px;
-      }
-
-      .no-gap {
-        gap: 0;
-      }
-
-      .content-block {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .content-block.align-left {
-        align-items: flex-start;
-      }
-
-      .content-block.align-center {
-        align-items: center;
-      }
-
-      .content-block.align-right {
-        align-items: flex-end;
-      }
-
-      .content-inner {
-        width: 100%;
-        display: flex;
+      .content-row,
+      .gallery-grid,
+      .tuw-product-row {
+        grid-template-columns: 1fr;
         flex-direction: column;
       }
 
-      .content-row {
-        display: flex;
-        width: 100%;
-      }
-
-      .row-image-wrapper {
-        flex: 1 1 0;
-        min-width: 0;
-        display: flex;
-      }
-
-      .gallery-image {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-
-      .content-row .gallery-image {
-        width: 100.1%;
-        height: 100%;
-        object-fit: cover;
-        flex: 1;
-      }
-
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
+      .tuw-product-design-panel,
+      .tuw-product-real-panel {
+        height: 60vh;
       }
 
       .grid-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 260px;
-        background: var(--theongyn-light-grey);
-        border: var(--theongyn-border);
-        overflow: hidden;
-      }
-
-      .grid-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      .content-caption {
-        margin: 12px 0 0;
-      }
-
-      .content-text {
-        margin: 0;
-        text-align: center;
-        white-space: pre-wrap;
-      }
-
-      .content-text-wrapper {
-        padding: 20px 0;
-      }
-
-      .content-text-wrapper p {
-        margin: 0;
-      }
-
-      .titled-text-block {
-        padding: 20px 0;
+        min-height: 0;
+        aspect-ratio: 1;
       }
 
       .titled-text-block .titled-text-title {
-        margin: 0 0 10px;
-        font-family: "Cirrus Cumulus", serif;
-        -webkit-text-stroke-width: 0.5px;
-        -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
-        font-size: 32px;
-        line-height: normal;
-        color: var(--theongyn-ink);
+        font-size: 26px;
       }
 
       .titled-text-block .titled-text-body {
-        margin: 0;
-        font-family: "SF Pro Display", sans-serif;
-        font-size: 24px;
-        font-weight: 100;
-        line-height: 1.1;
-        color: var(--theongyn-ink);
-      }
-
-      .titled-text-block .titled-text-body p {
-        margin: 0;
-      }
-      
-      .black-bg-centered-block {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 1393 / 605;
-        background: #000;
-        overflow: hidden;
-      }
-
-      .black-bg-centered-block img {
-        position: absolute;
-        left: 33.36%;
-        top: 11.69%;
-        width: 33.27%;
-        height: 76.62%;
-        object-fit: contain;
-      }
-
-      /* ---- DLK (Project 6) specific ---- */
-      .dlk-two-col { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; padding: 20px 0; }
-      .dlk-section { display: flex; flex-direction: column; gap: 10px; }
-      .dlk-section-title { margin: 0; font-family: 'Cirrus Cumulus', serif;
-      -webkit-text-stroke-width: 0.5px;
-      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626); font-size: 32px; line-height: 1; }
-      .dlk-section-body { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 100; line-height: 1.1; }
-      .dlk-section-body p { margin: 0; }
-      .dlk-section-list { list-style: disc; padding-left: 36px; font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 100; line-height: 1.1; margin: 0; }
-      .dlk-section-list li::marker { font-size: 0.8em; }
-      .tuw-section-copy li::marker { font-size: 0.8em; }
-      .dlk-section-list li + li { margin-top: 0; }
-      .dlk-value-cards { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
-      .dlk-value-card { background: #fff; padding: 20px; }
-      .dlk-value-card-title { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 600; line-height: 1.1; margin: 0 0 12px; }
-      .dlk-value-card-list { list-style: disc; padding-left: 24px; font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 100; line-height: 1.1; margin: 0; }
-      .dlk-value-card-list li::marker { font-size: 0.8em; }
-      .dlk-pills { display: flex; flex-wrap: wrap; gap: 10px; }
-      .dlk-pill { background: #fff; border-radius: 100px; padding: 12px 20px; font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 600; line-height: 1.1; color: #262626; }
-      .dlk-color-bar { display: flex; width: 100%; margin-top: 20px; }
-      .dlk-color-bar-item { flex: 1; height: 97px; }
-      .dlk-team-logo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: start; }
-      .dlk-team-logo-text { display: flex; flex-direction: column; justify-content: space-between; padding-right: 20px; gap: 20px; }
-      .dlk-team-logo-text-title { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 600; line-height: 1.1; margin: 0 0 12px; }
-      .dlk-team-logo-text-body { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 100; line-height: 1.1; }
-      .dlk-team-logo-text-body p { margin: 0; }
-      .dlk-team-logo-variants { display: block; width: 100%; height: auto; }
-      .dlk-logo-overlay { position: relative; aspect-ratio: 1; overflow: hidden; }
-      .dlk-logo-overlay-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-      .dlk-logo-overlay-dim { position: absolute; inset: 0; background: rgba(0,0,0,0.2); }
-      .dlk-merch-section { position: relative; width: 100%; aspect-ratio: 1393/750; overflow: hidden; }
-      .dlk-merch-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-      .dlk-text-section { padding: 20px 0; }
-      .dlk-text-section-title { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 600; line-height: 1.1; margin: 0 0 12px; }
-      .dlk-text-section-body { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 100; line-height: 1.1; }
-      .dlk-text-section-body p { margin: 0; }
-      .dlk-illustration-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0; }
-      .dlk-illustration-grid img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
-
-      /* ---- Horse (Project 8) specific ---- */
-      .horse-text-row { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; padding: 40px 0 20px; }
-      .horse-text-item { display: flex; flex-direction: column; gap: 10px; }
-      .horse-text-title { margin: 0; font-family: 'Cirrus Cumulus', serif;
-      -webkit-text-stroke-width: 0.5px;
-      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626); font-size: 32px; line-height: 1.2; }
-      .horse-text-body { font-family: 'SF Pro Display', sans-serif; font-size: 24px; font-weight: 100; line-height: 1.1; }
-      
-      .horse-collage { position: relative; width: 100%; max-width: 976px; margin: 40px auto; aspect-ratio: 976 / 917; }
-      .horse-collage-item { position: absolute; display: flex; align-items: center; justify-content: center; }
-      .horse-collage-item img { display: block; width: 100%; height: auto; }
-      .horse-collage-item.mix-multiply { mix-blend-mode: multiply; }
-      .horse-collage-item.is-stall-1 { left: 41.46%; top: 35.68%; width: 52.73%; height: 64.32%; }
-      .horse-collage-item.is-stall-1 .inner { overflow: hidden; position: relative;}
-      .horse-collage-item.is-stall-2 { left: 0%; top: 9.17%; width: 73.07%; height: 61.02%; }
-      .horse-collage-item.is-stall-2 .inner {overflow: hidden; position: relative;}
-      .horse-collage-item.is-stall-3 { left: 58.73%; top: 4.27%; width: 37.21%; height: 41.26%; }
-      .horse-collage-item.is-stall-3 .inner {overflow: hidden;}
-      .horse-collage-item.is-stall-4 { left: 1.08%; top: 60.58%; width: 35.34%; height: 39.42%; }
-      .horse-collage-item.is-pink-splash { left: 19.64%; top: 2%; width: 21.29%; height: 13.14%; }
-      .horse-collage-item.is-pink-splash .inner { transform: scaleY(-1) rotate(188deg); width: 100%; height: 100%; }
-      .horse-collage-item.is-star-1 { left: 95.94%; top: 33.4%; width: 4.06%; }
-      .horse-collage-item.is-star-2 { left: 36.53%; top: 70.97%; width: 4.06%; }
-      .horse-collage-item.is-star-3 { left: 5.11%; top: 7.54%; width: 4.06%; }
-
-      /* ---- Ukiyo (Project 9) specific ---- */
-      .ukiyo-history { display: flex; background-color: #ac3c31; min-height: 600px; color: white; }
-      .ukiyo-history-content { flex: 1; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; }
-      .ukiyo-history-title { font-family: 'Gantari', sans-serif; font-size: 24px; text-transform: uppercase; color: #c3b098; margin-bottom: 20px; font-weight: 600; }
-      .ukiyo-history-body { font-family: 'Gantari', sans-serif; font-size: 24px; line-height: 1.2; font-weight: 100; }
-      .ukiyo-history-body span { color: #c3b098; font-weight: 500; }
-      .ukiyo-history-images { flex: 1; display: flex; flex-direction: column; }
-      .ukiyo-history-images img { width: 100%; height: 50%; object-fit: cover; }
- 
-      .ukiyo-fresh-taste { display: flex; background-color: #ac3c31; min-height: 600px; color: white; }
-      .ukiyo-fresh-content { flex: 1; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; }
-      .ukiyo-fresh-title { font-family: 'Aboreto', sans-serif; font-size: 50px; line-height: 1; color: #c3b098; }
-      .ukiyo-fresh-title div { font-family: 'SeoulHangang CM', serif; display: inline-block; margin-left: 10px; font-size: 0.8em; }
-      .ukiyo-fresh-title p { font-size: 0.6em; color: white; margin: 10px 0 0; }
-      .ukiyo-fresh-body { font-family: 'Gantari', sans-serif; font-size: 18px; line-height: 1.3; font-weight: 100; }
-      .ukiyo-fresh-body b { color: #c3b098; font-weight: 500; }
-      .ukiyo-fresh-image { flex: 1.2; }
-      .ukiyo-fresh-image img { width: 100%; height: 100%; object-fit: cover; }
-
-      /* ---- Vinamilk (Project 10) specific ---- */
-      .vnm-project-block { border-bottom: var(--theongyn-border); width: 100%; }
-      .vnm-project-block:first-child { margin-top: -20px; }
-      .vnm-project-title { margin: 0 0 20px; font-family: "Cirrus Cumulus", serif;
-      -webkit-text-stroke-width: 0.5px;
-      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626); font-size: 32px; line-height: 1; color: var(--theongyn-ink); }
-
-      @media (max-width: 768px) {
-        .ukiyo-history, .ukiyo-fresh-taste { flex-direction: column; }
-        .ukiyo-history-images img { height: auto; }
-        .ukiyo-naming-main { font-size: 60px; }
-        .ukiyo-naming-jp { height: 60px; }
-        .ukiyo-naming-line { width: 80%; }
-        .ukiyo-naming-meaning { font-size: 18px; }
-        .ukiyo-fresh-title { font-size: 30px; }
-      }
-
-      .meta-label {
-        font-family: "Cirrus Cumulus", serif;
-        -webkit-text-stroke-width: 0.5px;
-        -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
-        line-height: 1;
-        margin: 0 0 6px;
-        font-size: 32px;
-        font-weight: 100;
+        font-size: 20px;
       }
 
       .meta-scope-list {
-        list-style: disc;
-        padding-left: 36px;
-        margin: 0;
-        font-size: 24px; /* 16pt approx */
-        font-weight: 100;
-        line-height: 1.1;
-      }
-
-      .meta-scope-list li {
-        margin-bottom: 0;
-      }
-
-      .meta-scope-list li::marker {
-        font-size: 0.8em;
-      }
-
-      .meta-badges-row {
-        display: flex;
-        align-items: start;
-        gap: 8px;
-        min-height: 90px;
-      }
-
-      .meta-badges-row .meta-label {
-        margin: 0;
+        font-size: 16px;
+        padding-left: 24px;
       }
 
       .meta-badges-link {
-        font-family: "Cirrus Cumulus", serif;
-        -webkit-text-stroke-width: 0.5px;
-        -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
-        font-size: 32px;
-        line-height: 1;
-        text-decoration: underline;
-        text-decoration-thickness: from-font;
-        display: inline-block;
-        transform: translateY(-8px);
-      }
-
-      .meta-badge-icons {
-        display: flex;
-        align-items: flex-start;
-        gap: 6px;
+        font-size: 26px;
       }
 
       .meta-badge-preview {
-        display: block;
-        width: 52px;
-        height: auto;
-        flex: 0 0 auto;
+        width: 38px;
       }
 
-      .tuw-project {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+      .black-bg-centered-block img {
+        max-width: 33%;
+      }
+
+      .project-description {
+        font-size: 20px;
+      }
+
+      /* DLK mobile overrides */
+      .dlk-two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .dlk-section-title {
+        font-size: 26px;
+      }
+
+      .dlk-section-body,
+      .dlk-section-list,
+      .dlk-value-card-title,
+      .dlk-value-card-list,
+      .dlk-pill,
+      .dlk-team-logo-text-title,
+      .dlk-team-logo-text-body,
+      .dlk-text-section-title,
+      .dlk-text-section-body {
+        font-size: 20px;
+      }
+
+      .dlk-section-list {
+        padding-left: 30px;
+      }
+
+      .dlk-value-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .dlk-color-bar-item {
+        height: 56px;
+      }
+
+      .dlk-team-logo-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .dlk-team-logo-text {
+        padding-right: 0;
+      }
+
+      .dlk-merch-section {
+        aspect-ratio: auto;
+        min-height: 300px;
+      }
+
+      .dlk-illustration-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .tuw-gallery {
-        gap: 20px;
+        gap: 16px;
       }
 
       .tuw-section {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        gap: 16px;
       }
 
       .tuw-section-title {
-        margin: 0;
-        font-family: "Cirrus Cumulus", serif;
-      -webkit-text-stroke-width: 0.5px;
-      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
-        font-size: 32px;
-        line-height: 1;
+        font-size: 26px;
       }
 
       .tuw-section-copy {
-        font-size: 24px;
-        font-weight: 100;
-        line-height: 1.1;
-      }
-
-      .tuw-section-copy p,
-      .tuw-section-copy ul {
-        margin: 0;
+        font-size: 13px;
       }
 
       .tuw-section-copy ul {
-        padding-left: 36px;
-      }
-
-      .tuw-section-copy li {
-        margin: 0;
-      }
-
-      .tuw-responsive-media,
-      .tuw-responsive-media img {
-        display: block;
-        margin: auto;
-        max-width: 100%;
-      }
-
-      .tuw-bg-wrapper {
-        width: 100%;
-        height: 100%;
-        min-height: 0;
-        background-color: transparent;
-        background-image: var(--bg-desk);
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        overflow: hidden;
-      }
-
-      .tuw-product-real-panel.is-double .tuw-responsive-media{
-        background-size: cover;
-      }
-
-      @media (max-width: 768px) {
-        .tuw-bg-wrapper {
-          background-image: var(--bg-mob);
-        }
-      }
-
-      .tuw-brand-system {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-      }
-
-      .tuw-palette-grid,
-      .tuw-gradient-grid {
-        display: grid;
+        padding-left: 20px;
       }
 
       .tuw-palette-grid {
-        grid-template-columns: repeat(7, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .tuw-gradient-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .tuw-palette-card,
-      .tuw-gradient-card {
-        min-width: 0;
-      }
-
       .tuw-palette-card {
-        min-height: 293px;
-        padding: 10px 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        min-height: 149px;
+        padding: 7px 12px 6px;
       }
 
       .tuw-palette-heading {
-        font-family: "SF Pro Display", sans-serif;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 1.1;
+        font-size: 16px;
       }
 
       .tuw-palette-meta {
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 1.1;
-      }
-
-      .tuw-palette-meta p {
-        margin: 0;
+        gap: 8px;
+        font-size: 10.67px;
       }
 
       .tuw-gradient-card {
-        min-height: 293px;
-      }
-
-      .tuw-gradient-card.gradient-1 {
-        background: linear-gradient(180deg, #ddd3ff 0%, #ffe3ec 38.942%, #ffffff 92.788%);
-      }
-
-      .tuw-gradient-card.gradient-2 {
-        background: linear-gradient(180deg, #e7e0ff 17.411%, #ffffff 100%);
-      }
-
-      .tuw-gradient-card.gradient-3 {
-        background: linear-gradient(180deg, #fde0e6 0%, #ffffff 86.1%);
+        min-height: 149px;
       }
 
       .tuw-typography-row {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 10px;
-        align-items: center;
-        padding: 40px;
-        background: #fff9ed;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px 20px;
       }
 
       .tuw-typography-spec {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        min-width: 0;
-      }
-
-      .tuw-typography-swatch,
-      .tuw-typography-swatch img {
-        display: block;
-        width: auto;
-        max-width: 100%;
-        height: auto;
+        justify-content: space-between;
       }
 
       .tuw-typography-meta {
-        font-size: 18px;
-        line-height: 1;
-        color: #d06281;
-      }
-
-      .tuw-typography-meta p,
-      .tuw-typography-note p {
-        margin: 0;
+        font-size: 13px;
       }
 
       .tuw-typography-note {
-        font-size: 16px;
-        line-height: 1.1;
-        color: #31214e;
+        font-size: 13px;
       }
 
-      .tuw-desktop-brand-cards,
-      .tuw-mobile-brand-cards {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .tuw-mobile-only {
+      .tuw-desktop-only {
         display: none;
       }
 
-      .tuw-comm-mockups {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 34px;
-        min-height: 690px;
-      }
-
-      .tuw-comm-card {
-        position: relative;
-      }
-
-      .tuw-comm-card.is-left {
-        width: 337px;
-        margin-top: 2px;
-        transform: rotate(-6.35deg);
-      }
-
-      .tuw-comm-card.is-right {
-        width: 365px;
-        margin-top: 86px;
-        transform: rotate(9.34deg);
-      }
-
-      .tuw-comm-card-base,
-      .tuw-comm-card-overlay {
+      .tuw-mobile-only {
         display: block;
-        width: 100%;
-        height: auto;
       }
 
-      .tuw-comm-card-overlay {
-        position: absolute;
-        inset: 0;
+      .tuw-desktop-brand-cards {
+        display: none;
       }
 
       .tuw-comm-grid {
-        display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0;
-      }
-
-      .tuw-comm-grid img {
-        display: block;
-        width: 100%;
-        height: auto;
       }
 
       .tuw-product-row {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
-        align-items: stretch;
+        gap: 12px;
       }
 
       .tuw-product-side {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        gap: 8px;
       }
 
       .tuw-product-label {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin: 0;
-        font-size: 24px;
-        font-weight: 300;
-        line-height: 1.1;
+        font-size: 16px;
       }
 
       .tuw-product-label::after {
-        content: url('../assets/images/projects/p5/tuw/pointer-down.png');
-        font-size: 24px;
-        line-height: 1;
+        font-size: 16px;
+      }
+
+      .tuw-product-design-panel,
+      .tuw-product-real-panel {
+        min-height: 218px;
       }
 
       .tuw-product-design-panel {
-        display: flex;
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 20px;
-        background: var(--theongyn-light-grey);
-        border: var(--theongyn-border);
-        overflow: hidden;
+        padding: 6px;
+        gap: 6px;
       }
 
       .tuw-product-design-panel.is-column {
-        flex-direction: column;
-        gap: 30px;
-        /* height: 80vh; */
+        gap: 8px;
       }
 
-      .tuw-product-design-panel.is-row {
-        flex-direction: row;
-        /* height: 80vh; */
-      }
-
-      .tuw-product-design-panel picture,
-      .tuw-product-design-panel img,
-      .tuw-product-real-panel picture,
-      .tuw-product-real-panel img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-
-      .tuw-product-crop {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-
-      .tuw-product-crop img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .tuw-product-crop.is-half {
-        height: 296px;
-      }
-
+      .tuw-product-crop.is-half,
       .tuw-product-crop.is-large {
-        height: 428px;
+        height: 94px;
       }
 
       .tuw-product-crop.is-small {
-        height: 211px;
+        height: 70px;
       }
 
       .tuw-product-crop-row {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-        width: 100%;
+        gap: 6px;
       }
-
-      .tuw-product-crop.is-top img,
-      .tuw-product-crop.is-main img {
-        object-position: top center;
-      }
-
-      .tuw-product-crop.is-bottom img {
-        object-position: bottom center;
-      }
-
-      .tuw-product-crop.is-detail-left img {
-        object-position: left bottom;
-      }
-
-      .tuw-product-crop.is-detail-right img {
-        object-position: right bottom;
-      }
-
-      .tuw-product-real-panel {
-        flex: 1;
-        display: grid;
-      }
-
-      .tuw-product-real-panel.is-double {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .tuw-product-real-panel.is-single {
-        /* height: 80vh; */
-      }
-
-      .tuw-product-jersey-pair {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-        align-items: center;
-      }
-
-      .tuw-product-jersey-pair img {
-        width: 100%;
-        height: auto;
-      }
-
-      .tuw-packaging-row {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0;
-      }
-
-      .tuw-packaging-row img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-
-      .mobile-topbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        height: 80px;
-        padding: 0 20px;
-        background: var(--theongyn-light-grey);
-        z-index: 110;
-        transition: transform 0.24s ease;
-      }
-
-      .mobile-topbar.is-hidden {
-        transform: translateY(-120%);
-      }
-
-      .mobile-brand-mark {
-        width: 179px;
-        height: 43px;
-      }
-
-      .mobile-brand-mark .brand-mark-text {
-        font-size: 34px;
-      -webkit-text-stroke-width: 0.5px;
-      -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
-      }
-
-      .mobile-menu-toggle {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 3px;
-        padding: 0;
-        border: 0;
-        background: transparent;
-      }
-
-      .mobile-menu-line {
-        display: block;
-        height: 6px;
-        background: var(--theongyn-pink);
-        border: var(--theongyn-border);
-      }
-
-      .mobile-menu-line.line-1 {
-        width: 60px;
-      }
-
-      .mobile-menu-line.line-2 {
-        width: 50px;
-      }
-
-      .mobile-menu-line.line-3 {
-        width: 40px;
-      }
-
-      .mobile-slide-menu {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 20px 20px 32px;
-        background: var(--theongyn-pink);
-        transform: translateX(100%);
-        transition: transform 0.25s ease;
-        z-index: 200;
-      }
-
-      .mobile-slide-menu.is-open {
-        transform: translateX(0);
-      }
-
-      .mobile-slide-menu[aria-hidden="true"] {
-        visibility: hidden;
-      }
-
-      .mobile-slide-menu[aria-hidden="false"] {
-        visibility: visible;
-      }
-
-      .mobile-menu-top {
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      .mobile-close-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-        padding: 0;
-        border: var(--theongyn-border);
-        background: var(--theongyn-pink);
-      }
-
-      .mobile-close-button img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .mobile-menu-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 26px;
-      }
-
-      .mobile-menu-links .menu-box {
-        min-width: 0;
-      }
-
-      .mobile-menu-links .menu-box-text {
-        font-size: 32px;
-      }
-
-      .mobile-menu-footer {
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      .mobile-menu-footer img {
-        display: block;
-        width: 58px;
-        height: auto;
-      }
-
-      @media (max-width: 768px) {
-        .desktop-shell {
-          display: none;
-        }
-
-        .mobile-shell {
-          display: block;
-        }
-
-        main {
-          padding: 99px 24px 40px;
-        }
-
-        .details-shell {
-          max-width: 100%;
-        }
-
-        .project-intro {
-          padding: 0 0 14px;
-        }
-
-        .project-title {
-          font-size: 32px;
-        }
-
-        .project-description {
-          margin: 8px 0 15px;
-          font-size: 13px;
-          line-height: 1.12;
-        }
-
-        .project-meta {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 14px 24px;
-        }
-
-        .project-meta-label {
-          font-size: 32px;
-        }
-
-        .project-meta-value {
-          font-size: 20px;
-        }
-
-        .logos-project-grid {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 22px;
-          padding-top: 20px;
-        }
-
-        .scroll-top-footer {
-          min-height: 112px;
-          padding: 24px 0 40px;
-        }
-
-        .project-title {
-          font-size: 34px;
-        }
-
-        .project-description,
-        .meta-label,
-        .meta-value,
-        .meta-list a,
-        .content-caption,
-        .content-text {
-          font-size: 32px;
-        }
-
-        .project-meta {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .content-row,
-        .gallery-grid,
-        .tuw-product-row {
-          grid-template-columns: 1fr;
-          flex-direction: column;
-        }
-
-        .tuw-product-design-panel,
-        .tuw-product-real-panel {
-          height: 60vh;
-        }
-
-        .grid-item {
-          min-height: 0;
-          aspect-ratio: 1;
-        }
-
-        .titled-text-block .titled-text-title {
-          font-size: 26px;
-        }
-
-        .titled-text-block .titled-text-body {
-          font-size: 20px;
-        }
-
-        .meta-scope-list {
-          font-size: 16px;
-          padding-left: 24px;
-        }
-
-        .meta-badges-link {
-          font-size: 26px;
-        }
-
-        .meta-badge-preview {
-          width: 38px;
-        }
-
-        .black-bg-centered-block img {
-          max-width: 33%;
-        }
-
-        .project-description {
-          font-size: 20px;
-        }
-
-        /* DLK mobile overrides */
-        .dlk-two-col { grid-template-columns: 1fr; }
-        .dlk-section-title { font-size: 26px; }
-        .dlk-section-body,
-        .dlk-section-list,
-        .dlk-value-card-title,
-        .dlk-value-card-list,
-        .dlk-pill,
-        .dlk-team-logo-text-title,
-        .dlk-team-logo-text-body,
-        .dlk-text-section-title,
-        .dlk-text-section-body { font-size: 20px; }
-        .dlk-section-list { padding-left: 30px; }
-        .dlk-value-cards { grid-template-columns: 1fr; }
-        .dlk-color-bar-item { height: 56px; }
-        .dlk-team-logo-row { grid-template-columns: 1fr; gap: 12px; }
-        .dlk-team-logo-text { padding-right: 0; }
-        .dlk-merch-section { aspect-ratio: auto; min-height: 300px; }
-        .dlk-illustration-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-
-        .tuw-gallery {
-          gap: 16px;
-        }
-
-        .tuw-section {
-          gap: 16px;
-        }
-
-        .tuw-section-title {
-          font-size: 26px;
-        }
-
-        .tuw-section-copy {
-          font-size: 13px;
-        }
-
-        .tuw-section-copy ul {
-          padding-left: 20px;
-        }
-
-        .tuw-palette-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .tuw-gradient-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .tuw-palette-card {
-          min-height: 149px;
-          padding: 7px 12px 6px;
-        }
-
-        .tuw-palette-heading {
-          font-size: 16px;
-        }
-
-        .tuw-palette-meta {
-          gap: 8px;
-          font-size: 10.67px;
-        }
-
-        .tuw-gradient-card {
-          min-height: 149px;
-        }
-
-        .tuw-typography-row {
-          grid-template-columns: 1fr;
-          gap: 24px;
-          padding: 24px 20px;
-        }
-
-        .tuw-typography-spec {
-          justify-content: space-between;
-        }
-
-        .tuw-typography-meta {
-          font-size: 13px;
-        }
-
-        .tuw-typography-note {
-          font-size: 13px;
-        }
-
-        .tuw-desktop-only {
-          display: none;
-        }
-
-        .tuw-mobile-only {
-          display: block;
-        }
-
-        .tuw-desktop-brand-cards {
-          display: none;
-        }
-
-        .tuw-comm-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .tuw-product-row {
-          gap: 12px;
-        }
-
-        .tuw-product-side {
-          gap: 8px;
-        }
-
-        .tuw-product-label {
-          font-size: 16px;
-        }
-
-        .tuw-product-label::after {
-          font-size: 16px;
-        }
-
-        .tuw-product-design-panel,
-        .tuw-product-real-panel {
-          min-height: 218px;
-        }
-
-        .tuw-product-design-panel {
-          padding: 6px;
-          gap: 6px;
-        }
-
-        .tuw-product-design-panel.is-column {
-          gap: 8px;
-        }
-
-        .tuw-product-crop.is-half,
-        .tuw-product-crop.is-large {
-          height: 94px;
-        }
-
-        .tuw-product-crop.is-small {
-          height: 70px;
-        }
-
-        .tuw-product-crop-row {
-          gap: 6px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="desktop-shell">
-      <header class="desktop-topbar">
-        <a class="brand-mark" href="../index.html" aria-label="Theongyn home">
-          <span class="brand-mark-text">°˖Theongyn˖°</span>
+    }
+  </style>
+</head>
+
+<body>
+  <div class="desktop-shell">
+    <header class="desktop-topbar">
+      <a class="brand-mark" href="../index.html" aria-label="Theongyn home">
+        <span class="brand-mark-text">°˖Theongyn˖°</span>
+      </a>
+      <nav class="menu-links" aria-label="Primary">
+        <a class="menu-box is-active" href="./index.html">
+          <span class="menu-box-text">Works</span>
         </a>
-        <nav class="menu-links" aria-label="Primary">
-          <a class="menu-box is-active" href="./index.html">
-            <span class="menu-box-text">Works</span>
-          </a>
-          <a class="menu-box" href="../about/index.html">
-            <span class="menu-box-text">About</span>
-          </a>
-          <a
-            class="menu-box"
-            href="https://drive.google.com/drive/u/2/folders/1E3qgW-FttoqoTuiE9klyMaTLA-6FDMRH"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Resume"
-          >
-            <span class="menu-box-text">Resume</span>
-          </a>
-        </nav>
-      </header>
-    </div>
-
-    <div class="mobile-shell">
-      <header class="mobile-topbar">
-        <a
-          class="brand-mark mobile-brand-mark"
-          href="../index.html"
-          aria-label="Theongyn home"
-        >
-          <span class="brand-mark-text">°˖Theongyn˖°</span>
+        <a class="menu-box" href="../about/index.html">
+          <span class="menu-box-text">About</span>
         </a>
-        <button
-          class="mobile-menu-toggle"
-          type="button"
-          aria-label="Open menu"
-          aria-controls="mobile-slide-menu"
-          aria-expanded="false"
-          data-menu-open
-        >
-          <span class="mobile-menu-line line-1"></span>
-          <span class="mobile-menu-line line-2"></span>
-          <span class="mobile-menu-line line-3"></span>
-        </button>
-      </header>
+        <a class="menu-box" href="https://drive.google.com/drive/u/2/folders/1E3qgW-FttoqoTuiE9klyMaTLA-6FDMRH"
+          target="_blank" rel="noopener noreferrer" aria-label="Resume">
+          <span class="menu-box-text">Resume</span>
+        </a>
+      </nav>
+    </header>
+  </div>
 
-      <aside id="mobile-slide-menu" class="mobile-slide-menu" aria-hidden="true">
-        <div class="mobile-menu-top">
-          <button
-            class="mobile-close-button"
-            type="button"
-            aria-label="Close menu"
-            data-menu-close
-          >
-            <img src="../assets/icons/menu/mobile-menu-close.svg" alt="" />
-          </button>
-        </div>
-
-        <nav class="mobile-menu-links" aria-label="Mobile navigation">
-          <a class="menu-box is-active" href="./index.html">
-            <span class="menu-box-text">Works</span>
-          </a>
-          <a class="menu-box" href="../about/index.html">
-            <span class="menu-box-text">About</span>
-          </a>
-          <a
-            class="menu-box"
-            href="https://drive.google.com/drive/u/2/folders/1E3qgW-FttoqoTuiE9klyMaTLA-6FDMRH"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Resume"
-          >
-            <span class="menu-box-text">Resume</span>
-          </a>
-        </nav>
-
-        <div class="mobile-menu-footer">
-          <img src="../assets/icons/menu/mobile-menu-footer-mark.svg" alt="" />
-        </div>
-      </aside>
-    </div>
-
-    <main>
-      <div class="details-shell" id="project-content"></div>
-    </main>
-
-    <div class="scroll-top-footer">
-      <button class="scroll-top-btn" id="scroll-top" type="button" aria-label="Scroll to top">
-        <img src="../assets/icons/works/scroll-up.svg" alt="" />
+  <div class="mobile-shell">
+    <header class="mobile-topbar">
+      <a class="brand-mark mobile-brand-mark" href="../index.html" aria-label="Theongyn home">
+        <span class="brand-mark-text">°˖Theongyn˖°</span>
+      </a>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-slide-menu"
+        aria-expanded="false" data-menu-open>
+        <span class="mobile-menu-line line-1"></span>
+        <span class="mobile-menu-line line-2"></span>
+        <span class="mobile-menu-line line-3"></span>
       </button>
-    </div>
+    </header>
 
-    <script src="projects-data.js"></script>
-    <script>
-      const projectContent = document.getElementById("project-content");
-      const scrollTopButton = document.getElementById("scroll-top");
-      const menuOpenButton = document.querySelector("[data-menu-open]");
-      const desktopTopbar = document.querySelector(".desktop-topbar");
-      const mobileTopbar = document.querySelector(".mobile-topbar");
-      const menuCloseButton = document.querySelector("[data-menu-close]");
-      const mobileMenu = document.getElementById("mobile-slide-menu");
-      let lastScrollY = window.scrollY;
+    <aside id="mobile-slide-menu" class="mobile-slide-menu" aria-hidden="true">
+      <div class="mobile-menu-top">
+        <button class="mobile-close-button" type="button" aria-label="Close menu" data-menu-close>
+          <img src="../assets/icons/menu/mobile-menu-close.svg" alt="" />
+        </button>
+      </div>
 
-      const logoProjectAssets = Array.from({ length: 24 }, (_, index) => {
-        return `../assets/images/projects/p2/Work/Logo-${index}.svg`;
-      });
+      <nav class="mobile-menu-links" aria-label="Mobile navigation">
+        <a class="menu-box is-active" href="./index.html">
+          <span class="menu-box-text">Works</span>
+        </a>
+        <a class="menu-box" href="../about/index.html">
+          <span class="menu-box-text">About</span>
+        </a>
+        <a class="menu-box" href="https://drive.google.com/drive/u/2/folders/1E3qgW-FttoqoTuiE9klyMaTLA-6FDMRH"
+          target="_blank" rel="noopener noreferrer" aria-label="Resume">
+          <span class="menu-box-text">Resume</span>
+        </a>
+      </nav>
 
-      const tuwPaletteCards = [
-        {
-          name: "Midnight Purple",
-          hex: "#31214E",
-          bg: "#31214e",
-          fg: "#ffffff",
-          cmyk: ["C: 37%", "M: 58%", "Y: 0%", "K: 69%"],
-          rgb: ["R: 49", "G: 33", "B: 78"],
-        },
-        {
-          name: "Dusky Periwinkle",
-          hex: "#A491E5",
-          bg: "#a491e5",
-          fg: "#ffffff",
-          cmyk: ["C: 28%", "M: 37%", "Y: 0%", "K: 10%"],
-          rgb: ["R: 164", "G: 145", "B: 229"],
-        },
-        {
-          name: "Lilac",
-          hex: "#DDD4FF",
-          bg: "#ddd4ff",
-          fg: "#31214e",
-          cmyk: ["C: 13%", "M: 17%", "Y: 0%", "K: 0%"],
-          rgb: ["R: 221", "G: 212", "B: 255"],
-        },
-        {
-          name: "Rare Rose",
-          hex: "#D06281",
-          bg: "#d06281",
-          fg: "#ffffff",
-          cmyk: ["C: 0%", "M: 53%", "Y: 38%", "K: 18%"],
-          rgb: ["R: 208", "G: 98", "B: 129"],
-        },
-        {
-          name: "Grapefruit Pink",
-          hex: "#EC7287",
-          bg: "#ec7287",
-          fg: "#ffffff",
-          cmyk: ["C: 0%", "M: 52%", "Y: 43%", "K: 8%"],
-          rgb: ["R: 236", "G: 114", "B: 135"],
-        },
-        {
-          name: "Little Girl Pink",
-          hex: "#FFCFDE",
-          bg: "#ffcfde",
-          fg: "#d06281",
-          cmyk: ["C: 0%", "M: 19%", "Y: 13%", "K: 0%"],
-          rgb: ["R: 255", "G: 207", "B: 222"],
-        },
-        {
-          name: "Fresh Cream",
-          hex: "#FFF9ED",
-          bg: "#fff9ed",
-          fg: "#31214e",
-          cmyk: ["C: 0%", "M: 2%", "Y: 7%", "K: 0%"],
-          rgb: ["R: 255", "G: 249", "B: 237"],
-        },
-      ];
+      <div class="mobile-menu-footer">
+        <img src="../assets/icons/menu/mobile-menu-footer-mark.svg" alt="" />
+      </div>
+    </aside>
+  </div>
 
-      function tuwAsset(fileName) {
-        return `../assets/images/projects/p5/tuw/${fileName}`;
-      }
+  <main>
+    <div class="details-shell" id="project-content"></div>
+  </main>
 
-      function renderResponsiveImage(desktopFile, mobileFile, alt, className = "tuw-responsive-media") {
-        const desktopUrl = tuwAsset(desktopFile);
-        const mobileUrl = mobileFile ? tuwAsset(mobileFile) : desktopUrl;
+  <div class="scroll-top-footer">
+    <button class="scroll-top-btn" id="scroll-top" type="button" aria-label="Scroll to top">
+      <img src="../assets/icons/works/scroll-up.svg" alt="" />
+    </button>
+  </div>
 
-        return `
+  <script src="projects-data.js"></script>
+  <script>
+    const projectContent = document.getElementById("project-content");
+    const scrollTopButton = document.getElementById("scroll-top");
+    const menuOpenButton = document.querySelector("[data-menu-open]");
+    const desktopTopbar = document.querySelector(".desktop-topbar");
+    const mobileTopbar = document.querySelector(".mobile-topbar");
+    const menuCloseButton = document.querySelector("[data-menu-close]");
+    const mobileMenu = document.getElementById("mobile-slide-menu");
+    let lastScrollY = window.scrollY;
+
+    const logoProjectAssets = Array.from({ length: 24 }, (_, index) => {
+      return `../assets/images/projects/p2/Work/Logo-${index}.svg`;
+    });
+
+    const tuwPaletteCards = [
+      {
+        name: "Midnight Purple",
+        hex: "#31214E",
+        bg: "#31214e",
+        fg: "#ffffff",
+        cmyk: ["C: 37%", "M: 58%", "Y: 0%", "K: 69%"],
+        rgb: ["R: 49", "G: 33", "B: 78"],
+      },
+      {
+        name: "Dusky Periwinkle",
+        hex: "#A491E5",
+        bg: "#a491e5",
+        fg: "#ffffff",
+        cmyk: ["C: 28%", "M: 37%", "Y: 0%", "K: 10%"],
+        rgb: ["R: 164", "G: 145", "B: 229"],
+      },
+      {
+        name: "Lilac",
+        hex: "#DDD4FF",
+        bg: "#ddd4ff",
+        fg: "#31214e",
+        cmyk: ["C: 13%", "M: 17%", "Y: 0%", "K: 0%"],
+        rgb: ["R: 221", "G: 212", "B: 255"],
+      },
+      {
+        name: "Rare Rose",
+        hex: "#D06281",
+        bg: "#d06281",
+        fg: "#ffffff",
+        cmyk: ["C: 0%", "M: 53%", "Y: 38%", "K: 18%"],
+        rgb: ["R: 208", "G: 98", "B: 129"],
+      },
+      {
+        name: "Grapefruit Pink",
+        hex: "#EC7287",
+        bg: "#ec7287",
+        fg: "#ffffff",
+        cmyk: ["C: 0%", "M: 52%", "Y: 43%", "K: 8%"],
+        rgb: ["R: 236", "G: 114", "B: 135"],
+      },
+      {
+        name: "Little Girl Pink",
+        hex: "#FFCFDE",
+        bg: "#ffcfde",
+        fg: "#d06281",
+        cmyk: ["C: 0%", "M: 19%", "Y: 13%", "K: 0%"],
+        rgb: ["R: 255", "G: 207", "B: 222"],
+      },
+      {
+        name: "Fresh Cream",
+        hex: "#FFF9ED",
+        bg: "#fff9ed",
+        fg: "#31214e",
+        cmyk: ["C: 0%", "M: 2%", "Y: 7%", "K: 0%"],
+        rgb: ["R: 255", "G: 249", "B: 237"],
+      },
+    ];
+
+    function tuwAsset(fileName) {
+      return `../assets/images/projects/p5/tuw/${fileName}`;
+    }
+
+    function renderResponsiveImage(desktopFile, mobileFile, alt, className = "tuw-responsive-media") {
+      const desktopUrl = tuwAsset(desktopFile);
+      const mobileUrl = mobileFile ? tuwAsset(mobileFile) : desktopUrl;
+
+      return `
           <div class="${className} tuw-bg-wrapper" style="--bg-desk: url('${desktopUrl}'); --bg-mob: url('${mobileUrl}');" role="img" aria-label="${alt}">
             <picture style="visibility: hidden; display: block; width: 100%; height: auto; max-height: 100%; pointer-events: none;">
               ${mobileFile ? `<source media="(max-width: 768px)" srcset="${tuwAsset(mobileFile)}" />` : ""}
-              <img src="${desktopUrl}" alt="" style="display: block; width: 100%; height: auto; max-height: 100%; object-fit: cover;" />
+              <img src="${desktopUrl}" alt="" style="display: block; " />
             </picture>
           </div>
         `;
-      }
+    }
 
-      function renderTuwPaletteCards() {
-        return tuwPaletteCards
-          .map(
-            (card) => `
+    function renderTuwPaletteCards() {
+      return tuwPaletteCards
+        .map(
+          (card) => `
               <div class="tuw-palette-card" style="background:${card.bg};color:${card.fg};">
                 <div class="tuw-palette-heading">
                   <p>${card.name}</p>
@@ -1613,28 +2062,28 @@
                 </div>
               </div>
             `
-          )
-          .join("");
-      }
+        )
+        .join("");
+    }
 
-      function renderTuwCommunicationGrid(desktopFiles, mobileFiles, altPrefix) {
-        return `
+    function renderTuwCommunicationGrid(desktopFiles, mobileFiles, altPrefix) {
+      return `
           <div class="tuw-comm-grid">
             ${desktopFiles
-              .map((desktopFile, index) =>
-                renderResponsiveImage(
-                  desktopFile,
-                  mobileFiles[index],
-                  `${altPrefix} ${index + 1}`
-                )
-              )
-              .join("")}
+          .map((desktopFile, index) =>
+            renderResponsiveImage(
+              desktopFile,
+              mobileFiles[index],
+              `${altPrefix} ${index + 1}`
+            )
+          )
+          .join("")}
           </div>
         `;
-      }
+    }
 
-      function renderTuwProductRow(config) {
-        return `
+    function renderTuwProductRow(config) {
+      return `
           <div class="tuw-product-row">
             <div class="tuw-product-side">
               <p class="tuw-product-label">Design</p>
@@ -1650,16 +2099,16 @@
             </div>
           </div>
         `;
-      }
+    }
 
-      function renderTuwProject(project) {
-        const scopeListHtml = project.scope
-          .split(",")
-          .map((item) => item.trim())
-          .map((item) => `<li>${item}</li>`)
-          .join("");
+    function renderTuwProject(project) {
+      const scopeListHtml = project.scope
+        .split(",")
+        .map((item) => item.trim())
+        .map((item) => `<li>${item}</li>`)
+        .join("");
 
-        const communicationCopy = `
+      const communicationCopy = `
           <div class="tuw-section-copy">
             <p>My goal is to establish and continuously refine a graphic system and visual identity that aligns with the brand's direction and characteristics:</p>
             <ul>
@@ -1672,14 +2121,14 @@
           </div>
         `;
 
-        const productCopy = `
+      const productCopy = `
           <div class="tuw-section-copy">
             <p>Alongside my work in digital graphic design, I also played a role in bringing some of TUW's most notable apparel pieces to life.</p>
             <p>From initial sketches to final products, I was involved in the design process, ensuring that each piece aligned with the brand's aesthetic and vision. Here are some of my designs that successfully transitioned from concept to reality.</p>
           </div>
         `;
 
-        return `
+      return `
           <section class="project-details tuw-project" aria-labelledby="project-title">
             <div class="project-header">
               <h1 class="project-title" id="project-title">${project.title}</h1>
@@ -1728,19 +2177,28 @@
                     <div class="tuw-typography-spec">
                       ${renderResponsiveImage("brand-headline-aa-desktop.png", "brand-headline-aa-mobile.png", "Headline type specimen", "tuw-typography-swatch")}
                       <div class="tuw-typography-meta">
+                        <div>
                         <p>/Headlines</p>
+                        </div>
+                        <div>
                         <p>Mallory</p>
                         <p>Condensed</p>
                         <p>Bold</p>
+                        </div>
                       </div>
                     </div>
                     <div class="tuw-typography-spec">
                       ${renderResponsiveImage("brand-body-aa-desktop.png", "brand-body-aa-mobile.png", "Body text specimen", "tuw-typography-swatch")}
                       <div class="tuw-typography-meta">
+                        <div>
                         <p>/Body text</p>
+                        
+                        </div>
+                        <div>
                         <p>SF Display</p>
                         <p>Pro</p>
                         <p>Regular</p>
+                        </div>
                       </div>
                     </div>
                     <div class="tuw-typography-note">
@@ -1773,25 +2231,25 @@
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0;">
                   ${renderTuwCommunicationGrid(
-                    ["comm-grid-1a-desktop.png", "comm-grid-1b-desktop.png", "comm-grid-1c-desktop.png"],
-                    ["comm-grid-1a-mobile.png", "comm-grid-1b-mobile.png", "comm-grid-1c-mobile.png"],
-                    "Today U Wear communication grid 1"
-                  )}
+        ["comm-grid-1a-desktop.png", "comm-grid-1b-desktop.png", "comm-grid-1c-desktop.png"],
+        ["comm-grid-1a-mobile.png", "comm-grid-1b-mobile.png", "comm-grid-1c-mobile.png"],
+        "Today U Wear communication grid 1"
+      )}
                   ${renderTuwCommunicationGrid(
-                    ["comm-grid-2a-desktop.png", "comm-grid-2b-desktop.png", "comm-grid-2c-desktop.png"],
-                    ["comm-grid-2a-mobile.png", "comm-grid-2b-mobile.png", "comm-grid-2c-mobile.png"],
-                    "Today U Wear communication grid 2"
-                  )}
+        ["comm-grid-2a-desktop.png", "comm-grid-2b-desktop.png", "comm-grid-2c-desktop.png"],
+        ["comm-grid-2a-mobile.png", "comm-grid-2b-mobile.png", "comm-grid-2c-mobile.png"],
+        "Today U Wear communication grid 2"
+      )}
                   ${renderTuwCommunicationGrid(
-                    ["comm-grid-3a-desktop.png", "comm-grid-3b-desktop.png", "comm-grid-3c-desktop.png"],
-                    ["comm-grid-3a-mobile.png", "comm-grid-3b-mobile.png", "comm-grid-3c-mobile.png"],
-                    "Today U Wear communication grid 3"
-                  )}
+        ["comm-grid-3a-desktop.png", "comm-grid-3b-desktop.png", "comm-grid-3c-desktop.png"],
+        ["comm-grid-3a-mobile.png", "comm-grid-3b-mobile.png", "comm-grid-3c-mobile.png"],
+        "Today U Wear communication grid 3"
+      )}
                   ${renderTuwCommunicationGrid(
-                    ["comm-grid-4a-desktop.png", "comm-grid-4b-desktop.png", "comm-grid-4c-desktop.png"],
-                    ["comm-grid-4a-mobile.png", "comm-grid-4b-mobile.png", "comm-grid-4c-mobile.png"],
-                    "Today U Wear communication grid 4"
-                  )}
+        ["comm-grid-4a-desktop.png", "comm-grid-4b-desktop.png", "comm-grid-4c-desktop.png"],
+        ["comm-grid-4a-mobile.png", "comm-grid-4b-mobile.png", "comm-grid-4c-mobile.png"],
+        "Today U Wear communication grid 4"
+      )}
                 </div>
               </section>
 
@@ -1799,9 +2257,9 @@
                 <h2 class="tuw-section-title">3. Product Design</h2>
                 ${productCopy}
                 ${renderTuwProductRow({
-                  realLabel: "Real product (Best-seller)",
-                  designPanelClass: "is-column",
-                  designHtml: `
+        realLabel: "Real product (Best-seller)",
+        designPanelClass: "is-column",
+        designHtml: `
                     <div class="tuw-product-crop is-half">
                       ${renderResponsiveImage("product-1-design-top-desktop.png", "product-1-design-top-mobile.png", "Today U Wear apparel concept front")}
                     </div>
@@ -1809,12 +2267,12 @@
                       ${renderResponsiveImage("product-1-design-bottom-desktop.png", "product-1-design-bottom-mobile.png", "Today U Wear apparel concept back")}
                     </div>
                   `,
-                  realHtml: renderResponsiveImage("product-1-real-desktop.png", "product-1-real-mobile.png", "Today U Wear best seller real product"),
-                })}
+        realHtml: renderResponsiveImage("product-1-real-desktop.png", "product-1-real-mobile.png", "Today U Wear best seller real product"),
+      })}
                 ${renderTuwProductRow({
-                  designPanelClass: "is-column",
-                  realPanelClass: "is-double",
-                  designHtml: `
+        designPanelClass: "is-column",
+        realPanelClass: "is-double",
+        designHtml: `
                     <div class="tuw-product-crop is-half">
                       ${renderResponsiveImage("product-2-design-top-desktop.png", "product-2-design-top-mobile.png", "Today U Wear apparel concept top")}
                     </div>
@@ -1822,40 +2280,40 @@
                       ${renderResponsiveImage("product-2-design-bottom-desktop.png", "product-2-design-bottom-mobile.png", "Today U Wear apparel concept bottom")}
                     </div>
                   `,
-                  realHtml: `
+        realHtml: `
                     ${renderResponsiveImage("product-2-real-a-desktop.png", "product-2-real-a-mobile.png", "Today U Wear real product variation one")}
                     ${renderResponsiveImage("product-2-real-b-desktop.png", "product-2-real-b-mobile.png", "Today U Wear real product variation two")}
                   `,
-                })}
+      })}
                 ${renderTuwProductRow({
-                  designPanelClass: "is-column",
-                  designHtml: `
+        designPanelClass: "is-column",
+        designHtml: `
                     <div class="tuw-product-crop">
                       ${renderResponsiveImage("product-3-design-composite-desktop.png", "product-3-design-composite-mobile.png", "Today U Wear design composite top")}
                     </div>
                   `,
-                  realHtml: renderResponsiveImage("product-3-real-desktop.png", "product-3-real-mobile.png", "Today U Wear real product"),
-                })}
+        realHtml: renderResponsiveImage("product-3-real-desktop.png", "product-3-real-mobile.png", "Today U Wear real product"),
+      })}
                 ${renderTuwProductRow({
-                  designPanelClass: "is-column",
-                  designHtml: `
+        designPanelClass: "is-column",
+        designHtml: `
                     <div class="tuw-product-crop">
                       ${renderResponsiveImage("product-4-design-composite-desktop.png", "product-4-design-composite-mobile.png", "Today U Wear product concept main")}
                     </div>
                     
                   `,
-                  realHtml: renderResponsiveImage("product-4-real-desktop.png", "product-4-real-mobile.png", "Today U Wear real product"),
-                })}
+        realHtml: renderResponsiveImage("product-4-real-desktop.png", "product-4-real-mobile.png", "Today U Wear real product"),
+      })}
                 ${renderTuwProductRow({
-                  designPanelClass: "is-row",
-                  designHtml: `
+        designPanelClass: "is-row",
+        designHtml: `
                     <div class="tuw-product-jersey-pair">
                       ${renderResponsiveImage("product-5-design-front-desktop.png", "product-5-design-front-mobile.png", "Today U Wear jersey front concept")}
                       ${renderResponsiveImage("product-5-design-back-desktop.png", "product-5-design-back-mobile.png", "Today U Wear jersey back concept")}
                     </div>
                   `,
-                  realHtml: renderResponsiveImage("product-5-real-desktop.png", "product-5-real-mobile.png", "Today U Wear jersey real product"),
-                })}
+        realHtml: renderResponsiveImage("product-5-real-desktop.png", "product-5-real-mobile.png", "Today U Wear jersey real product"),
+      })}
               </section>
 
               <section class="tuw-section">
@@ -1873,84 +2331,84 @@
             </div>
           </section>
         `;
+    }
+
+    function getProjectId() {
+      const params = new URLSearchParams(window.location.search);
+      return Number.parseInt(params.get("id"), 10) || 1;
+    }
+
+    function setMenuState(isOpen) {
+      if (!mobileMenu || !menuOpenButton) {
+        return;
       }
 
-      function getProjectId() {
-        const params = new URLSearchParams(window.location.search);
-        return Number.parseInt(params.get("id"), 10) || 1;
+      mobileMenu.classList.toggle("is-open", isOpen);
+      mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+      menuOpenButton.setAttribute("aria-expanded", String(isOpen));
+      document.body.style.overflow = isOpen ? "hidden" : "";
+      if (isOpen) {
+        setTopbarsHidden(false);
       }
+    }
 
-      function setMenuState(isOpen) {
-        if (!mobileMenu || !menuOpenButton) {
+    function setTopbarsHidden(isHidden) {
+      [desktopTopbar, mobileTopbar].forEach((topbar) => {
+        if (!topbar) {
           return;
         }
 
-        mobileMenu.classList.toggle("is-open", isOpen);
-        mobileMenu.setAttribute("aria-hidden", String(!isOpen));
-        menuOpenButton.setAttribute("aria-expanded", String(isOpen));
-        document.body.style.overflow = isOpen ? "hidden" : "";
-        if (isOpen) {
-          setTopbarsHidden(false);
-        }
-      }
+        topbar.classList.toggle("is-hidden", isHidden);
+      });
+    }
 
-      function setTopbarsHidden(isHidden) {
-        [desktopTopbar, mobileTopbar].forEach((topbar) => {
-          if (!topbar) {
-            return;
-          }
+    function handleTopbarVisibility() {
+      const currentScrollY = window.scrollY;
+      const isMenuOpen = mobileMenu?.classList.contains("is-open");
 
-          topbar.classList.toggle("is-hidden", isHidden);
-        });
-      }
-
-      function handleTopbarVisibility() {
-        const currentScrollY = window.scrollY;
-        const isMenuOpen = mobileMenu?.classList.contains("is-open");
-
-        if (isMenuOpen || currentScrollY <= 0) {
-          setTopbarsHidden(false);
-          lastScrollY = currentScrollY;
-          return;
-        }
-
-        if (currentScrollY > lastScrollY + 8) {
-          setTopbarsHidden(true);
-        } else if (currentScrollY < lastScrollY - 8) {
-          setTopbarsHidden(false);
-        }
-
+      if (isMenuOpen || currentScrollY <= 0) {
+        setTopbarsHidden(false);
         lastScrollY = currentScrollY;
+        return;
       }
 
-      function renderLogosProject(project) {
-        const badgesPreview = project.badges && project.badges.images && project.badges.images.length
-          ? `
+      if (currentScrollY > lastScrollY + 8) {
+        setTopbarsHidden(true);
+      } else if (currentScrollY < lastScrollY - 8) {
+        setTopbarsHidden(false);
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
+    function renderLogosProject(project) {
+      const badgesPreview = project.badges && project.badges.images && project.badges.images.length
+        ? `
             
             <div class="meta-item">
                 <div class="meta-badges-row">
                   <a class="meta-badges-link" href="${project.badges.url}" target="_blank" rel="noreferrer">
                     Badges:
                   </a>
-                  <div class="meta-badge-icons">
+                  <a class="meta-badge-icons" href="${project.badges.url}" target="_blank" rel="noreferrer">
                          ${project.badges.images.map(src => `<img class="meta-badge-preview" src="${src}" alt="Badges" />`).join("")}
                   </div>
                 </div>
               </div>
           `
-          : "";
+        : "";
 
-        const logoTiles = logoProjectAssets
-          .map(
-            (src, index) => `
+      const logoTiles = logoProjectAssets
+        .map(
+          (src, index) => `
               <div class="logos-project-tile">
                 <img src="${src}" alt="${project.title} logo ${index + 1}" />
               </div>
             `
-          )
-          .join("");
+        )
+        .join("");
 
-        return `
+      return `
           <section class="project-details" aria-labelledby="project-title">
             <div class="project-header">
               <h1 class="project-title" id="project-title">${project.title}</h1>
@@ -1978,18 +2436,18 @@
             </div>
           </section>
         `;
-      }
+    }
 
-      function renderGenericProject(project) {
-        const scopeItems = project.scope
-          ? project.scope.split(",").map((item) => item.trim())
-          : [];
+    function renderGenericProject(project) {
+      const scopeItems = project.scope
+        ? project.scope.split(",").map((item) => item.trim())
+        : [];
 
-        let teamHtml = "";
-        if (project.team) {
-          if (typeof project.team === "string") {
-            const members = project.team.split(",").map(m => m.trim());
-            teamHtml = `
+      let teamHtml = "";
+      if (project.team) {
+        if (typeof project.team === "string") {
+          const members = project.team.split(",").map(m => m.trim());
+          teamHtml = `
               <div class="meta-item">
                 <p class="meta-label">Team</p>
                 <ul class="meta-scope-list">
@@ -1997,44 +2455,44 @@
                 </ul>
               </div>
             `;
-          } else if (Array.isArray(project.team) && project.team.length) {
-            teamHtml = `
+        } else if (Array.isArray(project.team) && project.team.length) {
+          teamHtml = `
               <div class="meta-item">
                 <p class="meta-label">Team</p>
                 <div class="meta-list">
                   ${project.team
-                    .map((member) =>
-                      member.url
-                        ? `<a href="${member.url}" target="_blank" rel="noreferrer">${member.name}</a>`
-                        : `<span class="meta-value">${member.name}</span>`
-                    )
-                    .join("")}
+              .map((member) =>
+                member.url
+                  ? `<a href="${member.url}" target="_blank" rel="noreferrer">${member.name}</a>`
+                  : `<span class="meta-value">${member.name}</span>`
+              )
+              .join("")}
                 </div>
               </div>
             `;
-          }
         }
+      }
 
-        const linksHtml =
-          project.links && project.links.length
-            ? `
+      const linksHtml =
+        project.links && project.links.length
+          ? `
               <div class="meta-item">
                 <p class="meta-label">Links</p>
                 <div class="meta-list">
                   ${project.links
-                    .map(
-                      (link) =>
-                        `<a href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`
-                    )
-                    .join("")}
+            .map(
+              (link) =>
+                `<a href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`
+            )
+            .join("")}
                 </div>
               </div>
             `
-            : "";
+          : "";
 
-        const badgesHtml =
-          project.badges && project.badges.url
-            ? `
+      const badgesHtml =
+        project.badges && project.badges.url
+          ? `
               <div class="meta-item">
                 <p class="meta-label">Badges</p>
                 <div class="meta-list">
@@ -2044,18 +2502,18 @@
                 </div>
               </div>
             `
-            : "";
+          : "";
 
-        let galleryHtml = "";
+      let galleryHtml = "";
 
-        if (project.content && project.content.length) {
-          galleryHtml = project.content
-            .map((block) => {
-              if (block.type === "text") {
-                const paragraphs = block.text.split('\n').filter(p => p.trim());
-                const pHtml = paragraphs.map(p => `<p>${p}</p>`).join('');
-                const textAlign = block.align ? block.align : "center";
-                return `
+      if (project.content && project.content.length) {
+        galleryHtml = project.content
+          .map((block) => {
+            if (block.type === "text") {
+              const paragraphs = block.text.split('\n').filter(p => p.trim());
+              const pHtml = paragraphs.map(p => `<p>${p}</p>`).join('');
+              const textAlign = block.align ? block.align : "center";
+              return `
                   <div class="content-block align-center">
                     <div class="content-inner">
                       <div class="content-text-wrapper" style="text-align:${textAlign};font-family:'SF Pro Display',sans-serif;font-size:24px;font-weight:300;line-height:1.1;">
@@ -2064,95 +2522,95 @@
                     </div>
                   </div>
                 `;
-              }
+            }
 
-              if (block.type === "titled-text") {
-                const paragraphs = block.text.split('\n').filter(p => p.trim());
-                const pHtml = paragraphs.map(p => `<p>${p}</p>`).join('');
-                return `
+            if (block.type === "titled-text") {
+              const paragraphs = block.text.split('\n').filter(p => p.trim());
+              const pHtml = paragraphs.map(p => `<p>${p}</p>`).join('');
+              return `
                   <div class="titled-text-block">
                     <p class="titled-text-title">${block.title}</p>
                     <div class="titled-text-body">${pHtml}</div>
                   </div>
                 `;
-              }
+            }
 
-              if (block.type === "black-bg-centered") {
-                return `
+            if (block.type === "black-bg-centered") {
+              return `
                   <div class="black-bg-centered-block">
                     <img src="${block.src}" alt="" />
                   </div>
                 `;
-              }
+            }
 
-              if (block.type === "dlk-body") {
-                const sectionsHtml = block.sections.map(sec => {
-                  if (sec.format === "paragraphs") {
-                    const ps = sec.text.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
-                    return `<div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><div class="dlk-section-body">${ps}</div></div>`;
-                  }
-                  if (sec.format === "list") {
-                    const lis = sec.items.map(i => `<li>${i}</li>`).join('');
-                    return `<div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><ul class="dlk-section-list">${lis}</ul></div>`;
-                  }
-                  if (sec.format === "cards") {
-                    const cardsHtml = sec.cards.map(c => {
-                      const lis = c.items.map(i => `<li>${i}</li>`).join('');
-                      return `<div class="dlk-value-card"><p class="dlk-value-card-title">${c.title}</p><ul class="dlk-value-card-list">${lis}</ul></div>`;
-                    }).join('');
-                    return `<div class="dlk-section" style="padding:20px 0;"><p class="dlk-section-title">${sec.title}</p><div class="dlk-value-cards">${cardsHtml}</div></div>`;
-                  }
-                  if (sec.format === "direction") {
-                    const ps = sec.text.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
-                    const pillsHtml = sec.pills.map(p => `<span class="dlk-pill">${p}</span>`).join('');
-                    const colorsHtml = sec.colors.map(c => `<div class="dlk-color-bar-item" style="background:${c};"></div>`).join('');
-                    return `<div class="dlk-section" style="padding:20px 0;"><div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><div class="dlk-section-body">${ps}</div></div><div class="dlk-pills">${pillsHtml}</div><div class="dlk-color-bar">${colorsHtml}</div></div>`;
-                  }
-                  return '';
-                }).join('');
-                // Pair A+B side-by-side on desktop
-                const abHtml = block.sections.length >= 2 && block.sections[0].id === "A" && block.sections[1].id === "B"
-                  ? `<div class="dlk-two-col">${sectionsHtml.substring(0, sectionsHtml.indexOf('</div></div>') + 12)}${sectionsHtml.substring(sectionsHtml.indexOf('</div></div>') + 12)}</div>`
-                  : sectionsHtml;
-                // Simpler: render A and B in a two-col, C and D stacked
-                const secA = block.sections.find(s => s.id === "A");
-                const secB = block.sections.find(s => s.id === "B");
-                const secC = block.sections.find(s => s.id === "C");
-                const secD = block.sections.find(s => s.id === "D");
-                const renderSec = (sec) => {
-                  if (!sec) return '';
-                  if (sec.format === "paragraphs") {
-                    const ps = sec.text.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
-                    return `<div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><div class="dlk-section-body">${ps}</div></div>`;
-                  }
-                  if (sec.format === "list") {
-                    const lis = sec.items.map(i => `<li>${i}</li>`).join('');
-                    return `<div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><ul class="dlk-section-list">${lis}</ul></div>`;
-                  }
-                  if (sec.format === "cards") {
-                    const cardsHtml = sec.cards.map(c => {
-                      const lis = c.items.map(i => `<li>${i}</li>`).join('');
-                      return `<div class="dlk-value-card"><p class="dlk-value-card-title">${c.title}</p><ul class="dlk-value-card-list">${lis}</ul></div>`;
-                    }).join('');
-                    return `<div class="dlk-section" style="padding:20px 0;"><div class="dlk-value-cards"><p class="dlk-section-title">${sec.title}</p>${cardsHtml}</div></div>`;
-                  }
-                  if (sec.format === "direction") {
-                    const ps = sec.text.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
-                    const pillsHtml = sec.pills.map(p => `<span class="dlk-pill">${p}</span>`).join('');
-                    const colorsHtml = sec.colors.map(c => `<div class="dlk-color-bar-item" style="background:${c};"></div>`).join('');
-                    return `<div class="dlk-section" style="padding:20px 0;"><div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><div class="dlk-section-body">${ps}</div></div><div class="dlk-pills">${pillsHtml}</div><div class="dlk-color-bar">${colorsHtml}</div></div>`;
-                  }
-                  return '';
-                };
-                return `
+            if (block.type === "dlk-body") {
+              const sectionsHtml = block.sections.map(sec => {
+                if (sec.format === "paragraphs") {
+                  const ps = sec.text.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+                  return `<div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><div class="dlk-section-body">${ps}</div></div>`;
+                }
+                if (sec.format === "list") {
+                  const lis = sec.items.map(i => `<li>${i}</li>`).join('');
+                  return `<div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><ul class="dlk-section-list">${lis}</ul></div>`;
+                }
+                if (sec.format === "cards") {
+                  const cardsHtml = sec.cards.map(c => {
+                    const lis = c.items.map(i => `<li>${i}</li>`).join('');
+                    return `<div class="dlk-value-card"><p class="dlk-value-card-title">${c.title}</p><ul class="dlk-value-card-list">${lis}</ul></div>`;
+                  }).join('');
+                  return `<div class="dlk-section" style="padding:20px 0;"><p class="dlk-section-title">${sec.title}</p><div class="dlk-value-cards">${cardsHtml}</div></div>`;
+                }
+                if (sec.format === "direction") {
+                  const ps = sec.text.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+                  const pillsHtml = sec.pills.map(p => `<span class="dlk-pill">${p}</span>`).join('');
+                  const colorsHtml = sec.colors.map(c => `<div class="dlk-color-bar-item" style="background:${c};"></div>`).join('');
+                  return `<div class="dlk-section" style="padding:20px 0;"><div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><div class="dlk-section-body">${ps}</div></div><div class="dlk-pills">${pillsHtml}</div><div class="dlk-color-bar">${colorsHtml}</div></div>`;
+                }
+                return '';
+              }).join('');
+              // Pair A+B side-by-side on desktop
+              const abHtml = block.sections.length >= 2 && block.sections[0].id === "A" && block.sections[1].id === "B"
+                ? `<div class="dlk-two-col">${sectionsHtml.substring(0, sectionsHtml.indexOf('</div></div>') + 12)}${sectionsHtml.substring(sectionsHtml.indexOf('</div></div>') + 12)}</div>`
+                : sectionsHtml;
+              // Simpler: render A and B in a two-col, C and D stacked
+              const secA = block.sections.find(s => s.id === "A");
+              const secB = block.sections.find(s => s.id === "B");
+              const secC = block.sections.find(s => s.id === "C");
+              const secD = block.sections.find(s => s.id === "D");
+              const renderSec = (sec) => {
+                if (!sec) return '';
+                if (sec.format === "paragraphs") {
+                  const ps = sec.text.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+                  return `<div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><div class="dlk-section-body">${ps}</div></div>`;
+                }
+                if (sec.format === "list") {
+                  const lis = sec.items.map(i => `<li>${i}</li>`).join('');
+                  return `<div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><ul class="dlk-section-list">${lis}</ul></div>`;
+                }
+                if (sec.format === "cards") {
+                  const cardsHtml = sec.cards.map(c => {
+                    const lis = c.items.map(i => `<li>${i}</li>`).join('');
+                    return `<div class="dlk-value-card"><p class="dlk-value-card-title">${c.title}</p><ul class="dlk-value-card-list">${lis}</ul></div>`;
+                  }).join('');
+                  return `<div class="dlk-section" style="padding:20px 0;"><div class="dlk-value-cards"><p class="dlk-section-title">${sec.title}</p>${cardsHtml}</div></div>`;
+                }
+                if (sec.format === "direction") {
+                  const ps = sec.text.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+                  const pillsHtml = sec.pills.map(p => `<span class="dlk-pill">${p}</span>`).join('');
+                  const colorsHtml = sec.colors.map(c => `<div class="dlk-color-bar-item" style="background:${c};"></div>`).join('');
+                  return `<div class="dlk-section" style="padding:20px 0;"><div class="dlk-section"><p class="dlk-section-title">${sec.title}</p><div class="dlk-section-body">${ps}</div></div><div class="dlk-pills">${pillsHtml}</div><div class="dlk-color-bar">${colorsHtml}</div></div>`;
+                }
+                return '';
+              };
+              return `
                   <div class="dlk-two-col">${renderSec(secA)}${renderSec(secB)}</div>
                   ${renderSec(secC)}
                   ${renderSec(secD)}
                 `;
-              }
+            }
 
-              if (block.type === "dlk-team-logo") {
-                return `
+            if (block.type === "dlk-team-logo") {
+              return `
                   <div class="dlk-team-logo-row">
                     <div class="dlk-team-logo-text">
                       <div>
@@ -2169,18 +2627,18 @@
                     </div>
                   </div>
                 `;
-              }
+            }
 
-              if (block.type === "dlk-merch") {
-                return `
+            if (block.type === "dlk-merch") {
+              return `
                   <div class="dlk-merch-section ${block.className ? block.className : ''}">
                     <img class="dlk-merch-bg" src="${block.bgSrc}" alt="" />
                   </div>
                 `;
-              }
+            }
 
-              if (block.type === "dlk-project-logo") {
-                return `
+            if (block.type === "dlk-project-logo") {
+              return `
                   <div class="dlk-text-section">
                     <p class="dlk-text-section-title">${block.title}</p>
                     <div class="dlk-text-section-body">
@@ -2188,10 +2646,10 @@
                     </div>
                   </div>
                 `;
-              }
+            }
 
-              if (block.type === "dlk-illustration") {
-                return `
+            if (block.type === "dlk-illustration") {
+              return `
                   <div class="dlk-text-section">
                     <p class="dlk-text-section-title">${block.title}</p>
                     <div class="dlk-text-section-body">
@@ -2202,81 +2660,81 @@
                     ${block.images.map(src => `<img src="${src}" alt="Illustration" />`).join('')}
                   </div>
                 `;
-              }
+            }
 
-              if (block.type === "horse-text") {
-                const itemsHtml = block.items.map(item => `
+            if (block.type === "horse-text") {
+              const itemsHtml = block.items.map(item => `
                   <div class="horse-text-item">
                     <p class="horse-text-title">${item.title}</p>
                     <div class="horse-text-body">${item.text}</div>
                   </div>
                 `).join('');
-                return `<div class="horse-text-row">${itemsHtml}</div>`;
-              }
+              return `<div class="horse-text-row">${itemsHtml}</div>`;
+            }
 
-              if (block.type === "horse-collage") {
-                const itemsHtml = block.items.map(item => {
-                  let innerClass = "inner";
-                  let itemClass = `horse-collage-item is-${item.id.replace(/_/g, '-')}`;
-                  if (item.id === 'pink_splash') itemClass += " mix-multiply";
-                  
-                  return `
+            if (block.type === "horse-collage") {
+              const itemsHtml = block.items.map(item => {
+                let innerClass = "inner";
+                let itemClass = `horse-collage-item is-${item.id.replace(/_/g, '-')}`;
+                if (item.id === 'pink_splash') itemClass += " mix-multiply";
+
+                return `
                     <div class="${itemClass}">
                       <div class="${innerClass}">
                         <img src="${item.src}" alt="" />
                       </div>
                     </div>
                   `;
-                }).join('');
-                return `<div class="horse-collage">${itemsHtml}</div>`;
-              }
+              }).join('');
+              return `<div class="horse-collage">${itemsHtml}</div>`;
+            }
 
-              if (block.type === "ukiyo-history") {
-                const highlightedBody = block.text.replace(/UKIYO \(浮世\)/g, '<span>UKIYO (浮世)</span>');
-                return `
-                  <div class="ukiyo-history">
-                    <div class="ukiyo-history-content">
-                      <div class="ukiyo-history-title">${block.title}</div>
-                      <div class="ukiyo-history-body">${highlightedBody}</div>
-                    </div>
-                    <div class="ukiyo-history-images">
-                      ${block.images.map(img => `<img src="${img}" alt="" />`).join('')}
-                    </div>
-                  </div>
-                `;
-              }
+            // if (block.type === "ukiyo-history") {
+            //   const highlightedBody = block.text.replace(/UKIYO \(浮世\)/g, '<span>UKIYO (浮世)</span>');
+            //   return `
+            //       <div class="ukiyo-history">
+            //         <div class="ukiyo-history-content">
+            //           <div class="ukiyo-history-title">${block.title}</div>
+            //           <div class="ukiyo-history-body">${highlightedBody}</div>
+            //         </div>
+            //         <div class="ukiyo-history-images">
+            //           ${block.images.map(img => `<img src="${img}" alt="" />`).join('')}
+            //         </div>
+            //       </div>
+            //     `;
+            // }
 
-              if (block.type === "ukiyo-fresh-taste") {
-                const highlightedBody = block.text.replace(/UKIYO \(浮世\)/g, '<b>UKIYO (浮世)</b>');
-                const titleParts = block.title.split('\n');
-                return `
-                  <div class="ukiyo-fresh-taste">
-                    <div class="ukiyo-fresh-content">
-                      <div class="ukiyo-fresh-title">
-                        ${titleParts[0]}
-                        <p>${titleParts[1]}</p>
-                      </div>
-                      <div class="ukiyo-fresh-body">${highlightedBody}</div>
-                    </div>
-                    <div class="ukiyo-fresh-image">
-                      <img src="${block.image}" alt="" />
-                    </div>
-                  </div>
-                `;
-              }
+            // if (block.type === "ukiyo-fresh-taste") {
+            //   const highlightedBody = block.text.replace(/UKIYO \(浮世\)/g, '<b>UKIYO (浮世)</b>');
+            //   const titleParts = block.title.split('\n');
+            //   return `
+            //       <div class="ukiyo-fresh-taste">
+            //         <div class="ukiyo-fresh-content">
+            //           <div class="ukiyo-fresh-title">
+            //             ${titleParts[0]}
+            //             <p>${titleParts[1]}</p>
+            //           </div>
+            //           <div class="ukiyo-fresh-body">${highlightedBody}</div>
+            //         </div>
+            //         <div class="ukiyo-fresh-image">
+            //           <img src="${block.image}" alt="" />
+            //         </div>
+            //       </div>
+            //     `;
+            // }
 
-              if (block.type === "vnm-project-section") {
-                const imagesHtml = (block.images || [])
-                  .map(
-                    (image) => `
+            if (block.type === "vnm-project-section") {
+              const imagesHtml = (block.images || [])
+                .map(
+                  (image) => `
                     <div class="row-image-wrapper">
                       <img src="${image.src}" class="gallery-image" alt="" style="${image.objectFit ? `object-fit:${image.objectFit};` : ""}" />
                     </div>
                   `
-                  )
-                  .join("");
+                )
+                .join("");
 
-                return `
+              return `
                   <div class="vnm-project-block">
                     <p class="vnm-project-title">${block.title}</p>
                     <div class="content-row" style="gap:0;">
@@ -2284,59 +2742,59 @@
                     </div>
                   </div>
                 `;
-              }
+            }
 
-              if (block.type === "grid") {
-                const itemsHtml = block.items
-                  .map((item) => {
-                    const styles = [
-                      item.padding ? `padding:${item.padding};` : "",
-                      item.bgColor ? `background:${item.bgColor};` : "",
-                    ].join("");
+            if (block.type === "grid") {
+              const itemsHtml = block.items
+                .map((item) => {
+                  const styles = [
+                    item.padding ? `padding:${item.padding};` : "",
+                    item.bgColor ? `background:${item.bgColor};` : "",
+                  ].join("");
 
-                    const isVideo = item.src && item.src.endsWith('.mp4');
-                    const content = item.src
-                      ? (isVideo ? `<video src="${item.src}" autoplay loop muted playsinline></video>` : `<img src="${item.src}" alt="" />`)
-                      : item.html || "";
+                  const isVideo = item.src && item.src.endsWith('.mp4');
+                  const content = item.src
+                    ? (isVideo ? `<video src="${item.src}" autoplay loop muted playsinline></video>` : `<img src="${item.src}" alt="" />`)
+                    : item.html || "";
 
-                    return `<div class="grid-item" style="${styles}">${content}</div>`;
-                  })
-                  .join("");
+                  return `<div class="grid-item" style="${styles}">${content}</div>`;
+                })
+                .join("");
 
-                return `<div class="gallery-grid">${itemsHtml}</div>`;
-              }
+              return `<div class="gallery-grid">${itemsHtml}</div>`;
+            }
 
-              const alignClass = block.align ? `align-${block.align}` : "align-center";
-              const widthStyle = block.width ? `max-width:${block.width};` : "";
-              let mediaHtml = "";
+            const alignClass = block.align ? `align-${block.align}` : "align-center";
+            const widthStyle = block.width ? `max-width:${block.width};` : "";
+            let mediaHtml = "";
 
-              if (block.type === "single") {
-                const isVideo = block.src && block.src.endsWith('.mp4');
-                mediaHtml = isVideo ? `<video src="${block.src}" class="gallery-image" autoplay loop muted playsinline></video>` : 
+            if (block.type === "single") {
+              const isVideo = block.src && block.src.endsWith('.mp4');
+              mediaHtml = isVideo ? `<video src="${block.src}" class="gallery-image" autoplay loop muted playsinline></video>` :
                 `<img src="${block.src}" class="gallery-image" alt="" />`;
-              } else if (block.type === "row") {
-                mediaHtml = `
-                  <div class="content-row" style="${block.gap!=null ? `gap:${block.gap};` : ""}">
+            } else if (block.type === "row") {
+              mediaHtml = `
+                  <div class="content-row" style="${block.gap != null ? `gap:${block.gap};` : ""}">
                     ${block.images
-                      .map(
-                        (image) => {
-                          const isVideo = image.src && image.src.endsWith('.mp4');
-                          const mediaTag = isVideo 
-                            ? `<video src="${image.src}" class="gallery-image" autoplay loop muted playsinline style="${image.objectFit ? `object-fit:${image.objectFit};` : ""}"></video>`
-                            : `<img src="${image.src}" class="gallery-image" alt="" style="${image.objectFit ? `object-fit:${image.objectFit};` : ""}" />`;
-                          return `
+                  .map(
+                    (image) => {
+                      const isVideo = image.src && image.src.endsWith('.mp4');
+                      const mediaTag = isVideo
+                        ? `<video src="${image.src}" class="gallery-image" autoplay loop muted playsinline style="${image.objectFit ? `object-fit:${image.objectFit};` : ""}"></video>`
+                        : `<img src="${image.src}" class="gallery-image" alt="" style="${image.objectFit ? `object-fit:${image.objectFit};` : ""}" />`;
+                      return `
                           <div class="row-image-wrapper">
                             ${mediaTag}
                           </div>
                         `;
-                        }
-                      )
-                      .join("")}
+                    }
+                  )
+                  .join("")}
                   </div>
                 `;
-              }
+            }
 
-              return `
+            return `
                 <div class="content-block ${alignClass}  ${block.className ? block.className : ""}">
                   <div class="content-inner" style="${widthStyle}">
                     ${mediaHtml}
@@ -2344,45 +2802,45 @@
                   </div>
                 </div>
               `;
-            })
-            .join("");
-        } else if (project.images && project.images.length) {
-          galleryHtml = project.images
-            .map(
-              (image) => `
+          })
+          .join("");
+      } else if (project.images && project.images.length) {
+        galleryHtml = project.images
+          .map(
+            (image) => `
                 <div class="content-block align-center">
                   <div class="content-inner">
                     <img src="${image}" class="gallery-image" alt="${project.title}" />
                   </div>
                 </div>
               `
-            )
-            .join("");
-        }
-
-        const scopeListHtml = scopeItems
-          .map((item) => `<li>${item}</li>`)
+          )
           .join("");
+      }
 
-        const badgesMetaHtml =
-          project.badges && project.badges.url
-            ? `
+      const scopeListHtml = scopeItems
+        .map((item) => `<li>${item}</li>`)
+        .join("");
+
+      const badgesMetaHtml =
+        project.badges && project.badges.url
+          ? `
               <div class="meta-item">
                 <div class="meta-badges-row">
                   <a class="meta-badges-link" href="${project.badges.url}" target="_blank" rel="noreferrer">
                     ${project.badges.label || "Badges:"}
                   </a>
                   ${project.badges.images && project.badges.images.length
-                    ? `<div class="meta-badge-icons">
+            ? `<a class="meta-badge-icons"  href="${project.badges.url}" target="_blank" rel="noreferrer">
                         ${project.badges.images.map(src => `<img class="meta-badge-preview" src="${src}" alt="Badges" />`).join("")}
                       </div>`
-                    : ""}
+            : ""}
                 </div>
               </div>
             `
-            : "";
+          : "";
 
-        return `
+      return `
           <section class="project-details" aria-labelledby="project-title">
             <div class="project-header">
               <h1 class="project-title" id="project-title">${project.title}</h1>
@@ -2412,58 +2870,59 @@
             </div>
           </section>
         `;
+    }
+
+    function renderProject() {
+      const projectId = getProjectId();
+      const project = projectsData.find((entry) => entry.id === projectId);
+
+      if (!project) {
+        projectContent.innerHTML = "<h1>Project not found</h1>";
+        return;
       }
 
-      function renderProject() {
-        const projectId = getProjectId();
-        const project = projectsData.find((entry) => entry.id === projectId);
+      projectContent.innerHTML =
+        projectId === 2
+          ? renderLogosProject(project)
+          : projectId === 5
+            ? renderTuwProject(project)
+            : renderGenericProject(project);
 
-        if (!project) {
-          projectContent.innerHTML = "<h1>Project not found</h1>";
-          return;
-        }
+      document.title = `${project.title} | Theongyn Portfolio`;
+    }
 
-        projectContent.innerHTML =
-          projectId === 2
-            ? renderLogosProject(project)
-            : projectId === 5
-              ? renderTuwProject(project)
-              : renderGenericProject(project);
+    document.querySelectorAll("[data-disabled-link]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+      });
+    });
 
-        document.title = `${project.title} | Theongyn Portfolio`;
-      }
+    if (scrollTopButton) {
+      scrollTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
 
-      document.querySelectorAll("[data-disabled-link]").forEach((link) => {
-        link.addEventListener("click", (event) => {
-          event.preventDefault();
-        });
+    if (menuOpenButton && menuCloseButton && mobileMenu) {
+      menuOpenButton.addEventListener("click", () => setMenuState(true));
+      menuCloseButton.addEventListener("click", () => setMenuState(false));
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setMenuState(false));
       });
 
-      if (scrollTopButton) {
-        scrollTopButton.addEventListener("click", () => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      }
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          setMenuState(false);
+          console.log("Escape key pressed - closing menu");
+        }
+      });
+    }
 
-      if (menuOpenButton && menuCloseButton && mobileMenu) {
-        menuOpenButton.addEventListener("click", () => setMenuState(true));
-        menuCloseButton.addEventListener("click", () => setMenuState(false));
+    window.addEventListener("scroll", handleTopbarVisibility, { passive: true });
 
-        mobileMenu.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", () => setMenuState(false));
-        });
+    renderProject();
+  </script>
+</body>
 
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape") {
-            setMenuState(false);
-            console.log("Escape key pressed - closing menu");
-          }
-        });
-      }
-
-      window.addEventListener("scroll", handleTopbarVisibility, { passive: true });
-
-      renderProject();
-    </script>
-  </body>
 </html>

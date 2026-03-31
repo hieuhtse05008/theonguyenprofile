@@ -10,6 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="icon" type="image/svg" href="../assets/icons/about/desktop-about-footer-mark.svg" />
     <style>
       @font-face {
         font-family: "Cirrus Cumulus";
@@ -41,6 +42,7 @@
     html,
     body {
       min-height: 100%;
+      cursor: url('../assets/icons/about/desktop-about-footer-mark.svg'), auto;
     }
 
     body {
@@ -166,7 +168,8 @@
         gap: 3px;
         align-items: flex-start;
         cursor: pointer;
-        transition: transform 0.2s ease;
+        opacity: 0;
+        transition: opacity 0.8s ease;
       }
 
       /* Hover states */
@@ -272,9 +275,9 @@
         font-weight: 300;
         line-height: normal;
         white-space: nowrap;
-        visibility: hidden;
-        opacity: 0;
-        pointer-events: none; /* Prevent overlap with neighboring cards when hidden */
+        /* visibility: hidden; */
+        /* opacity: 0; */
+        pointer-events: none;
         transition: opacity 0.2s ease, visibility 0.2s;
       }
 
@@ -1105,7 +1108,7 @@
             
             let angleDeg = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
             
-            const offset = -185.56; 
+            const offset = -155.56; 
             const finalAngle = angleDeg + offset;
 
             clockHands.style.transform = `translate(-180.49px, -202.22px) rotate(${finalAngle}deg)`;
@@ -1154,6 +1157,10 @@
             c.el.style.left = `${x}px`;
             c.el.style.top = `${y}px`;
             c.el.style.transform = `translate(-50%, -50%)`;
+            // Fade in after position is set
+            requestAnimationFrame(() => {
+              c.el.style.opacity = '1';
+            });
           });
         }
       }

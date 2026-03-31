@@ -176,7 +176,7 @@ const projectsData = [
     "year": "2023 - Now",
     "type": "Commission",
     "scope": "Art Direction, Brand Repositioning & Strategy, Product Design (Apparel), Social Media Posts",
-    "description": "This project supported Today U Wear (TUW), one of Hanoi\u2019s first premium local sportswear brands, in reconnecting with its audience and repositioning itself as a leader in the athleisure market by blending performance-driven gym wear with everyday style. Facing the challenge of rebuilding brand trust and visibility in a saturated market, I served as Art Director and Designer, leading the visual identity refresh and campaign direction. Since December 2023, the new bold, friendly, and energetic visual system has driven TUW\u2019s rapid return to market leadership.",
+    "description": "This project supported Today U Wear (TUW), one of Hanoi’s first premium local sportswear brands, in reconnecting with its audience and repositioning itself as a leader in the athleisure market by blending performance-driven gym wear with everyday style.<span class=\"empty-line\"></span>Facing the challenge of rebuilding brand trust and visibility in a saturated market, I served as Art Director and Designer, leading the visual identity refresh and campaign direction in close collaboration with marketing, e-commerce, and production teams. <span class=\"empty-line\"></span>Since December 2023, the new bold, friendly, and energetic visual system has driven TUW’s rapid return to market leadership, achieving top rankings on Shopee and Lazada and generating average monthly sales of approximately <b class=\"fw-bold\">500 million VND</b> across key campaigns.",
     "images": [
       "../assets/images/projects/p5/img_1.png",
       "../assets/images/projects/p5/img_2.png",
@@ -409,12 +409,13 @@ const projectsData = [
     "galleryClass": "no-gap",
     "content": [
       { "type": "single", "align": "center", "src": "../assets/images/projects/p9/hero.png" },
-      {
-        "type": "ukiyo-history",
-        "title": "ukiyo Branding/ History",
-        "text": "Founded in 2015 by renowned chef Hiroshi Nakamura, UKIYO (\u6d6e\u4e16) was born from a dream: to bring the authentic flavors of Tokyo to the world. Inspired by his grandmother's traditional sushi recipes and his Michelin-starred culinary expertise, Nakamura envisioned a restaurant that would celebrate Japanese culture and artistry. Sourcing the finest ingredients from Tokyo's Tsukiji Market and drawing inspiration from Kyoto's tea houses, Ukiyo quickly gained acclaim for its meticulous attention to detail and elegant minimalism. Today, it stands as a cultural landmark, beloved by locals and international visitors alike, for its innovative fusion of tradition and modern Japanese cuisine.",
-        "images": ["../assets/images/projects/p9/chef_work.png", "../assets/images/projects/p9/sushi_close.png"]
-      },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/history.png" },
+      // {
+      //   "type": "ukiyo-history",
+      //   "title": "ukiyo Branding/ History",
+      //   "text": "Founded in 2015 by renowned chef Hiroshi Nakamura, UKIYO (\u6d6e\u4e16) was born from a dream: to bring the authentic flavors of Tokyo to the world. Inspired by his grandmother's traditional sushi recipes and his Michelin-starred culinary expertise, Nakamura envisioned a restaurant that would celebrate Japanese culture and artistry. Sourcing the finest ingredients from Tokyo's Tsukiji Market and drawing inspiration from Kyoto's tea houses, Ukiyo quickly gained acclaim for its meticulous attention to detail and elegant minimalism. Today, it stands as a cultural landmark, beloved by locals and international visitors alike, for its innovative fusion of tradition and modern Japanese cuisine.",
+      //   "images": ["../assets/images/projects/p9/chef_work.png", "../assets/images/projects/p9/sushi_close.png"]
+      // },
       {
         "type": "text",
         "align": "center",
@@ -446,12 +447,13 @@ const projectsData = [
         "text": "The color palette was inspired by the organic & neutral color scheme used in old Japanese traditional paintings."
       },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p9/rect_1487.png" },
-      {
-        "type": "ukiyo-fresh-taste",
-        "title": "ukiyo \u6d6e\u4e16\nA FRESH TASTE\nFROM TOKYO",
-        "text": "In the bustling metropolis of Tokyo, UKIYO (\u6d6e\u4e16) offers a tranquil escape. Step into a world where the art of sushi is celebrated alongside an intimate bar, a collection of unique art gifts\ufe0f, and the soothing power of music. We invite you to experience authentic Japanese cuisine, crafted with the highest quality ingredients, in an atmosphere that is both serene and sophisticated, safe and welcoming. Ukiyo is more than a restaurant; it's a journey of culinary and artistic discovery.",
-        "image": "../assets/images/projects/p9/fresh_taste_bg.png"
-      },
+      { "type": "single", "align": "center", "src": "../assets/images/projects/p9/fresh.png" },
+      // {
+      //   "type": "ukiyo-fresh-taste",
+      //   "title": "ukiyo \u6d6e\u4e16\nA FRESH TASTE\nFROM TOKYO",
+      //   "text": "In the bustling metropolis of Tokyo, UKIYO (\u6d6e\u4e16) offers a tranquil escape. Step into a world where the art of sushi is celebrated alongside an intimate bar, a collection of unique art gifts\ufe0f, and the soothing power of music. We invite you to experience authentic Japanese cuisine, crafted with the highest quality ingredients, in an atmosphere that is both serene and sophisticated, safe and welcoming. Ukiyo is more than a restaurant; it's a journey of culinary and artistic discovery.",
+      //   "image": "../assets/images/projects/p9/fresh_taste_bg.png"
+      // },
       { "type": "single", "align": "center", "src": "../assets/images/projects/p9/section_mockups.png" },
       {
         "type": "row",
