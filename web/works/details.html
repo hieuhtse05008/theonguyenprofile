@@ -35,6 +35,13 @@
       font-display: swap;
     }
 
+    @font-face {
+      font-family: "SF Pro Display";
+      src: url("../fonts/SF-Pro-Display/SF-Pro-Display-Regular.otf") format("opentype");
+      font-weight: 400;
+      font-display: swap;
+    }
+
     :root {
       --theongyn-green: #3cd362;
       --theongyn-pink: #fe45ee;
@@ -115,10 +122,13 @@
       position: fixed;
       top: 0;
       left: 0;
+      right: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      max-width: 1512px;
+      margin: 0 auto;
       height: 103px;
       padding: 0 60px;
       background: var(--theongyn-light-grey);
@@ -1425,9 +1435,7 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .tuw-product-real-panel.is-single {
-      /* height: 80vh; */
-    }
+
 
     .tuw-product-jersey-pair {
       display: grid;
@@ -1655,7 +1663,7 @@
       .meta-list a,
       .content-caption,
       .content-text {
-        font-size: 26px;
+        font-size: 16px;
       }
 
       .project-meta {
@@ -2156,7 +2164,7 @@
             </div>
 
             <div class="project-gallery tuw-gallery">
-              <section class="tuw-section">
+              <section class="tuw-section" style="margin-top:20px">
                 ${renderResponsiveImage("hero-desktop.png", "hero-mobile.png", "Today U Wear brand identity hero")}
               </section>
 
@@ -2312,8 +2320,8 @@
         designPanelClass: "is-row",
         designHtml: `
                     <div class="tuw-product-jersey-pair">
-                      ${renderResponsiveImage("product-5-design-front-desktop.png", "product-5-design-front-mobile.png", "Today U Wear jersey front concept")}
-                      ${renderResponsiveImage("product-5-design-back-desktop.png", "product-5-design-back-mobile.png", "Today U Wear jersey back concept")}
+                      ${renderResponsiveImage("product-5-design-front-desktop.svg", "product-5-design-front-mobile.svg", "Today U Wear jersey front concept")}
+                      ${renderResponsiveImage("product-5-design-back-desktop.svg", "product-5-design-back-mobile.svg", "Today U Wear jersey back concept")}
                     </div>
                   `,
         realHtml: renderResponsiveImage("product-5-real-desktop.png", "product-5-real-mobile.png", "Today U Wear jersey real product"),

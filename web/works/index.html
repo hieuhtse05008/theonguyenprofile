@@ -128,10 +128,13 @@
         position: absolute; /* or fixed if you want it to scroll */
         top: 0;
         left: 0;
+        right: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        max-width: var(--theongyn-desktop-width);
+        margin: 0 auto;
         height: 103px;
         padding: 0 60px;
         z-index: 50;
@@ -183,8 +186,7 @@
         background: var(--theongyn-pink);
       }
 
-      .work-card:hover .work-card-title-inner {
-      }
+
 
       .work-card:hover .work-card-category {
         visibility: visible !important;
@@ -212,7 +214,7 @@
       -webkit-text-stroke-width: 0.5px;
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
         line-height: 1;
-        text-align: center;
+        text-align: left;
         letter-spacing: -0.03em;
       }
 
@@ -231,7 +233,7 @@
         font-weight: 100;
         font-size: 20px;
         line-height: 1;
-        text-align: center;
+        text-align: left;
       }
 
       .work-card-year p {
@@ -257,7 +259,7 @@
       -webkit-text-stroke-color: var(--2026-PORT-Tertiary-Dark-grey, #262626);
         font-size: 48px;
         line-height: 1;
-        text-align: center;
+        text-align: left;
         white-space: nowrap;
       }
 
